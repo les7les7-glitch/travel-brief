@@ -8,8 +8,7 @@
 <meta property="og:title" content="여행 브리핑">
 <meta property="og:description" content="항공·호텔 프로모션, 프리미엄 캐빈, 럭셔리 호텔 소식과 느낌·예산별 여행지 추천을 매일 아침 정리해요.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0e3b34">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -19,31 +18,42 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@400..700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   color-scheme: light dark;
-  --color-bg: #f7f5f0;
+  --color-bg: #f3f5f1;
   --color-panel: #ffffff;
-  --color-fg: #1d1b18;
-  --color-fg-muted: #67625a;
-  --color-border-line: #e4dfd6;
-  --color-ok: #2a7a4b;
-  --color-warn: #9a5800;
-  --color-bad: #b8382b;
-  --series-1: #b5472f;
-  --series-2: #2f6db5;
-  --series-3: #946419;
-  --series-4: #2b8063;
-  --series-5: #7b4fb3;
-  --series-6: #b84d72;
-  --series-7: #4f7a2b;
+  --color-fg: #16231f;
+  --color-fg-muted: #586560;
+  --color-border-line: #dce3de;
+  --color-ok: #23764b;
+  --color-warn: #9a5b00;
+  --color-bad: #b4372b;
+  --series-1: #8c5d1e;
+  --series-2: #275b8b;
+  --series-3: #6d4891;
+  --series-4: #2e7560;
+  --series-5: #17624f;
+  --series-6: #5a5e9d;
+  --series-7: #1c6a72;
   --series-8: #5b6470;
-  --cds-chart-grid: #ece7de;
-  --cds-chart-reference: #1d1b18;
-  --cds-chart-muted: #c9c2b6;
-  --font-anthropic-sans: "Noto Sans KR", system-ui, -apple-system, "Apple SD Gothic Neo", sans-serif;
-  --font-anthropic-serif: "Noto Serif KR", "Apple SD Gothic Neo", serif;
+  --cds-chart-grid: #e6ebe7;
+  --cds-chart-reference: #16231f;
+  --cds-chart-muted: #bcc7c1;
+  --lounge: #0e3b34;
+  --brand: #0e3b34;
+  --brand-on: #ffffff;
+  --brass-light: #dbb77c;
+  --side-bg: #e7eee9;
+  --side-line: rgba(14, 59, 52, 0.14);
+  --bar-h: 3.25rem;
+  --wrap: 88rem;
+  --gutter: max(16px, env(safe-area-inset-left));
+  --font-display: "Hahmlet", "Noto Serif KR", "AppleMyungjo", serif;
+  --font-anthropic-sans: "IBM Plex Sans KR", system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-anthropic-serif: var(--font-display);
   --cds-font-size-caption: 0.8125rem;
   --cds-font-size-body: 0.9375rem;
   --cds-font-size-heading: 1.125rem;
@@ -53,45 +63,48 @@
   --cds-gap-sm: 8px;
   --cds-gap-md: 12px;
   --cds-gap-lg: 20px;
-  --cds-gap-xl: 36px;
+  --cds-gap-xl: 40px;
   --cds-pad-xs: 4px;
   --cds-pad-sm: 8px;
   --cds-pad-md: 14px;
-  --cds-pad-lg: 20px;
+  --cds-pad-lg: 22px;
   --cds-radius: 12px;
   --cds-dur-slow: 400ms;
   --cds-ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
+@media (min-width: 48rem) { :root { --gutter: 32px; } }
+@media (min-width: 110rem) { :root { --wrap: 104rem; } }
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #141311;
-    --color-panel: #1d1b18;
-    --color-fg: #f2efe9;
-    --color-fg-muted: #a8a197;
-    --color-border-line: #302d28;
+    --color-bg: #0c1714;
+    --color-panel: #13211d;
+    --color-fg: #e6eeea;
+    --color-fg-muted: #97a9a1;
+    --color-border-line: #23352f;
     --color-ok: #6cc28f;
     --color-warn: #e3a74c;
     --color-bad: #ef7a6c;
-    --series-1: #e8846b;
-    --series-2: #74a7ea;
-    --series-3: #d9a650;
-    --series-4: #5fc4a0;
-    --series-5: #b48de8;
-    --series-6: #e88fae;
-    --series-7: #9cc96a;
+    --series-1: #dcb06e;
+    --series-2: #86b2e2;
+    --series-3: #c2a4e8;
+    --series-4: #6fc6a8;
+    --series-5: #7fcdb2;
+    --series-6: #a9aaea;
+    --series-7: #74c4cc;
     --series-8: #a2abb6;
-    --cds-chart-grid: #2c2925;
-    --cds-chart-reference: #f2efe9;
-    --cds-chart-muted: #5a554d;
+    --cds-chart-grid: #1f2f2a;
+    --cds-chart-reference: #e6eeea;
+    --cds-chart-muted: #4d5f58;
+    --brand: #8fd2ba;
+    --brand-on: #0c1714;
+    --side-bg: #13211d;
+    --side-line: rgba(255, 255, 255, 0.08);
   }
 }
 * { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-family: var(--font-anthropic-sans); line-height: 1.5; }
-#dash-root {
-  padding: calc(env(safe-area-inset-top) + 20px) max(16px, env(safe-area-inset-right)) calc(env(safe-area-inset-bottom) + 48px) max(16px, env(safe-area-inset-left));
-}
-@media (min-width: 48rem) { #dash-root { padding-left: 32px; padding-right: 32px; } }
+html { -webkit-text-size-adjust: 100%; background: var(--lounge); }
+body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-family: var(--font-anthropic-sans); line-height: 1.5; word-break: keep-all; overflow-wrap: break-word; }
+#dash-root { padding: 0; }
 a { color: inherit; }
 button, input, select { font-family: inherit; }
 .dash-skeleton { color: transparent !important; background: var(--cds-chart-grid); border-radius: 6px; min-height: 1em; }
@@ -345,27 +358,171 @@ button, input, select { font-family: inherit; }
 .tv-photo figcaption:empty { display: none; }
 .tv-photo figcaption a { color: inherit; text-decoration: none; }
 .tv-pick:has(> .tv-photo) { box-shadow: none; }
+
+/* ---- 사이트 전용 레이아웃: 표지, 고정 막대, 두 칸, 바닥글 ---- */
+html { scroll-padding-top: calc(var(--bar-h) + 12px); }
+
+/* 표지 */
+.sb-hero { position: relative; isolation: isolate; display: flex; flex-direction: column; justify-content: flex-end; min-height: clamp(28rem, 64vh, 44rem); background: var(--lounge); color: #fff; overflow: hidden; }
+.sb-hero-photo { position: absolute; inset: 0; margin: 0; z-index: -1; }
+.sb-hero-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; opacity: 0; }
+.sb-hero-photo img.is-in { opacity: 1; }
+@media (prefers-reduced-motion: no-preference) {
+  .sb-hero-photo img { transform: scale(1.04); transition: opacity 900ms var(--cds-ease-out), transform 2400ms var(--cds-ease-out); }
+  .sb-hero-photo img.is-in { transform: none; }
+}
+.sb-hero-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(5, 24, 20, 0.95) 0%, rgba(5, 24, 20, 0.84) 38%, rgba(5, 24, 20, 0.5) 72%, rgba(5, 24, 20, 0.46) 100%); }
+@media (min-width: 64rem) {
+  .sb-hero-photo::after { background: linear-gradient(to top, rgba(5, 24, 20, 0.92) 0%, rgba(5, 24, 20, 0.55) 38%, rgba(5, 24, 20, 0.08) 72%, rgba(5, 24, 20, 0.35) 100%), linear-gradient(to right, rgba(5, 24, 20, 0.62) 0%, rgba(5, 24, 20, 0) 62%); }
+}
+.sb-hero-in { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: calc(env(safe-area-inset-top) + 72px) var(--gutter) 22px; }
+.sb-title { text-shadow: 0 2px 24px rgba(0, 0, 0, 0.25); font-family: var(--font-display); font-weight: 700; font-size: clamp(3.25rem, 1.9rem + 6.4vw, 7rem); line-height: 0.98; letter-spacing: -0.035em; margin: 0; }
+.sb-lead { text-shadow: 0 1px 14px rgba(0, 0, 0, 0.35); font-size: clamp(1.0625rem, 0.96rem + 0.42vw, 1.3125rem); line-height: 1.6; max-width: 38em; margin: 22px 0 10px; color: rgba(255, 255, 255, 0.95); text-wrap: pretty; }
+.sb-meta { font-size: 0.875rem; color: rgba(255, 255, 255, 0.7); margin: 0; font-variant-numeric: tabular-nums; }
+.sb-hero .dash-skeleton { background: rgba(255, 255, 255, 0.14); min-width: 4em; display: inline-block; }
+.sb-hero .sb-lead.dash-skeleton { display: block; min-height: 3.2em; max-width: 30em; }
+.sb-pick { display: grid; gap: 16px; margin-top: 30px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, 0.24); }
+.sb-pick[hidden] { display: none; }
+@media (min-width: 48rem) { .sb-pick { grid-template-columns: minmax(0, 1fr) auto; align-items: end; gap: 24px; } }
+.sb-pick-k { font-size: 0.8125rem; font-weight: 600; color: var(--brass-light); margin: 0 0 6px; }
+.sb-pick-place { font-family: var(--font-display); font-weight: 600; font-size: 1.625rem; line-height: 1.2; margin: 0; }
+.sb-pick-head { font-size: 0.9375rem; line-height: 1.5; color: rgba(255, 255, 255, 0.82); margin: 4px 0 0; }
+.sb-pick-act { display: flex; flex-wrap: wrap; gap: 8px; }
+.sb-btn { font: inherit; font-size: 0.9375rem; font-weight: 600; min-height: 2.75rem; padding: 0 22px; border-radius: 999px; border: 1px solid var(--brass-light); background: var(--brass-light); color: var(--lounge); cursor: pointer; }
+.sb-btn:hover { background: #e9cc98; border-color: #e9cc98; }
+.sb-btn[hidden] { display: none; }
+.sb-btn--line { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.55); }
+.sb-btn--line:hover { background: rgba(255, 255, 255, 0.12); border-color: #fff; }
+.sb-credit { position: absolute; top: calc(env(safe-area-inset-top) + 14px); right: var(--gutter); max-width: 60%; margin: 0; font-size: 0.6875rem; line-height: 1.4; color: rgba(255, 255, 255, 0.72); text-align: right; }
+.sb-credit a { color: inherit; text-decoration: none; }
+.sb-credit a:hover { text-decoration: underline; }
+.sb-btn:focus-visible, .sb-credit a:focus-visible, .sb-brand:focus-visible, .sb-bar .tv-tab:focus-visible, .sb-foot a:focus-visible { outline: 2px solid var(--brass-light); outline-offset: 3px; }
+
+/* 고정 막대 */
+.sb-bar { position: sticky; top: 0; z-index: 20; background: var(--lounge); color: #fff; box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12); }
+.sb-bar-in { display: flex; align-items: stretch; max-width: var(--wrap); height: var(--bar-h); margin: 0 auto; padding: 0 var(--gutter); }
+.sb-brand { display: none; }
+@media (min-width: 64rem) {
+  .sb-brand { display: flex; align-items: center; gap: 10px; flex: none; max-width: 0; margin-right: 0; overflow: hidden; opacity: 0; visibility: hidden; color: #fff; text-decoration: none; font-family: var(--font-display); font-weight: 700; font-size: 1.125rem; letter-spacing: -0.02em; white-space: nowrap; }
+  .sb-bar.is-stuck .sb-brand { max-width: 12rem; margin-right: 22px; opacity: 1; visibility: visible; }
+}
+@media (min-width: 64rem) and (prefers-reduced-motion: no-preference) {
+  .sb-brand { transition: max-width 320ms var(--cds-ease-out), margin 320ms var(--cds-ease-out), opacity 240ms linear, visibility 0s linear 320ms; }
+  .sb-bar.is-stuck .sb-brand { transition: max-width 320ms var(--cds-ease-out), margin 320ms var(--cds-ease-out), opacity 240ms linear 80ms, visibility 0s; }
+}
+.sb-brand img { width: 28px; height: 28px; border-radius: 7px; flex: none; }
+.sb-bar .tv-tabs { position: relative; flex: 1; min-width: 0; align-items: stretch; gap: 0; margin: 0; padding: 0; -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent); }
+@media (min-width: 64rem) { .sb-bar .tv-tabs { -webkit-mask-image: none; mask-image: none; } }
+.sb-bar .tv-tab { position: relative; display: flex; align-items: center; font-size: 0.9375rem; font-weight: 500; padding: 0 14px; border: 0; border-radius: 0; background: none; color: rgba(255, 255, 255, 0.7); }
+.sb-bar .tv-tab:first-child { margin-left: -14px; }
+.sb-bar .tv-tab:last-child { margin-right: 32px; }
+.sb-bar .tv-tab:hover { color: #fff; }
+.sb-bar .tv-tab[aria-pressed="true"] { background: none; color: #fff; }
+.sb-bar .tv-tab[aria-pressed="true"]::after { content: ""; position: absolute; left: 14px; right: 14px; bottom: 0; height: 3px; border-radius: 3px 3px 0 0; background: var(--brass-light); }
+.sb-bar .tv-tab:focus-visible { outline-offset: -6px; }
+.sb-bar-date { display: none; }
+@media (min-width: 64rem) {
+  .sb-bar-date { display: block; align-self: center; flex: none; margin: 0 0 0 24px; font-size: var(--cds-font-size-caption); color: rgba(255, 255, 255, 0.62); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .sb-bar-date .dash-skeleton { background: rgba(255, 255, 255, 0.14); min-width: 7em; display: inline-block; }
+  .sb-bar .tv-tab:last-child { margin-right: 0; }
+}
+
+/* 본문 두 칸 */
+.tv.sb-wrap { max-width: var(--wrap); min-height: calc(100vh - var(--bar-h)); padding: 32px var(--gutter) 64px; }
+@media (min-width: 72rem) {
+  .tv.sb-wrap { display: grid; grid-template-columns: minmax(0, 1fr) 20rem; gap: 0 40px; align-items: start; padding-top: 40px; }
+  .sb-side { position: sticky; top: calc(var(--bar-h) + 24px); max-height: calc(100vh - var(--bar-h) - 48px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+}
+@media (min-width: 90rem) { .tv.sb-wrap { grid-template-columns: minmax(0, 1fr) 22rem; gap: 0 56px; } }
+@media (max-width: 71.99rem) {
+  .sb-side { margin-bottom: var(--cds-gap-xl); }
+  body:not([data-tab="all"]) .sb-side { display: none; }
+}
+.sb-main > .tv-section:last-child { margin-bottom: 0; }
+.sb-side { display: flex; flex-direction: column; gap: 16px; }
+.sb-block { background: var(--side-bg); border-radius: var(--cds-radius); padding: 18px 18px 14px; --color-border-line: var(--side-line); }
+.sb-block-h { font-family: var(--font-display); font-weight: 600; font-size: 1.1875rem; line-height: 1.3; letter-spacing: -0.01em; margin: 0; }
+.sb-block .tv-note { margin: 4px 0 12px; }
+.sb-new-list { list-style: none; margin: 12px 0 0; padding: 0; }
+.sb-new-row { display: grid; gap: 2px; width: 100%; text-align: left; font: inherit; color: inherit; background: none; border: 0; border-top: 1px solid var(--color-border-line); padding: 10px 0; cursor: pointer; }
+.sb-new-list li:first-child .sb-new-row { border-top: 0; padding-top: 0; }
+.sb-new-k { font-size: var(--cds-font-size-caption); font-weight: 600; color: var(--tv-accent); }
+.sb-new-t { font-size: var(--cds-font-size-body); line-height: 1.45; }
+.sb-new-row:hover .sb-new-t, .tv-due-row:hover .tv-due-t { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.sb-new-row:focus-visible, .tv-due-row:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 4px; }
+
+/* 제목과 버튼 */
+.tv-h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.375rem; line-height: 1.3; letter-spacing: -0.01em; }
+.tv-section > .tv-h2:first-child { font-size: 1.625rem; padding-top: 22px; border-top: 1px solid var(--color-border-line); }
+.sb-main > .tv-section:first-child > .tv-h2:first-child { padding-top: 0; border-top: 0; }
+.tv-g-h { font-family: var(--font-display); font-weight: 600; font-size: 1.3125rem; letter-spacing: -0.01em; }
+.tv-pick-place, .tv-bc-place, .tv-day-title { font-weight: 600; letter-spacing: -0.01em; }
+.tv-pick-place { font-size: 2rem; }
+.tv-pick.is-cover > .tv-pick-k, .tv-pick.is-cover > .tv-pick-place, .tv-pick.is-cover > .tv-pick-head { display: none; }
+.sb-cover-h { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; line-height: 1.3; letter-spacing: -0.01em; margin: 0 0 var(--cds-gap-xs); }
+.tv-pick-rows dd { max-width: 46rem; }
+.tv-pick { container-type: inline-size; }
+@container (min-width: 50rem) {
+  .tv-pick-rows { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: var(--cds-gap-sm); }
+  .tv-pick-rows > div { grid-template-columns: 1fr; gap: 6px; align-content: start; }
+  .tv-pick-rows dd { max-width: none; }
+}
+.tv-opt[aria-pressed="true"], .tv-go:not(:disabled) { background: var(--brand); border-color: var(--brand); color: var(--brand-on); }
+.tv-chip[aria-pressed="true"] { border-color: var(--brand); color: var(--brand); }
+.tv-guide-btn { border-color: var(--brand); color: var(--brand); }
+.tv-guide-btn:hover { background: var(--brand); color: var(--brand-on); }
+.tv-in:focus { outline-color: var(--brand); }
+
+/* 바닥글 */
+.sb-foot { background: var(--lounge); color: rgba(255, 255, 255, 0.76); }
+.sb-foot-in { display: grid; gap: 14px; max-width: var(--wrap); margin: 0 auto; padding: 44px var(--gutter) calc(env(safe-area-inset-bottom) + 52px); }
+@media (min-width: 64rem) { .sb-foot-in { grid-template-columns: 18rem minmax(0, 46rem); gap: 48px; } }
+.sb-foot-brand { font-family: var(--font-display); font-weight: 700; font-size: 2rem; line-height: 1.05; letter-spacing: -0.03em; color: #fff; margin: 0; }
+.sb-foot-text { display: grid; gap: 10px; }
+.sb-foot-text p { font-size: 0.875rem; line-height: 1.75; margin: 0; }
 </style>
 </head>
-<body>
+<body data-tab="all">
 <div id="dash-root">
-<div class="tv">
-  <header class="tv-head" id="top">
-    <h1 class="tv-title">여행 브리핑</h1>
-    <p class="tv-takeaway dash-skeleton" data-source="digest" data-field="headline" data-row="0">—</p>
-    <p class="tv-meta"><span class="dash-skeleton" data-source="digest" data-field="updatedLabel" data-row="0">—</span> 갱신 · 새 소식 <span class="dash-skeleton" data-source="digest" data-field="newCount" data-row="0">—</span>건</p>
-  </header>
+<section class="sb-hero" id="top" aria-labelledby="sb-title">
+  <figure class="sb-hero-photo"><img id="hero-img" alt="" decoding="async"></figure>
+  <div class="sb-hero-in">
+    <h1 class="sb-title" id="sb-title">여행 브리핑</h1>
+    <p class="sb-lead dash-skeleton" data-source="digest" data-field="headline" data-row="0">—</p>
+    <p class="sb-meta"><span class="dash-skeleton" data-source="digest" data-field="updatedLabel" data-row="0">—</span> 갱신, 새 소식 <span class="dash-skeleton" data-source="digest" data-field="newCount" data-row="0">—</span>건</p>
+    <div class="sb-pick" id="hero-pick" hidden>
+      <div class="sb-pick-text">
+        <p class="sb-pick-k">오늘의 여행지</p>
+        <p class="sb-pick-place" id="hero-place"></p>
+        <p class="sb-pick-head" id="hero-head"></p>
+      </div>
+      <div class="sb-pick-act">
+        <button class="sb-btn" type="button" id="hero-guide" hidden>가이드 보기</button>
+        <button class="sb-btn sb-btn--line" type="button" id="hero-more">자세히 보기</button>
+      </div>
+    </div>
+  </div>
+  <p class="sb-credit" id="hero-credit"></p>
+</section>
 
-  <nav class="tv-tabs" aria-label="섹션 선택">
-    <button class="tv-tab" type="button" data-tab="all" aria-pressed="true">전체</button>
-    <button class="tv-tab" type="button" data-tab="vibe" aria-pressed="false">느낌으로 찾기</button>
-    <button class="tv-tab" type="button" data-tab="budget" aria-pressed="false">예산으로 찾기</button>
-    <button class="tv-tab" type="button" data-tab="guide" aria-pressed="false">여행지 가이드</button>
-    <button class="tv-tab" type="button" data-tab="promo" aria-pressed="false">프로모션</button>
-    <button class="tv-tab" type="button" data-tab="air" aria-pressed="false">항공</button>
-    <button class="tv-tab" type="button" data-tab="hotel" aria-pressed="false">호텔</button>
-  </nav>
+<header class="sb-bar" id="bar">
+  <div class="sb-bar-in">
+    <a class="sb-brand" href="#top"><img src="icons/icon.svg" alt="" width="28" height="28"><span>여행 브리핑</span></a>
+    <nav class="tv-tabs" aria-label="섹션 선택">
+        <button class="tv-tab" type="button" data-tab="all" aria-pressed="true">전체</button>
+        <button class="tv-tab" type="button" data-tab="vibe" aria-pressed="false">느낌으로 찾기</button>
+        <button class="tv-tab" type="button" data-tab="budget" aria-pressed="false">예산으로 찾기</button>
+        <button class="tv-tab" type="button" data-tab="guide" aria-pressed="false">여행지 가이드</button>
+        <button class="tv-tab" type="button" data-tab="promo" aria-pressed="false">프로모션</button>
+        <button class="tv-tab" type="button" data-tab="air" aria-pressed="false">항공</button>
+        <button class="tv-tab" type="button" data-tab="hotel" aria-pressed="false">호텔</button>
+    </nav>
+    <p class="sb-bar-date"><span class="dash-skeleton" data-source="digest" data-field="updatedLabel" data-row="0">—</span> 갱신</p>
+  </div>
+</header>
 
+<div class="tv sb-wrap">
+  <main class="sb-main" id="main">
   <section class="tv-section" id="pick" data-tab-of="all">
     <article class="tv-card tv-pick" id="pick-card">
       <p class="tv-pick-k">오늘의 여행지 · <span class="tv-pick-f dash-skeleton" data-f="dateLabel">—</span></p>
@@ -507,13 +664,6 @@ button, input, select { font-family: inherit; }
     <p class="tv-vibe-basis" id="guide-foot">영업시간, 휴무일, 예약 조건은 자주 바뀌어요. 가기 전에 구글 지도나 공식 사이트에서 꼭 다시 확인하세요.</p>
   </section>
 
-  <section class="tv-section" id="due-soon" data-tab-of="all">
-    <div class="tv-card">
-      <h2 class="tv-h2">2주 안에 끝나는 혜택</h2>
-      <p class="tv-note">마감이 가까운 순서예요. 누르면 해당 소식으로 가요.</p>
-      <ul class="tv-due-list" id="due-list"></ul>
-    </div>
-  </section>
 
   <section class="tv-section" id="promo" data-tab-of="promo">
     <h2 class="tv-h2">프로모션 · 프로그램 변경</h2>
@@ -532,9 +682,29 @@ button, input, select { font-family: inherit; }
     <p class="tv-note">새로 여는 곳, 대개조, 눈여겨볼 리뷰</p>
     <div class="tv-grid" id="grid-hotel"></div>
   </section>
-
-  <p class="tv-foot" id="about">항공·호텔 프로그램의 프로모션, 퍼스트·비즈니스 새 좌석, 럭셔리 호텔 소식을 골라 한국어로 요약하고, 오늘의 여행지와 느낌·예산에 맞는 여행지, 여행지별 2일 코스와 식당 가이드를 함께 보여줘요. Claude가 매일 아침 갱신해요. 가격과 조건은 바뀔 수 있으니 예약 전에 출처에서 꼭 다시 확인하세요.</p>
+  </main>
+  <aside class="sb-side" id="side" aria-label="새 소식과 마감">
+    <section class="sb-block" id="new-today" hidden>
+      <h2 class="sb-block-h">오늘 들어온 소식</h2>
+      <ul class="sb-new-list" id="new-list"></ul>
+    </section>
+    <section class="sb-block" id="due-soon">
+      <h2 class="sb-block-h">2주 안에 끝나는 혜택</h2>
+      <p class="tv-note">마감이 가까운 순서예요. 누르면 해당 소식으로 가요.</p>
+      <ul class="tv-due-list" id="due-list"></ul>
+    </section>
+  </aside>
 </div>
+
+<footer class="sb-foot">
+  <div class="sb-foot-in">
+    <p class="sb-foot-brand">여행 브리핑</p>
+    <div class="sb-foot-text">
+      <p id="about">항공·호텔 프로그램의 프로모션, 퍼스트·비즈니스 새 좌석, 럭셔리 호텔 소식을 골라 한국어로 요약하고, 오늘의 여행지와 느낌·예산에 맞는 여행지, 여행지별 2일 코스와 식당 가이드를 함께 보여줘요. Claude가 매일 아침 갱신해요.</p>
+      <p>가격과 조건은 바뀔 수 있으니 예약 전에 출처에서 꼭 다시 확인하세요. 사진은 Unsplash 작가들의 작품이에요. 사진 위 작가 이름을 누르면 원본이 열려요.</p>
+    </div>
+  </div>
+</footer>
 </div>
 <script>
 (() => {
@@ -609,7 +779,7 @@ button, input, select { font-family: inherit; }
     return colors[i % colors.length];
   };
   let pickId = null;
-  const failedLine = (tag) => el(tag || 'div', 'tv-failed', 'Failed to load');
+  const failedLine = (tag) => el(tag || 'div', 'tv-failed', '불러오지 못했어요. 잠시 뒤 새로고침해 주세요.');
   const isExpired = (r, today) => r.dueKind === 'deadline' && isDate(r.due) && r.due < today;
   const prio = (r) => Number(r.priority) || 3;
   const dueKey = (r) => (r.dueKind === 'deadline' && isDate(r.due) ? r.due : '9999-12-31');
@@ -715,13 +885,7 @@ button, input, select { font-family: inherit; }
         markItem(el('span', 'tv-due-t', str(r.title)), 'title', r.id),
         markItem(el('span', 'tv-due-l', str(r.dueLabel)), 'dueLabel', r.id)
       );
-      b.addEventListener('click', () => {
-        const target = document.getElementById('item-' + r.id);
-        if (!target) return;
-        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        target.classList.add('is-flash');
-        setTimeout(() => target.classList.remove('is-flash'), 1400);
-      });
+      b.addEventListener('click', () => goToItem(r));
       li.append(b);
       list.append(li);
     });
@@ -769,6 +933,158 @@ button, input, select { font-family: inherit; }
     }
   }
 
+  // ---- 사이트 전용: 표지 사진, 고정 막대, 옆 칸 ----
+  let heroPick = null;
+  const wide = window.matchMedia('(min-width: 72rem)');
+  const SECTION_WORD = { promo: '프로모션', air: '항공', hotel: '호텔' };
+
+  function clearHeroPhoto(img) {
+    img.classList.remove('is-in');
+    img.removeAttribute('srcset');
+    img.removeAttribute('src');
+    delete img.dataset.src;
+  }
+
+  // 표지에는 오늘의 여행지 사진을 깔고, 아래 띠에 그곳 이름과 버튼을 둬요.
+  function setHero(r) {
+    heroPick = r || null;
+    const box = document.getElementById('hero-pick');
+    const img = document.getElementById('hero-img');
+    const credit = document.getElementById('hero-credit');
+    credit.replaceChildren();
+    if (!r) { box.hidden = true; clearHeroPhoto(img); return; }
+    document.getElementById('hero-place').textContent = str(r.place);
+    document.getElementById('hero-head').textContent = str(r.headline);
+    const dest = destByPlace.get(str(r.place));
+    document.getElementById('hero-guide').hidden = !(dest && guideIndex.has(dest));
+    box.hidden = false;
+    const url = safeUrl(r.photo);
+    if (!url) { clearHeroPhoto(img); return; }
+    if (img.dataset.src !== url) {
+      clearHeroPhoto(img);
+      img.dataset.src = url;
+      if (isUnsplash(url)) {
+        img.sizes = '100vw';
+        img.srcset = [960, 1440, 1920, 2560].map((w) => photoSrc(url, w) + ' ' + w + 'w').join(', ');
+      }
+      img.src = photoSrc(url, 1920);
+    }
+    if (r.photoCredit) {
+      const page = safeUrl(r.photoPage);
+      const n = el(page ? 'a' : 'span', null, '사진 ' + str(r.photoCredit));
+      if (page) { n.href = page; n.target = '_blank'; n.rel = 'noopener noreferrer'; }
+      credit.append(n);
+    }
+  }
+
+  // 오늘 추천은 표지에 이름과 한 줄 소개가 있으니, 아래 카드는 '○○ 여행 한눈에'로 이어 받아요.
+  function coverCard(card, r) {
+    let h = card.querySelector(':scope > .sb-cover-h');
+    card.classList.toggle('is-cover', !!r);
+    if (!r) { if (h) h.remove(); return; }
+    if (!h) { h = el('h2', 'sb-cover-h'); card.prepend(h); }
+    const city = str(r.place).split(',')[0].trim();
+    h.textContent = (city || '오늘의 여행지') + ' 여행 한눈에';
+  }
+
+  // 소식 카드로 가요. 지금 탭에서 안 보이면 그 소식이 있는 탭으로 바꿔요.
+  function goToItem(r) {
+    let target = document.getElementById('item-' + r.id);
+    if (!target || !target.offsetParent) {
+      showTab(TABS.includes(r.section) ? r.section : 'all');
+      dash.setLink(current === 'all' ? 'top' : current);
+      draw();
+      target = document.getElementById('item-' + r.id);
+    }
+    if (!target) return;
+    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    target.classList.add('is-flash');
+    setTimeout(() => target.classList.remove('is-flash'), 1400);
+  }
+
+  function drawNew(rows, status, digestRow) {
+    const box = document.getElementById('new-today');
+    const list = document.getElementById('new-list');
+    list.replaceChildren();
+    const runDate = digestRow ? str(digestRow.runDate) : '';
+    const partial = digestRow ? Number(digestRow.newCount) < rows.length : false;
+    const today = todayKST();
+    const fresh = status === 'ok' && runDate && partial
+      ? rows.filter((r) => r.added === runDate && SECTION_WORD[r.section] && !isExpired(r, today))
+        .sort((a, b) => prio(a) - prio(b) || SECTIONS.indexOf(a.section) - SECTIONS.indexOf(b.section))
+        .slice(0, 5)
+      : [];
+    box.hidden = !fresh.length;
+    fresh.forEach((r) => {
+      const li = el('li');
+      const b = el('button', 'sb-new-row');
+      b.type = 'button';
+      b.style.setProperty('--tv-accent', accent(r.section));
+      b.append(
+        el('span', 'sb-new-k', str(r.program) || SECTION_WORD[r.section]),
+        markItem(el('span', 'sb-new-t', str(r.title)), 'title', r.id)
+      );
+      b.addEventListener('click', () => goToItem(r));
+      li.append(b);
+      list.append(li);
+    });
+  }
+
+  // 넓은 화면에선 오른쪽 칸, 좁은 화면에선 '전체' 탭의 프로모션 바로 앞에 둬요.
+  function placeSide() {
+    const side = document.getElementById('side');
+    const wrap = document.querySelector('.sb-wrap');
+    const promoSec = document.getElementById('promo');
+    if (wide.matches) { if (side.parentElement !== wrap) wrap.append(side); }
+    else if (side.nextElementSibling !== promoSec) promoSec.before(side);
+  }
+
+  // 탭을 바꿨을 때 이미 아래로 내려와 있으면 본문 맨 위로 올려 줘요.
+  function toContent(force) {
+    const wrap = document.querySelector('.sb-wrap');
+    const bar = document.getElementById('bar');
+    const y = Math.round(wrap.getBoundingClientRect().top + window.scrollY - bar.offsetHeight);
+    if (force || window.scrollY > y + 1) window.scrollTo({ top: y });
+  }
+
+  function revealTab(key) {
+    const on = tabs.find((t) => t.dataset.tab === key);
+    const nav = on && on.parentElement;
+    if (!nav || nav.scrollWidth <= nav.clientWidth + 1) return;
+    const a = on.getBoundingClientRect();
+    const b = nav.getBoundingClientRect();
+    nav.scrollLeft += (a.left + a.width / 2) - (b.left + b.width / 2);
+  }
+
+  function bindSite() {
+    const bar = document.getElementById('bar');
+    const img = document.getElementById('hero-img');
+    img.addEventListener('load', () => { if (img.getAttribute('src')) img.classList.add('is-in'); });
+    img.addEventListener('error', () => img.classList.remove('is-in'));
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => entries.forEach((e) => bar.classList.toggle('is-stuck', !e.isIntersecting)),
+        { rootMargin: '-1px 0px 0px 0px' }).observe(document.getElementById('top'));
+    }
+    document.querySelector('.sb-brand').addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    document.getElementById('hero-guide').addEventListener('click', () => {
+      const dest = heroPick && destByPlace.get(str(heroPick.place));
+      if (dest && guideIndex.has(dest)) openGuide(dest);
+    });
+    document.getElementById('hero-more').addEventListener('click', () => {
+      pickId = null;
+      if (current !== 'all') { showTab('all'); dash.setLink('top'); }
+      draw();
+      const s = document.getElementById('pick');
+      if (s) s.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    placeSide();
+    if (wide.addEventListener) wide.addEventListener('change', placeSide);
+    else if (wide.addListener) wide.addListener(placeSide);
+  }
+
   function drawPick(status, data) {
     const card = document.getElementById('pick-card');
     const hist = document.getElementById('pick-hist');
@@ -784,6 +1100,8 @@ button, input, select { font-family: inherit; }
       });
       link.hidden = true;
       removePhoto(card);
+      setHero(null);
+      coverCard(card, null);
       hist.hidden = true;
       hist.replaceChildren();
     };
@@ -809,7 +1127,9 @@ button, input, select { font-family: inherit; }
     const href = safeUrl(cur.url);
     link.hidden = !href;
     if (href) link.href = href;
-    setPhoto(card, cur, 'pick');
+    if (cur === list[0]) removePhoto(card); else setPhoto(card, cur, 'pick');
+    setHero(list[0]);
+    coverCard(card, cur === list[0] ? cur : null);
     const pickGuide = guideButton(destByPlace.get(str(cur.place)));
     if (pickGuide) card.querySelector('.tv-pick-foot').prepend(pickGuide);
 
@@ -1855,9 +2175,11 @@ button, input, select { font-family: inherit; }
 
   function showTab(key) {
     current = key;
+    document.body.dataset.tab = key;
     tabs.forEach((t) => t.setAttribute('aria-pressed', String(t.dataset.tab === key)));
     // 가이드는 길어서 '전체'에는 넣지 않고 자기 탭에서만 보여줘요.
     sections.forEach((s) => { s.hidden = key === 'all' ? s.dataset.tabOf === 'guide' : s.dataset.tabOf !== key; });
+    revealTab(key);
   }
 
   function draw() {
@@ -1878,6 +2200,7 @@ button, input, select { font-family: inherit; }
 
     const rows = items.status === 'ok' && Array.isArray(items.data) ? items.data.filter((r) => r && r.id && r.title) : [];
     drawDue(rows, items.status, today);
+    drawNew(rows, items.status, digestRow);
     const enter = items.status === 'ok' && rows.length > 0 && !animated;
     SECTIONS.forEach((s) => drawGrid(s, rows, items.status, today, digestRow, enter));
     if (enter) animated = true;
@@ -1886,6 +2209,7 @@ button, input, select { font-family: inherit; }
       linked = true;
       const named = document.getElementById(location.hash.slice(1));
       if (named && named.id !== 'top') named.scrollIntoView();
+      else if (current !== 'all') toContent(true);
     }
   }
 
@@ -1893,6 +2217,7 @@ button, input, select { font-family: inherit; }
     showTab(t.dataset.tab);
     dash.setLink(t.dataset.tab === 'all' ? 'top' : t.dataset.tab);
     draw();
+    toContent(false);
   }));
 
   const initial = location.hash.slice(1);
@@ -1902,6 +2227,7 @@ button, input, select { font-family: inherit; }
   bindBudget();
   bindVibe();
   bindGuide();
+  bindSite();
   dash.onData(draw);
 })();
 </script>
