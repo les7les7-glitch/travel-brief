@@ -4,8 +4,8 @@
 Usage:
     python3 scripts/export_public.py SRC_DIR [OUT_DIR]
 
-SRC_DIR holds items.json, pick.json, budget.json and digest.json from the
-private dashboard. Public-safe copies are written to OUT_DIR (default: the
+SRC_DIR holds items.json, pick.json, budget.json, digest.json and (optionally)
+guide.json from the private dashboard. Public-safe copies are written to OUT_DIR (default: the
 repo's data/ folder). Keep SRC_DIR outside the repo so the private copies are
 never committed.
 
@@ -27,6 +27,8 @@ ITEM_KEYS = {"id", "section", "program", "title", "summary", "tip", "source", "u
 PICK_KEYS = {"id", "date", "dateLabel", "place", "headline", "why", "stay", "getThere",
              "bestTime", "source", "url"}
 DIGEST_KEYS = {"runDate", "updatedAt", "updatedLabel", "newCount", "headline"}
+GUIDE_KEYS = {"id", "dest", "kind", "day", "order", "slot", "name", "mapQuery", "area", "note", "move", "mode",
+              "category", "price", "priceText", "tip", "walk", "source", "url", "asOf"}
 
 
 def is_private(text):
@@ -97,8 +99,22 @@ def main():
             newCount=sum(1 for i in public_items if i.get("added") == run_date),
         ))
 
-    for name, rows in (("items.json", public_items), ("pick.json", public_picks),
-                       ("budget.json", public_budget), ("digest.json", public_digest)):
+    outputs = [("items.json", public_items), ("pick.json", public_picks),
+               ("budget.json", public_budget), ("digest.json", public_digest)]
+
+    # Travel guides: only for destinations that are in the public budget list.
+    if (src / "guide.json").exists():
+        guide = load(src, "guide.json")
+        check_keys(guide, GUIDE_KEYS, "guide.json")
+        public_ids = {r.get("id") for r in public_budget}
+        public_guide = []
+        for r in guide:
+            if r["dest"] not in public_ids or is_private(r["name"]):
+                continue
+            public_guide.append(dict(r, note=scrub(r["note"]), tip=scrub(r["tip"])))
+        outputs.append(("guide.json", public_guide))
+
+    for name, rows in outputs:
         with open(out / name, "w", encoding="utf-8") as f:
             json.dump(rows, f, ensure_ascii=False, indent=1)
             f.write("\n")
