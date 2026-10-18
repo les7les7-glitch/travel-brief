@@ -237,6 +237,17 @@ button, input, select { font-family: inherit; }
   .tv-enter { animation: tv-in var(--cds-dur-slow) var(--cds-ease-out) both; }
   @keyframes tv-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 }
+
+.tv-photo { position: relative; margin: calc(-1 * var(--cds-pad-md)) calc(-1 * var(--cds-pad-md)) var(--cds-gap-xs); overflow: hidden; border-radius: calc(var(--cds-radius) - 1px) calc(var(--cds-radius) - 1px) 0 0; background: var(--cds-chart-grid); aspect-ratio: 16 / 9; }
+@media (min-width: 40rem) { .tv-photo { margin: calc(-1 * var(--cds-pad-lg)) calc(-1 * var(--cds-pad-lg)) var(--cds-gap-xs); } }
+.tv-photo--pick { aspect-ratio: 3 / 2; }
+@media (min-width: 40rem) { .tv-photo--pick { aspect-ratio: 21 / 9; } }
+.tv-photo--budget { aspect-ratio: 2 / 1; }
+.tv-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.tv-photo figcaption { position: absolute; right: 8px; bottom: 8px; max-width: calc(100% - 16px); font-size: 0.6875rem; line-height: 1.4; color: #fff; background: rgba(0, 0, 0, 0.45); padding: 1px 8px; border-radius: 999px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tv-photo figcaption:empty { display: none; }
+.tv-photo figcaption a { color: inherit; text-decoration: none; }
+.tv-pick:has(> .tv-photo) { box-shadow: none; }
 </style>
 </head>
 <body>
@@ -554,6 +565,41 @@ button, input, select { font-family: inherit; }
     return n;
   };
 
+  const isUnsplash = (url) => url.startsWith('https://images.unsplash.com/');
+  const photoSrc = (url, w) => (isUnsplash(url) ? url.split('?')[0] + '?w=' + w + '&q=75&auto=format&fit=crop' : url);
+  const removePhoto = (box) => { const f = box.querySelector(':scope > .tv-photo'); if (f) f.remove(); };
+  function setPhoto(box, r, kind) {
+    const url = safeUrl(r.photo);
+    let fig = box.querySelector(':scope > .tv-photo');
+    if (!url) { if (fig) fig.remove(); return; }
+    const w = kind === 'pick' ? 1200 : 800;
+    if (!fig) {
+      fig = el('figure', 'tv-photo tv-photo--' + kind);
+      const img = el('img');
+      img.loading = kind === 'pick' ? 'eager' : 'lazy';
+      img.decoding = 'async';
+      img.addEventListener('error', () => fig.remove());
+      fig.append(img, el('figcaption'));
+      box.prepend(fig);
+    }
+    const img = fig.querySelector('img');
+    if (img.dataset.src !== url) {
+      img.dataset.src = url;
+      if (isUnsplash(url)) img.srcset = photoSrc(url, w) + ' 1x, ' + photoSrc(url, w * 2) + ' 2x';
+      else img.removeAttribute('srcset');
+      img.src = photoSrc(url, w);
+    }
+    img.alt = str(r.place) + ' 풍경';
+    const cap = fig.querySelector('figcaption');
+    cap.replaceChildren();
+    if (r.photoCredit) {
+      const page = safeUrl(r.photoPage);
+      const n = el(page ? 'a' : 'span', null, '사진 · ' + str(r.photoCredit));
+      if (page) { n.href = page; n.target = '_blank'; n.rel = 'noopener noreferrer'; }
+      cap.append(n);
+    }
+  }
+
   function drawPick(status, data) {
     const card = document.getElementById('pick-card');
     const hist = document.getElementById('pick-hist');
@@ -568,6 +614,7 @@ button, input, select { font-family: inherit; }
         ['data-source', 'data-field', 'data-where'].forEach((a) => n.removeAttribute(a));
       });
       link.hidden = true;
+      removePhoto(card);
       hist.hidden = true;
       hist.replaceChildren();
     };
@@ -593,6 +640,7 @@ button, input, select { font-family: inherit; }
     const href = safeUrl(cur.url);
     link.hidden = !href;
     if (href) link.href = href;
+    setPhoto(card, cur, 'pick');
 
     hist.replaceChildren();
     hist.hidden = list.length < 2;
@@ -731,6 +779,7 @@ button, input, select { font-family: inherit; }
     const r = e.r;
     const a = el('article', 'tv-card tv-bc');
     a.id = 'bud-' + r.id;
+    setPhoto(a, r, 'budget');
 
     const top = el('div', 'tv-bc-top');
     top.append(

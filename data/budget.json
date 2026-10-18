@@ -24,7 +24,10 @@
   "firstUrl": "",
   "priceNote": "호텔은 2026년 5월 기사에 나온 시작 요금(1박 ¥72,000)이라 날짜에 따라 더 비쌀 수 있어요. 이코노미는 KAYAK 12개월 평균, 비즈니스는 대한항공 1월 왕복 최저가예요.",
   "asOf": "2026-10-18",
-  "asOfLabel": "10월 18일"
+  "asOfLabel": "10월 18일",
+  "photo": "https://images.unsplash.com/photo-1782641246639-de594a187a03",
+  "photoCredit": "Joss Woodhead · Unsplash",
+  "photoPage": "https://unsplash.com/photos/osaka-castle-rises-above-a-serene-pond-and-green-trees-yj47GYk1g3o"
  },
  {
   "id": "tokyo",
@@ -51,7 +54,10 @@
   "firstUrl": "",
   "priceNote": "호텔은 KAYAK 월별 평균 1박 요금(가장 싼 6월 $1,591~가장 비싼 3월 $2,356)의 중간값이에요. 항공은 대한항공 인천–하네다 왕복 최저가예요.",
   "asOf": "2026-10-18",
-  "asOfLabel": "10월 18일"
+  "asOfLabel": "10월 18일",
+  "photo": "https://images.unsplash.com/photo-1513407030348-c983a97b98d8",
+  "photoCredit": "Louie Martinez · Unsplash",
+  "photoPage": "https://unsplash.com/photos/tokyo-tower-illuminated-at-dusk-with-city-skyline-IocJwyqRv3M"
  },
  {
   "id": "hongkong",
@@ -78,7 +84,10 @@
   "firstUrl": "",
   "priceNote": "호텔은 KAYAK 월별 평균 1박 요금(10월 $873~12월 $1,220)의 중간값이에요. 이코노미는 KAYAK 12개월 평균, 비즈니스는 캐세이퍼시픽 11월 왕복 최저가예요.",
   "asOf": "2026-10-18",
-  "asOfLabel": "10월 18일"
+  "asOfLabel": "10월 18일",
+  "photo": "https://images.unsplash.com/photo-1620015092538-e33c665fc181",
+  "photoCredit": "Manson · Unsplash",
+  "photoPage": "https://unsplash.com/photos/hong-kong-skyline-across-victoria-harbour-4vf1KEkD7Gc"
  },
  {
   "id": "bangkok",
@@ -105,7 +114,10 @@
   "firstUrl": "",
   "priceNote": "호텔은 KAYAK 월별 평균 1박 요금(8월 $454~3월 $891)의 중간값이에요. 이코노미는 KAYAK 12개월 평균, 비즈니스는 타이항공 직항 왕복 최저가(2월 일정)예요.",
   "asOf": "2026-10-18",
-  "asOfLabel": "10월 18일"
+  "asOfLabel": "10월 18일",
+  "photo": "https://images.unsplash.com/photo-1613672803979-a6edfc5a179b",
+  "photoCredit": "Anantachai Saothong · Unsplash",
+  "photoPage": "https://unsplash.com/photos/wat-arun-temple-in-bangkok-0DKDTSFBXc8"
  },
  {
   "id": "phuquoc",
@@ -132,7 +144,10 @@
   "firstUrl": "",
   "priceNote": "호텔은 KAYAK 월별 평균 1박 요금(6월 €417~12월 €759)의 중간값이에요. 이코노미는 KAYAK 12개월 평균, 비즈니스는 베트남항공 경유 왕복 최저가(11월 일정)예요.",
   "asOf": "2026-10-18",
-  "asOfLabel": "10월 18일"
+  "asOfLabel": "10월 18일",
+  "photo": "https://images.unsplash.com/photo-1693282814784-649be45a459b",
+  "photoCredit": "Vivu Vietnam · Unsplash",
+  "photoPage": "https://unsplash.com/photos/a-beach-with-palm-trees-and-a-boat-in-the-water-IVJVh1v1PVs"
  },
  {
   "id": "bali",
@@ -159,7 +174,10 @@
   "firstUrl": "",
   "priceNote": "호텔은 KAYAK 월별 평균 1박 요금(11월 $343~7월 $492)의 중간값이에요. 이코노미는 KAYAK 12개월 평균이고, 비즈니스는 싱가포르항공 경유 왕복 최저가(지난 3월 일정)라 참고용이에요.",
   "asOf": "2026-10-18",
-  "asOfLabel": "10월 18일"
+  "asOfLabel": "10월 18일",
+  "photo": "https://images.unsplash.com/photo-1636619306699-2d27a100605e",
+  "photoCredit": "Alexandra Smielova · Unsplash",
+  "photoPage": "https://unsplash.com/photos/a-scenic-view-of-the-ocean-and-a-cliff-4euu6M6opno"
  },
  {
   "id": "maldives",
@@ -186,7 +204,10 @@
   "firstUrl": "",
   "priceNote": "항공에는 리조트 스피드보트 왕복(1인 $1,027, 리조트 공식 요금)이 들어 있어요. 호텔은 KAYAK 월별 평균 1박 요금(8월 $2,441~4월 $2,959)의 중간값인데, 성수기엔 훨씬 비쌀 수 있어요. 비즈니스는 싱가포르항공 경유 왕복 최저가(지난 5월 일정)라 참고용이에요.",
   "asOf": "2026-10-18",
-  "asOfLabel": "10월 18일"
+  "asOfLabel": "10월 18일",
+  "photo": "https://images.unsplash.com/photo-1470214203634-e436a8848e23",
+  "photoCredit": "Ishan @seefromthesky · Unsplash",
+  "photoPage": "https://unsplash.com/photos/aerial-photography-of-resort-villa-on-water-GSZQ_eupukE"
  },
  {
   "id": "sydney",
@@ -213,7 +234,10 @@
   "firstUrl": "",
   "priceNote": "호텔은 KAYAK 월별 평균 1박 요금(6월 $415~2월 $763)의 중간값이에요. 이코노미는 KAYAK 12개월 평균, 비즈니스는 대한항공 왕복 최저가(11~12월 일정)예요.",
   "asOf": "2026-10-18",
-  "asOfLabel": "10월 18일"
+  "asOfLabel": "10월 18일",
+  "photo": "https://images.unsplash.com/photo-1546268060-2592ff93ee24",
+  "photoCredit": "Jamie Davies · Unsplash",
+  "photoPage": "https://unsplash.com/photos/sydney-harbour-bridge-and-opera-house-Hao52Fu9-F8"
  },
  {
   "id": "paris",
@@ -240,7 +264,10 @@
   "firstUrl": "",
   "priceNote": "호텔은 KAYAK 월별 평균 1박 요금(8월 301만원~6월 392만원)의 중간값이에요. 이코노미는 KAYAK 12개월 평균, 비즈니스는 대한항공 왕복 최저가(12월 일정)예요.",
   "asOf": "2026-10-18",
-  "asOfLabel": "10월 18일"
+  "asOfLabel": "10월 18일",
+  "photo": "https://images.unsplash.com/photo-1492136344046-866c85e0bf04",
+  "photoCredit": "Jad Limcaco · Unsplash",
+  "photoPage": "https://unsplash.com/photos/eiffel-tower-paris-NT1mJPgni6A"
  },
  {
   "id": "newyork",
@@ -267,6 +294,9 @@
   "firstUrl": "https://www.kayak.co.kr/flight-routes/Seoul-Incheon-Intl-ICN/New-York-John-F-Kennedy-Intl-JFK",
   "priceNote": "호텔은 KAYAK 월별 평균 1박 요금(2월 $1,285~12월 $2,118)의 중간값이에요. 비즈니스는 대한항공 왕복 최저가(3월 일정)이고, 퍼스트는 KAYAK 일등석 최저가인데 편도·왕복 표시가 없어요.",
   "asOf": "2026-10-18",
-  "asOfLabel": "10월 18일"
+  "asOfLabel": "10월 18일",
+  "photo": "https://images.unsplash.com/photo-1499092346589-b9b6be3e94b2",
+  "photoCredit": "Patrick Tomasso · Unsplash",
+  "photoPage": "https://unsplash.com/photos/manhattan-skyline-and-brooklyn-bridge-SVVTZtTGyaU"
  }
 ]

@@ -10,7 +10,10 @@
   "getThere": "인천에서 수완나품까지 대한항공·아시아나·타이항공 직항으로 약 6시간이에요.",
   "bestTime": "11월 하순~2월",
   "source": "Le Journal des Palaces",
-  "url": "https://www.journaldespalaces.com/pressrelease-69564-A-legendary-landmark-returns-the-iconic-Dusit-Thani-Bangkok-announces-September-reopening.html"
+  "url": "https://www.journaldespalaces.com/pressrelease-69564-A-legendary-landmark-returns-the-iconic-Dusit-Thani-Bangkok-announces-September-reopening.html",
+  "photo": "https://images.unsplash.com/photo-1613672803979-a6edfc5a179b",
+  "photoCredit": "Anantachai Saothong · Unsplash",
+  "photoPage": "https://unsplash.com/photos/wat-arun-temple-in-bangkok-0DKDTSFBXc8"
  },
  {
   "id": "2026-10-17-osaka",
@@ -23,6 +26,9 @@
   "getThere": "인천에서 간사이공항까지 2시간 안팎이고, 공항 특급 하루카가 호텔과 가까운 JR 오사카역에 서요.",
   "bestTime": "11월 하순~12월 초",
   "source": "Hilton Stories",
-  "url": "https://stories.hilton.com/releases/waldorf-astoria-osaka-heralds-a-new-dawn-of-luxury-in-japan"
+  "url": "https://stories.hilton.com/releases/waldorf-astoria-osaka-heralds-a-new-dawn-of-luxury-in-japan",
+  "photo": "https://images.unsplash.com/photo-1782641246639-de594a187a03",
+  "photoCredit": "Joss Woodhead · Unsplash",
+  "photoPage": "https://unsplash.com/photos/osaka-castle-rises-above-a-serene-pond-and-green-trees-yj47GYk1g3o"
  }
 ]
