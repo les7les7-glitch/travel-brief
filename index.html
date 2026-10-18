@@ -9,7 +9,7 @@
 <meta property="og:description" content="취향과 예산에 맞는 여행지, 항공·호텔 프로모션과 럭셔리 호텔 소식을 매일 아침 정리해요.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=1200&q=75&auto=format&fit=crop">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#ffffff" id="theme-color">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -19,7 +19,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="preconnect" href="https://images.unsplash.com">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=1600&q=75&auto=format&fit=crop" imagesrcset="https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=800&q=75&auto=format&fit=crop 800w, https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=1200&q=75&auto=format&fit=crop 1200w, https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=1600&q=75&auto=format&fit=crop 1600w, https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=2400&q=75&auto=format&fit=crop 2400w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" media="(min-width: 768px)" href="https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=1600&q=75&auto=format&fit=crop" imagesrcset="https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=800&q=75&auto=format&fit=crop 800w, https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=1200&q=75&auto=format&fit=crop 1200w, https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=1600&q=75&auto=format&fit=crop 1600w, https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=2400&q=75&auto=format&fit=crop 2400w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" media="(max-width: 767px)" href="https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=960&h=2070&q=75&auto=format&fit=crop" imagesrcset="https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=640&h=1380&q=75&auto=format&fit=crop 640w, https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=960&h=2070&q=75&auto=format&fit=crop 960w, https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=1280&h=2760&q=75&auto=format&fit=crop 1280w" imagesizes="100vw" fetchpriority="high">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <style>
 /* ===== 디자인 기준 (색 · 글자 · 간격 · 모서리) ===== */
@@ -193,12 +194,30 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
 .hero-credit { position: absolute; right: var(--gutter); bottom: 14px; max-width: calc(100% - 2 * var(--gutter)); color: rgba(255, 255, 255, 0.8); font-size: 0.75rem; line-height: 1.4; text-align: right; }
 .hero-credit a { color: inherit; text-decoration: none; }
 .hero-credit a:hover { text-decoration: underline; }
+.hero-brand, .hero-next, .hero-credit-m { display: none; }
+/* 휴대폰: 첫 화면은 사진으로 꽉 채우고, 누르면 본문으로 넘어가요 */
 @media (max-width: 767px) {
-  .hero { align-items: flex-end; }
-  .hero::before { background: linear-gradient(0deg, rgba(var(--c-scrim), 0.78) 0%, rgba(var(--c-scrim), 0.45) 52%, rgba(var(--c-scrim), 0.12) 100%); }
-  .hero-in { padding-bottom: var(--sp-8); }
-  .hero-credit { top: 12px; bottom: auto; }
+  .hero { height: 100vh; height: 100svh; min-height: 34rem; margin-top: calc(-1 * var(--head-h) - 1px); align-items: flex-end; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .hero::before { background: linear-gradient(180deg, rgba(var(--c-scrim), 0.5) 0%, rgba(var(--c-scrim), 0) 20%), linear-gradient(0deg, rgba(var(--c-scrim), 0.84) 0%, rgba(var(--c-scrim), 0.55) 34%, rgba(var(--c-scrim), 0.08) 64%, rgba(var(--c-scrim), 0) 74%); }
+  .hero-img { object-position: center 40%; }
+  .hero-in { padding-bottom: calc(100px + env(safe-area-inset-bottom)); }
+  .hero-title { font-size: 2.5rem; line-height: 1.2; }
+  .hero-cta { margin-top: var(--sp-6); }
   .hero-cta .btn { width: 100%; }
+  .hero-credit { display: none; }
+  .hero-credit-m { display: block; margin-top: var(--sp-4); color: rgba(255, 255, 255, 0.72); font-size: 0.75rem; line-height: 1.4; }
+  .hero-brand { position: absolute; top: calc(20px + env(safe-area-inset-top)); left: var(--gutter); display: flex; align-items: center; gap: 10px; color: #fff; font-size: 1.125rem; font-weight: 700; letter-spacing: -0.01em; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25); }
+  .hero-brand img { width: 30px; height: 30px; border-radius: 8px; }
+  .hero-next { position: absolute; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom)); display: inline-flex; flex-direction: column; align-items: center; gap: 2px; min-width: 44px; min-height: 52px; padding: 4px 12px; border: 0; background: none; color: rgba(255, 255, 255, 0.92); font-size: var(--fs-xs); font-weight: 600; transform: translateX(-50%); cursor: pointer; }
+  .hero-next svg { order: 2; width: 22px; height: 22px; }
+  .hero-next:focus-visible { outline-color: #fff; }
+  .hd { background: var(--c-bg); -webkit-backdrop-filter: none; backdrop-filter: none; transition: transform 0.28s ease; }
+  .hd.is-cover { transform: translateY(-100%); }
+  .hd.is-cover:has(:focus-visible) { transform: none; }
+}
+@media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
+  .hero-next svg { animation: nudge 1.8s ease-in-out infinite; }
+  @keyframes nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
 }
 
 /* ===== 알림 영역 ===== */
@@ -455,16 +474,20 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
   <h1 class="sr-only" id="page-h1" hidden></h1>
 
   <section class="hero" data-views="home" aria-labelledby="hero-title">
-    <img class="hero-img" src="https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=1600&q=75&auto=format&fit=crop"
-      srcset="https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=800&q=75&auto=format&fit=crop 800w, https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=1200&q=75&auto=format&fit=crop 1200w, https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=1600&q=75&auto=format&fit=crop 1600w, https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=2400&q=75&auto=format&fit=crop 2400w"
-      sizes="100vw" alt="몰디브 바다 위 리조트 빌라를 하늘에서 내려다본 풍경" fetchpriority="high" loading="eager" decoding="async">
+    <picture>
+      <source media="(max-width: 767px)" srcset="https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=640&h=1380&q=75&auto=format&fit=crop 640w, https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=960&h=2070&q=75&auto=format&fit=crop 960w, https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=1280&h=2760&q=75&auto=format&fit=crop 1280w" sizes="100vw">
+      <img class="hero-img" src="https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=1600&q=75&auto=format&fit=crop" srcset="https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=800&q=75&auto=format&fit=crop 800w, https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=1200&q=75&auto=format&fit=crop 1200w, https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=1600&q=75&auto=format&fit=crop 1600w, https://images.unsplash.com/photo-1470214203634-e436a8848e23?w=2400&q=75&auto=format&fit=crop 2400w" sizes="100vw" alt="몰디브 바다 위 리조트 빌라를 하늘에서 내려다본 풍경" fetchpriority="high" loading="eager" decoding="async">
+    </picture>
+    <p class="hero-brand" aria-hidden="true"><img src="icons/icon.svg" alt="" width="30" height="30"><span>여행 브리핑</span></p>
     <div class="wrap hero-in">
       <div class="hero-copy">
         <h1 class="hero-title" id="hero-title">다음 여행, 어디로 갈까요?</h1>
         <p class="hero-sub">취향이나 예산을 고르면 어울리는 여행지와 호텔, 2일 코스까지 골라 드려요.</p>
         <div class="hero-cta"><button class="btn btn-primary btn-lg" type="button" id="hero-go">내 여행 찾기</button></div>
+        <p class="hero-credit-m">몰디브 풍경 · 사진 Ishan @seefromthesky / Unsplash</p>
       </div>
     </div>
+    <button class="hero-next" type="button" id="hero-next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>눌러서 둘러보기</span></button>
     <p class="hero-credit">몰디브 풍경 · 사진 <a href="https://unsplash.com/photos/aerial-photography-of-resort-villa-on-water-GSZQ_eupukE" target="_blank" rel="noopener noreferrer">Ishan @seefromthesky / Unsplash</a></p>
   </section>
 
@@ -1108,6 +1131,8 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
     promo: '프로모션 · 여행 브리핑', air: '항공 소식 · 여행 브리핑', hotel: '호텔 소식 · 여행 브리핑',
   };
   let view = 'home';
+  let routed = false;
+  let lastHref = '';
   let pending = null; // 화면을 바꾼 뒤 갈 곳: { id, flash }
   let finderTab = 'taste';
   try { if (localStorage.getItem('travel-brief-tab') === 'budget') finderTab = 'budget'; } catch (e) { /* 무시 */ }
@@ -1123,6 +1148,9 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
   function applyRoute() {
     closeSheet();
     const r = routeFromHash();
+    const prevView = routed ? view : null;
+    routed = true;
+    lastHref = location.href;
     view = r.view;
     if (r.dest) guideDest = r.dest;
     if (r.tab) finderTab = r.tab;
@@ -1145,9 +1173,12 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
       t.scrollIntoView({ block: go.flash ? 'center' : 'start' });
       if (go.flash) { t.classList.remove('is-flash'); void t.offsetWidth; t.classList.add('is-flash'); }
       if (go.focus) t.focus({ preventScroll: true });
+    } else if (view === 'home' && prevView && prevView !== 'home' && phone.matches) {
+      window.scrollTo(0, pastHero());
     } else {
       window.scrollTo(0, 0);
     }
+    updateCover();
   }
   function navigate(hash, go) {
     closeSheet();
@@ -1163,7 +1194,7 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
   // ===== 헤더 메뉴 (휴대폰) =====
   const hd = byId('hd');
   const navToggle = byId('nav-toggle');
-  function closeNav() { hd.classList.remove('is-open'); navToggle.setAttribute('aria-expanded', 'false'); }
+  function closeNav() { hd.classList.remove('is-open'); navToggle.setAttribute('aria-expanded', 'false'); if (typeof updateCover === 'function') updateCover(); }
   navToggle.addEventListener('click', () => {
     const open = !hd.classList.contains('is-open');
     hd.classList.toggle('is-open', open);
@@ -1173,9 +1204,34 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && hd.classList.contains('is-open')) { closeNav(); navToggle.focus(); } });
   document.querySelectorAll('[data-go="home"]').forEach((a) => a.addEventListener('click', (e) => {
     e.preventDefault();
-    if (view === 'home') { closeNav(); window.scrollTo({ top: 0, behavior: smooth() }); } else navigate('');
+    if (view === 'home') { closeNav(); window.scrollTo({ top: phone.matches ? pastHero() : 0, behavior: smooth() }); } else navigate('');
   }));
   byId('hero-go').addEventListener('click', () => byId('sec-find').scrollIntoView({ behavior: smooth(), block: 'start' }));
+
+  // ===== 휴대폰 첫 화면: 사진으로 꽉 채우고, 누르면 본문으로 넘어가요 =====
+  const phone = window.matchMedia('(max-width: 767px)');
+  const heroEl = document.querySelector('.hero');
+  const themeMeta = byId('theme-color');
+  const pastHero = () => Math.max(0, Math.round(heroEl.getBoundingClientRect().bottom + window.scrollY - hd.offsetHeight));
+  function updateCover() {
+    const over = view === 'home' && phone.matches && !heroEl.hidden && heroEl.getBoundingClientRect().bottom > hd.offsetHeight + 2;
+    hd.classList.toggle('is-cover', over && !hd.classList.contains('is-open'));
+    const color = over ? '#0e3a3c' : '#ffffff';
+    if (themeMeta && themeMeta.content !== color) themeMeta.content = color;
+  }
+  let coverTick = 0;
+  window.addEventListener('scroll', () => {
+    if (coverTick) return;
+    coverTick = requestAnimationFrame(() => { coverTick = 0; updateCover(); });
+  }, { passive: true });
+  window.addEventListener('resize', updateCover);
+  if (phone.addEventListener) phone.addEventListener('change', updateCover); else if (phone.addListener) phone.addListener(updateCover);
+  const enterContent = () => window.scrollTo({ top: pastHero(), behavior: smooth() });
+  heroEl.addEventListener('click', (e) => {
+    if (!phone.matches || e.target.closest('a, button, input, select, label')) return;
+    enterContent();
+  });
+  byId('hero-next').addEventListener('click', enterContent);
   document.querySelector('.skip').addEventListener('click', (e) => {
     e.preventDefault();
     const m = byId('main');
@@ -2132,8 +2188,10 @@ h1, h2, h3, p, figure, dl, dd { margin: 0; }
   }
 
   bindFinder();
-  window.addEventListener('hashchange', applyRoute);
-  window.addEventListener('popstate', () => { if (!location.hash) applyRoute(); });
+  // 뒤로 가기 한 번에 popstate와 hashchange가 함께 올 수 있어서, 주소가 바뀐 경우에만 한 번 그려요.
+  const onUrlChange = () => { if (location.href !== lastHref) applyRoute(); };
+  window.addEventListener('hashchange', onUrlChange);
+  window.addEventListener('popstate', onUrlChange);
   applyRoute();
   loadAll();
 })();
