@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>여행 브리핑</title>
+<meta name="description" content="항공·호텔 프로모션, 퍼스트·비즈니스 새 좌석, 럭셔리 호텔 소식과 예산별 여행지 추천을 매일 아침 정리해요.">
+<meta property="og:title" content="여행 브리핑">
+<meta property="og:description" content="항공·호텔 프로모션, 프리미엄 캐빈, 럭셔리 호텔 소식과 예산별 여행지 추천을 매일 아침 정리해요.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141311" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="여행 브리핑">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light dark;
+  --color-bg: #f7f5f0;
+  --color-panel: #ffffff;
+  --color-fg: #1d1b18;
+  --color-fg-muted: #67625a;
+  --color-border-line: #e4dfd6;
+  --color-ok: #2a7a4b;
+  --color-warn: #9a5800;
+  --color-bad: #b8382b;
+  --series-1: #b5472f;
+  --series-2: #2f6db5;
+  --series-3: #946419;
+  --series-4: #2b8063;
+  --series-5: #7b4fb3;
+  --series-6: #b84d72;
+  --series-7: #4f7a2b;
+  --series-8: #5b6470;
+  --cds-chart-grid: #ece7de;
+  --cds-chart-reference: #1d1b18;
+  --cds-chart-muted: #c9c2b6;
+  --font-anthropic-sans: "Noto Sans KR", system-ui, -apple-system, "Apple SD Gothic Neo", sans-serif;
+  --font-anthropic-serif: "Noto Serif KR", "Apple SD Gothic Neo", serif;
+  --cds-font-size-caption: 0.8125rem;
+  --cds-font-size-body: 0.9375rem;
+  --cds-font-size-heading: 1.125rem;
+  --cds-font-size-title: 1.75rem;
+  --cds-font-weight-medium: 600;
+  --cds-gap-xs: 4px;
+  --cds-gap-sm: 8px;
+  --cds-gap-md: 12px;
+  --cds-gap-lg: 20px;
+  --cds-gap-xl: 36px;
+  --cds-pad-xs: 4px;
+  --cds-pad-sm: 8px;
+  --cds-pad-md: 14px;
+  --cds-pad-lg: 20px;
+  --cds-radius: 12px;
+  --cds-dur-slow: 400ms;
+  --cds-ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #141311;
+    --color-panel: #1d1b18;
+    --color-fg: #f2efe9;
+    --color-fg-muted: #a8a197;
+    --color-border-line: #302d28;
+    --color-ok: #6cc28f;
+    --color-warn: #e3a74c;
+    --color-bad: #ef7a6c;
+    --series-1: #e8846b;
+    --series-2: #74a7ea;
+    --series-3: #d9a650;
+    --series-4: #5fc4a0;
+    --series-5: #b48de8;
+    --series-6: #e88fae;
+    --series-7: #9cc96a;
+    --series-8: #a2abb6;
+    --cds-chart-grid: #2c2925;
+    --cds-chart-reference: #f2efe9;
+    --cds-chart-muted: #5a554d;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-family: var(--font-anthropic-sans); line-height: 1.5; }
+#dash-root {
+  padding: calc(env(safe-area-inset-top) + 20px) max(16px, env(safe-area-inset-right)) calc(env(safe-area-inset-bottom) + 48px) max(16px, env(safe-area-inset-left));
+}
+@media (min-width: 48rem) { #dash-root { padding-left: 32px; padding-right: 32px; } }
+a { color: inherit; }
+button, input, select { font-family: inherit; }
+.dash-skeleton { color: transparent !important; background: var(--cds-chart-grid); border-radius: 6px; min-height: 1em; }
+@media (prefers-reduced-motion: no-preference) {
+  .dash-skeleton { animation: tb-pulse 1.4s ease-in-out infinite; }
+  @keyframes tb-pulse { 50% { opacity: 0.55; } }
+}
+</style>
+<style>
+.tv { max-width: 64rem; margin-inline: auto; font-family: var(--font-anthropic-sans); color: var(--color-fg); }
+.tv * { box-sizing: border-box; }
+.tv-head { margin-bottom: var(--cds-gap-lg); }
+.tv-title { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); line-height: 1.2; margin: 0 0 var(--cds-gap-sm); }
+.tv-takeaway { font-size: var(--cds-font-size-body); line-height: 1.6; margin: 0 0 var(--cds-gap-xs); max-width: 44rem; }
+.tv-meta { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0; font-variant-numeric: tabular-nums; }
+
+.tv-tabs { display: flex; gap: var(--cds-gap-xs); overflow-x: auto; padding-bottom: var(--cds-pad-xs); margin-bottom: var(--cds-gap-lg); scrollbar-width: none; }
+.tv-tabs::-webkit-scrollbar { display: none; }
+.tv-tab { flex: none; font: inherit; font-size: var(--cds-font-size-caption); padding: var(--cds-pad-xs) var(--cds-pad-md); border-radius: 999px; border: 1px solid var(--color-border-line); background: transparent; color: var(--color-fg-muted); cursor: pointer; }
+.tv-tab[aria-pressed="true"] { background: var(--color-fg); border-color: var(--color-fg); color: var(--color-bg); }
+
+.tv-section { margin-bottom: var(--cds-gap-xl); scroll-margin-top: var(--cds-gap-md); }
+.tv-section[hidden] { display: none; }
+.tv-h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); line-height: 1.3; margin: 0; }
+.tv-note { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: var(--cds-gap-xs) 0 var(--cds-gap-md); }
+.tv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: var(--cds-gap-md); }
+.tv-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-md); }
+@media (min-width: 40rem) { .tv-card { padding: var(--cds-pad-lg); } }
+
+.tv-item { display: flex; flex-direction: column; gap: var(--cds-gap-sm); }
+.tv-item.is-key { box-shadow: inset 0 3px 0 var(--tv-accent); }
+.tv-item.is-flash { outline: 2px solid var(--tv-accent); outline-offset: 2px; }
+.tv-item-top { display: flex; align-items: center; flex-wrap: wrap; gap: var(--cds-gap-xs) var(--cds-gap-sm); font-size: var(--cds-font-size-caption); }
+.tv-prog { color: var(--tv-accent); font-weight: var(--cds-font-weight-medium); }
+.tv-date { color: var(--color-fg-muted); font-variant-numeric: tabular-nums; }
+.tv-new { margin-left: auto; padding: 0 var(--cds-pad-sm); border-radius: 999px; border: 1px solid var(--tv-accent); color: var(--tv-accent); }
+.tv-item-title { font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); line-height: 1.45; margin: 0; }
+.tv-item-sum { font-size: var(--cds-font-size-body); line-height: 1.6; margin: 0; }
+.tv-item-tip { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.6; margin: 0; padding-left: var(--cds-pad-sm); border-left: 2px solid var(--color-border-line); }
+.tv-item-foot { display: flex; align-items: center; flex-wrap: wrap; gap: var(--cds-gap-xs) var(--cds-gap-sm); margin-top: auto; padding-top: var(--cds-pad-xs); font-size: var(--cds-font-size-caption); }
+.tv-due { font-variant-numeric: tabular-nums; }
+.tv-dleft { font-variant-numeric: tabular-nums; padding: 0 var(--cds-pad-sm); border-radius: 999px; border: 1px solid currentColor; }
+.is-soon { color: var(--color-warn); }
+.is-urgent { color: var(--color-bad); }
+.tv-link { margin-left: auto; color: var(--color-fg-muted); text-decoration: none; }
+.tv-link:hover { color: var(--color-fg); text-decoration: underline; }
+
+.tv-due-list { list-style: none; margin: 0; padding: 0; }
+.tv-due-row { display: grid; grid-template-columns: 3.25rem 1fr; gap: 2px var(--cds-gap-sm); align-items: baseline; width: 100%; text-align: left; font: inherit; color: inherit; background: none; border: 0; border-top: 1px solid var(--color-border-line); padding: var(--cds-pad-sm) 0; cursor: pointer; }
+.tv-due-list li:first-child .tv-due-row { border-top: 0; padding-top: 0; }
+.tv-due-d { font-size: var(--cds-font-size-caption); font-weight: var(--cds-font-weight-medium); font-variant-numeric: tabular-nums; }
+.tv-due-t { font-size: var(--cds-font-size-body); line-height: 1.45; }
+.tv-due-l { grid-column: 2; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.tv-empty { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0; }
+
+.tv-trip-top { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: var(--cds-gap-md); margin-bottom: var(--cds-gap-md); }
+.tv-k { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0 0 var(--cds-gap-xs); }
+.tv-big { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: calc(var(--cds-font-size-title) * 1.5); line-height: 1.1; font-variant-numeric: tabular-nums; margin: 0; }
+.tv-unit { font-size: var(--cds-font-size-heading); margin-left: 2px; }
+.tv-sub { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: var(--cds-gap-xs) 0 0; font-variant-numeric: tabular-nums; }
+.tv-range { margin-top: var(--cds-gap-md); min-height: 28px; }
+.tv-range svg { display: block; }
+.tv-range-labels { display: flex; justify-content: space-between; gap: var(--cds-gap-sm); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); font-variant-numeric: tabular-nums; margin-top: var(--cds-gap-xs); }
+
+.tv-foot { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.6; border-top: 1px solid var(--color-border-line); padding-top: var(--cds-pad-md); margin: var(--cds-gap-lg) 0 0; }
+
+.tv-failed { display: flex; align-items: center; justify-content: center; gap: var(--cds-gap-xs); min-height: 6rem; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); grid-column: 1 / -1; }
+.tv-failed::before { content: ""; width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--color-bad); }
+.tv-skel { min-height: 10rem; display: flex; flex-direction: column; gap: var(--cds-gap-sm); }
+.tv [data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+.tv [data-dash-source-state=empty] { color: transparent; }
+
+.tv-pick { display: flex; flex-direction: column; gap: var(--cds-gap-sm); box-shadow: inset 0 3px 0 var(--tv-accent); }
+.tv-pick-k { font-size: var(--cds-font-size-caption); font-weight: var(--cds-font-weight-medium); color: var(--tv-accent); margin: 0; }
+.tv-pick-place { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); line-height: 1.2; margin: 0; }
+.tv-pick-head { font-size: var(--cds-font-size-body); color: var(--color-fg-muted); line-height: 1.5; margin: 0; }
+.tv-pick-rows { display: grid; gap: var(--cds-gap-sm); margin: var(--cds-gap-xs) 0 0; }
+.tv-pick-rows > div { display: grid; grid-template-columns: 4.5rem 1fr; gap: var(--cds-gap-sm); }
+.tv-pick-rows dt { font-size: var(--cds-font-size-caption); font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); padding-top: 2px; }
+.tv-pick-rows dd { margin: 0; font-size: var(--cds-font-size-body); line-height: 1.6; }
+@media (max-width: 30rem) { .tv-pick-rows > div { grid-template-columns: 1fr; gap: 2px; } }
+.tv-pick-foot { display: flex; align-items: center; flex-wrap: wrap; gap: var(--cds-gap-xs) var(--cds-gap-sm); padding-top: var(--cds-pad-xs); font-size: var(--cds-font-size-caption); }
+.tv-pick-best { padding: 0 var(--cds-pad-sm); border-radius: 999px; border: 1px solid var(--tv-accent); color: var(--tv-accent); }
+.tv-pick-best:empty { display: none; }
+.tv-pick-hist { display: flex; flex-wrap: wrap; align-items: center; gap: var(--cds-gap-xs); margin-top: var(--cds-gap-sm); }
+.tv-pick-hist[hidden] { display: none; }
+.tv-pick-hist-k { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin-right: var(--cds-gap-xs); }
+.tv-chip { font: inherit; font-size: var(--cds-font-size-caption); padding: var(--cds-pad-xs) var(--cds-pad-sm); border-radius: 999px; border: 1px solid var(--color-border-line); background: transparent; color: var(--color-fg-muted); cursor: pointer; }
+.tv-chip[aria-pressed="true"] { border-color: var(--color-fg); color: var(--color-fg); }
+
+.tv-bud { display: flex; flex-direction: column; gap: var(--cds-gap-sm); --tv-accent: var(--color-fg); }
+.tv-bud .tv-note { margin-bottom: 0; }
+.tv-bud-main { display: flex; flex-direction: column; gap: var(--cds-gap-xs); margin-top: var(--cds-gap-sm); }
+.tv-field-k { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.tv-bud-amount { display: flex; align-items: baseline; gap: var(--cds-gap-xs); }
+.tv-in { font: inherit; font-size: var(--cds-font-size-body); color: var(--color-fg); background: var(--color-bg); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-xs) var(--cds-pad-sm); min-height: 2.25rem; width: 100%; font-variant-numeric: tabular-nums; }
+.tv-in:focus { outline: 2px solid var(--color-fg-muted); outline-offset: 1px; }
+.tv-in-big { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); width: 9ch; padding-block: 0; }
+.tv-bud-chips { display: flex; flex-wrap: wrap; gap: var(--cds-gap-xs); }
+.tv-bud-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.5rem), 1fr)); gap: var(--cds-gap-sm) var(--cds-gap-md); margin-top: var(--cds-gap-sm); }
+.tv-field { display: flex; flex-direction: column; gap: var(--cds-gap-xs); }
+.tv-in-unit { display: flex; align-items: center; gap: var(--cds-gap-xs); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.tv-in-unit .tv-in { flex: 1; min-width: 0; }
+.tv-in-unit > span { flex: none; white-space: nowrap; }
+.tv-reset { align-self: flex-start; font: inherit; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
+.tv-bud-sum { font-size: var(--cds-font-size-body); line-height: 1.6; margin: var(--cds-gap-md) 0; }
+.tv-bud-more { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: var(--cds-gap-sm) 0 0; }
+.tv-bud-over { margin-top: var(--cds-gap-lg); }
+.tv-bud-over[hidden], .tv-bud-more[hidden] { display: none; }
+.tv-h3 { font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); margin: 0 0 var(--cds-gap-sm); }
+
+.tv-bc { display: flex; flex-direction: column; gap: var(--cds-gap-sm); }
+.tv-bc-top { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--cds-gap-xs) var(--cds-gap-sm); }
+.tv-bc-place { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-heading); line-height: 1.3; margin: 0; }
+.tv-bc-tag { font-size: var(--cds-font-size-caption); padding: 0 var(--cds-pad-sm); border-radius: 999px; border: 1px solid currentColor; }
+.tv-bc-tag.is-on { color: var(--color-ok); }
+.tv-bc-tag.is-off { color: var(--color-fg-muted); }
+.tv-bc-route { margin-left: auto; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.tv-bc-hotel { font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); line-height: 1.45; margin: 0; }
+.tv-bc-note { font-weight: 400; color: var(--color-fg-muted); }
+.tv-bc-why { font-size: var(--cds-font-size-body); line-height: 1.6; margin: 0; }
+.tv-bc-total { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--cds-gap-xs) var(--cds-gap-sm); margin-top: var(--cds-gap-xs); }
+.tv-bc-sum { font-size: var(--cds-font-size-body); font-variant-numeric: tabular-nums; }
+.tv-bc .tv-bc-sum b { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); }
+.tv-bc-left { font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+.tv-bc-left.is-ok { color: var(--color-ok); }
+.tv-bc-left.is-over { color: var(--color-warn); }
+.tv-bar-wrap { position: relative; padding: 4px 0; }
+.tv-bar { display: flex; height: 10px; border-radius: 999px; overflow: hidden; background: var(--cds-chart-grid); }
+.tv-bar > span { height: 100%; min-width: 0; }
+.tv-bar-mark { position: absolute; top: 0; bottom: 0; width: 2px; margin-left: -1px; border-radius: 1px; background: var(--cds-chart-reference); }
+.tv-bd { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--cds-gap-xs); font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+.tv-bd li { display: grid; grid-template-columns: auto auto 1fr auto; align-items: baseline; gap: var(--cds-gap-sm); }
+.tv-sw { width: 0.5rem; height: 0.5rem; border-radius: 2px; align-self: center; }
+.tv-bd-k { font-weight: var(--cds-font-weight-medium); }
+.tv-bd-d { color: var(--color-fg-muted); }
+.tv-bd-v { text-align: right; }
+.tv-bc-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--cds-gap-xs) var(--cds-gap-sm); margin-top: auto; padding-top: var(--cds-pad-xs); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.tv-bc-foot .tv-link { margin-left: 0; }
+.tv-bc-basis { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.5; margin: 0; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .tv-enter { animation: tv-in var(--cds-dur-slow) var(--cds-ease-out) both; }
+  @keyframes tv-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+}
+</style>
+</head>
+<body>
+<div id="dash-root">
+<div class="tv">
+  <header class="tv-head" id="top">
+    <h1 class="tv-title">여행 브리핑</h1>
+    <p class="tv-takeaway dash-skeleton" data-source="digest" data-field="headline" data-row="0">—</p>
+    <p class="tv-meta"><span class="dash-skeleton" data-source="digest" data-field="updatedLabel" data-row="0">—</span> 갱신 · 새 소식 <span class="dash-skeleton" data-source="digest" data-field="newCount" data-row="0">—</span>건</p>
+  </header>
+
+  <nav class="tv-tabs" aria-label="섹션 선택">
+    <button class="tv-tab" type="button" data-tab="all" aria-pressed="true">전체</button>
+    <button class="tv-tab" type="button" data-tab="budget" aria-pressed="false">예산으로 찾기</button>
+    <button class="tv-tab" type="button" data-tab="promo" aria-pressed="false">프로모션</button>
+    <button class="tv-tab" type="button" data-tab="air" aria-pressed="false">항공</button>
+    <button class="tv-tab" type="button" data-tab="hotel" aria-pressed="false">호텔</button>
+  </nav>
+
+  <section class="tv-section" id="pick" data-tab-of="all">
+    <article class="tv-card tv-pick" id="pick-card">
+      <p class="tv-pick-k">오늘의 여행지 · <span class="tv-pick-f dash-skeleton" data-f="dateLabel">—</span></p>
+      <h2 class="tv-pick-place tv-pick-f dash-skeleton" data-f="place">—</h2>
+      <p class="tv-pick-head tv-pick-f dash-skeleton" data-f="headline">—</p>
+      <dl class="tv-pick-rows">
+        <div><dt>왜 지금</dt><dd class="tv-pick-f dash-skeleton" data-f="why">—</dd></div>
+        <div><dt>머물 곳</dt><dd class="tv-pick-f dash-skeleton" data-f="stay">—</dd></div>
+        <div><dt>가는 길</dt><dd class="tv-pick-f dash-skeleton" data-f="getThere">—</dd></div>
+      </dl>
+      <div class="tv-pick-foot">
+        <span class="tv-pick-best tv-pick-f" data-f="bestTime"></span>
+        <a class="tv-link" id="pick-link" target="_blank" rel="noopener noreferrer" hidden><span class="tv-pick-f" data-f="source"></span> ↗</a>
+      </div>
+    </article>
+    <div class="tv-pick-hist" id="pick-hist" hidden></div>
+  </section>
+
+  <section class="tv-section" id="budget" data-tab-of="budget">
+    <div class="tv-card tv-bud" id="bud-form">
+      <h2 class="tv-h2">예산으로 여행지 찾기</h2>
+      <p class="tv-note">항공·호텔·현지 경비를 더한 예상 총액으로 골라요. 가격은 조사한 날 기준 예상치라 날짜와 예약처에 따라 달라져요.</p>
+      <div class="tv-bud-main">
+        <label class="tv-field-k" for="bud-budget">총예산 (인원 합계)</label>
+        <div class="tv-bud-amount">
+          <input class="tv-in tv-in-big" id="bud-budget" type="number" inputmode="numeric" min="0" max="1000000" step="1">
+          <span class="tv-unit">만원</span>
+        </div>
+        <div class="tv-bud-chips" role="group" aria-label="예산 빠르게 고르기">
+          <button class="tv-chip" type="button" data-v="300">300만</button>
+          <button class="tv-chip" type="button" data-v="500">500만</button>
+          <button class="tv-chip" type="button" data-v="1000">1,000만</button>
+          <button class="tv-chip" type="button" data-v="2000">2,000만</button>
+          <button class="tv-chip" type="button" data-v="3000">3,000만</button>
+          <button class="tv-chip" type="button" data-v="5000">5,000만</button>
+        </div>
+      </div>
+      <div class="tv-bud-form">
+        <label class="tv-field"><span class="tv-field-k">인원</span>
+          <select class="tv-in" id="bud-people">
+            <option value="1">1명</option><option value="2">2명</option><option value="3">3명</option><option value="4">4명</option>
+          </select>
+        </label>
+        <label class="tv-field"><span class="tv-field-k">기간</span>
+          <select class="tv-in" id="bud-nights">
+            <option value="3">3박</option><option value="4">4박</option><option value="5">5박</option><option value="6">6박</option><option value="7">7박</option><option value="8">8박</option><option value="9">9박</option><option value="10">10박</option>
+          </select>
+        </label>
+        <label class="tv-field"><span class="tv-field-k">좌석</span>
+          <select class="tv-in" id="bud-cabin">
+            <option value="economy">이코노미</option><option value="business">비즈니스</option><option value="first">퍼스트</option>
+          </select>
+        </label>
+        <label class="tv-field"><span class="tv-field-k">출발</span>
+          <select class="tv-in" id="bud-month"></select>
+        </label>
+        <label class="tv-field"><span class="tv-field-k">현지 경비 (1인 하루)</span>
+          <span class="tv-in-unit"><input class="tv-in" id="bud-daily" type="number" inputmode="numeric" min="0" max="500" step="1"><span>만원</span></span>
+        </label>
+      </div>
+      <button class="tv-reset" type="button" id="bud-reset">기본값으로</button>
+    </div>
+    <p class="tv-bud-sum" id="bud-sum"></p>
+    <div class="tv-grid" id="bud-results"></div>
+    <p class="tv-bud-more" id="bud-more" hidden></p>
+    <div class="tv-bud-over" id="bud-over-wrap" hidden>
+      <h3 class="tv-h3" id="bud-over-title">조금만 더 쓰면 갈 수 있어요</h3>
+      <div class="tv-grid" id="bud-over"></div>
+    </div>
+  </section>
+
+  <section class="tv-section" id="due-soon" data-tab-of="all">
+    <div class="tv-card">
+      <h2 class="tv-h2">2주 안에 끝나는 혜택</h2>
+      <p class="tv-note">마감이 가까운 순서예요. 누르면 해당 소식으로 가요.</p>
+      <ul class="tv-due-list" id="due-list"></ul>
+    </div>
+  </section>
+
+  <section class="tv-section" id="promo" data-tab-of="promo">
+    <h2 class="tv-h2">프로모션 · 프로그램 변경</h2>
+    <p class="tv-note">등록·마감이 있는 혜택과 알아둘 규정 변경</p>
+    <div class="tv-grid" id="grid-promo"></div>
+  </section>
+
+  <section class="tv-section" id="air" data-tab-of="air">
+    <h2 class="tv-h2">항공 · 프리미엄 캐빈</h2>
+    <p class="tv-note">퍼스트·비즈니스 새 좌석과 노선 소식</p>
+    <div class="tv-grid" id="grid-air"></div>
+  </section>
+
+  <section class="tv-section" id="hotel" data-tab-of="hotel">
+    <h2 class="tv-h2">럭셔리 호텔</h2>
+    <p class="tv-note">새로 여는 곳, 대개조, 눈여겨볼 리뷰</p>
+    <div class="tv-grid" id="grid-hotel"></div>
+  </section>
+
+  <p class="tv-foot" id="about">항공·호텔 프로그램의 프로모션, 퍼스트·비즈니스 새 좌석, 럭셔리 호텔 소식을 골라 한국어로 요약하고, 오늘의 여행지와 예산별 여행지를 함께 보여줘요. Claude가 매일 아침 갱신해요. 가격과 조건은 바뀔 수 있으니 예약 전에 출처에서 꼭 다시 확인하세요.</p>
+</div>
+</div>
+<script>
+(() => {
+  // Small stand-in for the dashboard runtime: loads data/*.json and keeps the budget inputs.
+  const DEFAULTS = { budget: 1000, people: 2, nights: 5, cabin: 'business', daily: 25, month: null };
+  const KEY = 'travel-brief-params';
+  const cache = {};
+  const listeners = [];
+  let params = { ...DEFAULTS };
+  try {
+    const saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+    if (saved && typeof saved === 'object') params = { ...params, ...saved, month: null };
+  } catch (e) { /* storage unavailable */ }
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify({ ...params, month: null })); } catch (e) { /* ignore */ } };
+  const notify = () => listeners.forEach((fn) => { try { fn(); } catch (e) { console.error(e); } });
+  const load = (id) => {
+    if (cache[id]) return;
+    cache[id] = { status: 'loading', data: [] };
+    fetch('data/' + id + '.json', { cache: 'no-cache' })
+      .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then((data) => { cache[id] = { status: 'ok', data }; notify(); })
+      .catch((e) => { console.error(id, e); cache[id] = { status: 'error', data: [] }; notify(); });
+  };
+  window.dash = {
+    colors: ['var(--series-1)', 'var(--series-2)', 'var(--series-3)', 'var(--series-4)', 'var(--series-5)', 'var(--series-6)', 'var(--series-7)', 'var(--series-8)'],
+    data(id) { load(id); return cache[id]; },
+    onData(fn) { listeners.push(fn); fn(); },
+    params() { return { ...params }; },
+    setParams(next) { params = { ...params, ...next }; save(); notify(); },
+    resetParams() { params = { ...DEFAULTS }; try { localStorage.removeItem(KEY); } catch (e) { /* ignore */ } notify(); },
+    setLink(name) {
+      try { history.replaceState(null, '', !name || name === 'top' ? location.pathname : '#' + name); } catch (e) { /* ignore */ }
+    },
+  };
+  let t;
+  window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(notify, 150); });
+})();
+</script>
+<script>
+(() => {
+  const SECTIONS = ['promo', 'air', 'hotel'];
+  const TABS = ['budget', 'promo', 'air', 'hotel'];
+  const tabs = Array.from(document.querySelectorAll('.tv-tab'));
+  const sections = Array.from(document.querySelectorAll('.tv-section'));
+  let current = 'all';
+  let animated = false;
+  let linked = false;
+
+  const todayKST = () => new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Seoul' });
+  const isDate = (s) => typeof s === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(s);
+  const days = (from, to) => Math.round((Date.parse(to + 'T00:00:00Z') - Date.parse(from + 'T00:00:00Z')) / 86400000);
+  const str = (v) => (v == null ? '' : String(v));
+  const safeUrl = (u) => (typeof u === 'string' && /^https:\/\/[^\s"'<>]+$/i.test(u) ? u : null);
+  const urgency = (d) => (d <= 3 ? 'is-urgent' : d <= 7 ? 'is-soon' : '');
+  const dLabel = (d) => (d === 0 ? '오늘' : 'D-' + d);
+  const el = (tag, cls, text) => {
+    const n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  };
+  const markItem = (n, field, id) => {
+    n.setAttribute('data-source', 'items');
+    n.setAttribute('data-field', field);
+    n.setAttribute('data-where', 'id=' + encodeURIComponent(id));
+    return n;
+  };
+  const ACCENT_INDEX = { promo: 0, air: 1, hotel: 2, trip: 3, pick: 4, budget: 5 };
+  const accent = (section) => {
+    const colors = Array.isArray(dash.colors) && dash.colors.length ? dash.colors : ['currentColor'];
+    const i = ACCENT_INDEX[section] ?? 0;
+    return colors[i % colors.length];
+  };
+  let pickId = null;
+  const failedLine = (tag) => el(tag || 'div', 'tv-failed', 'Failed to load');
+  const isExpired = (r, today) => r.dueKind === 'deadline' && isDate(r.due) && r.due < today;
+  const prio = (r) => Number(r.priority) || 3;
+  const dueKey = (r) => (r.dueKind === 'deadline' && isDate(r.due) ? r.due : '9999-12-31');
+
+  function fillStatic(id, status, row) {
+    document.querySelectorAll('[data-source="' + id + '"][data-field]').forEach((n) => {
+      if (status === 'ok' && row) {
+        const v = str(row[n.getAttribute('data-field')]);
+        n.textContent = v || '—';
+        n.classList.remove('dash-skeleton');
+      } else {
+        n.textContent = '—';
+        n.classList.toggle('dash-skeleton', status === 'loading');
+      }
+    });
+  }
+
+  function sortRows(section, rows) {
+    return rows.slice().sort((a, b) => {
+      if (prio(a) !== prio(b)) return prio(a) - prio(b);
+      if (section === 'promo' && dueKey(a) !== dueKey(b)) return dueKey(a).localeCompare(dueKey(b));
+      return str(b.date).localeCompare(str(a.date));
+    });
+  }
+
+  function card(r, today, showNew, enter, idx) {
+    const a = el('article', 'tv-card tv-item' + (prio(r) === 1 ? ' is-key' : '') + (enter ? ' tv-enter' : ''));
+    a.id = 'item-' + r.id;
+    a.style.setProperty('--tv-accent', accent(r.section));
+    if (enter) a.style.animationDelay = Math.min(idx, 8) * 40 + 'ms';
+
+    const top = el('div', 'tv-item-top');
+    if (r.program) top.append(markItem(el('span', 'tv-prog', str(r.program)), 'program', r.id));
+    if (r.dateLabel) top.append(markItem(el('span', 'tv-date', str(r.dateLabel)), 'dateLabel', r.id));
+    if (showNew) top.append(el('span', 'tv-new', '새 소식'));
+    a.append(top);
+
+    a.append(markItem(el('h3', 'tv-item-title', str(r.title)), 'title', r.id));
+    if (r.summary) a.append(markItem(el('p', 'tv-item-sum', str(r.summary)), 'summary', r.id));
+    if (r.tip) a.append(markItem(el('p', 'tv-item-tip', str(r.tip)), 'tip', r.id));
+
+    const foot = el('div', 'tv-item-foot');
+    if (r.dueLabel) {
+      const d = isDate(r.due) ? days(today, r.due) : null;
+      const near = r.dueKind === 'deadline' && d != null && d >= 0 && d <= 14;
+      const cls = near ? urgency(d) : '';
+      foot.append(markItem(el('span', 'tv-due ' + cls, str(r.dueLabel)), 'dueLabel', r.id));
+      if (near) foot.append(el('span', 'tv-dleft ' + cls, dLabel(d)));
+    }
+    const href = safeUrl(r.url);
+    if (href) {
+      const link = el('a', 'tv-link');
+      link.href = href;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.append(markItem(el('span', null, str(r.source)), 'source', r.id), document.createTextNode(' ↗'));
+      foot.append(link);
+    } else if (r.source) {
+      foot.append(markItem(el('span', 'tv-link', str(r.source)), 'source', r.id));
+    }
+    a.append(foot);
+    return a;
+  }
+
+  function drawGrid(section, rows, status, today, digestRow, enter) {
+    const grid = document.getElementById('grid-' + section);
+    grid.replaceChildren();
+    if (status === 'loading') {
+      for (let i = 0; i < 2; i++) {
+        const s = el('div', 'tv-card tv-skel');
+        s.append(el('div', 'dash-skeleton', '—'), el('div', 'dash-skeleton', '—'), el('div', 'dash-skeleton', '—'));
+        grid.append(s);
+      }
+      return;
+    }
+    if (status !== 'ok') { grid.append(failedLine()); return; }
+    const list = sortRows(section, rows.filter((r) => r.section === section && !isExpired(r, today)));
+    if (!list.length) { grid.append(el('p', 'tv-empty', '아직 이 분야에 새 소식이 없어요.')); return; }
+    const runDate = digestRow ? str(digestRow.runDate) : '';
+    const partial = digestRow ? Number(digestRow.newCount) < rows.length : false;
+    list.forEach((r, i) => grid.append(card(r, today, partial && runDate && r.added === runDate, enter, i)));
+  }
+
+  function drawDue(rows, status, today) {
+    const list = document.getElementById('due-list');
+    list.replaceChildren();
+    if (status === 'loading') {
+      for (let i = 0; i < 3; i++) { const li = el('li'); li.append(el('div', 'tv-due-row dash-skeleton', '—')); list.append(li); }
+      return;
+    }
+    if (status !== 'ok') { list.append(failedLine('li')); return; }
+    const soon = rows
+      .filter((r) => r.dueKind === 'deadline' && isDate(r.due) && days(today, r.due) >= 0 && days(today, r.due) <= 14)
+      .sort((a, b) => a.due.localeCompare(b.due));
+    if (!soon.length) { const li = el('li'); li.append(el('p', 'tv-empty', '2주 안에 끝나는 혜택은 없어요.')); list.append(li); return; }
+    soon.forEach((r) => {
+      const d = days(today, r.due);
+      const li = el('li');
+      const b = el('button', 'tv-due-row');
+      b.type = 'button';
+      b.append(
+        el('span', 'tv-due-d ' + urgency(d), dLabel(d)),
+        markItem(el('span', 'tv-due-t', str(r.title)), 'title', r.id),
+        markItem(el('span', 'tv-due-l', str(r.dueLabel)), 'dueLabel', r.id)
+      );
+      b.addEventListener('click', () => {
+        const target = document.getElementById('item-' + r.id);
+        if (!target) return;
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        target.classList.add('is-flash');
+        setTimeout(() => target.classList.remove('is-flash'), 1400);
+      });
+      li.append(b);
+      list.append(li);
+    });
+  }
+
+  const markPick = (n, field, id) => {
+    n.setAttribute('data-source', 'pick');
+    n.setAttribute('data-field', field);
+    n.setAttribute('data-where', 'id=' + encodeURIComponent(id));
+    return n;
+  };
+
+  function drawPick(status, data) {
+    const card = document.getElementById('pick-card');
+    const hist = document.getElementById('pick-hist');
+    const link = document.getElementById('pick-link');
+    const fields = Array.from(card.querySelectorAll('.tv-pick-f'));
+    card.style.setProperty('--tv-accent', accent('pick'));
+    card.querySelectorAll('.tv-failed, .tv-empty').forEach((n) => n.remove());
+    const clear = (loading) => {
+      fields.forEach((n) => {
+        n.textContent = n.dataset.f === 'bestTime' || n.dataset.f === 'source' ? '' : '—';
+        n.classList.toggle('dash-skeleton', loading && n.dataset.f !== 'bestTime' && n.dataset.f !== 'source');
+        ['data-source', 'data-field', 'data-where'].forEach((a) => n.removeAttribute(a));
+      });
+      link.hidden = true;
+      hist.hidden = true;
+      hist.replaceChildren();
+    };
+    if (status !== 'ok') {
+      clear(status === 'loading');
+      if (status !== 'loading') card.append(failedLine());
+      return;
+    }
+    const list = (Array.isArray(data) ? data : [])
+      .filter((r) => r && r.id && r.place)
+      .sort((a, b) => str(b.date).localeCompare(str(a.date)));
+    if (!list.length) {
+      clear(false);
+      card.append(el('p', 'tv-empty', '다음 갱신 때 첫 추천이 올라와요.'));
+      return;
+    }
+    const cur = list.find((r) => r.id === pickId) || list[0];
+    fields.forEach((n) => {
+      n.textContent = str(cur[n.dataset.f]);
+      n.classList.remove('dash-skeleton');
+      markPick(n, n.dataset.f, cur.id);
+    });
+    const href = safeUrl(cur.url);
+    link.hidden = !href;
+    if (href) link.href = href;
+
+    hist.replaceChildren();
+    hist.hidden = list.length < 2;
+    if (list.length < 2) return;
+    hist.append(el('span', 'tv-pick-hist-k', '지난 추천'));
+    list.slice(0, 7).forEach((r, i) => {
+      const b = el('button', 'tv-chip');
+      b.type = 'button';
+      b.setAttribute('aria-pressed', String(r.id === cur.id));
+      b.append(
+        markPick(el('span', null, str(r.dateLabel)), 'dateLabel', r.id),
+        document.createTextNode(' · '),
+        markPick(el('span', null, str(r.place)), 'place', r.id)
+      );
+      b.addEventListener('click', () => {
+        pickId = i === 0 ? null : r.id;
+        draw();
+      });
+      hist.append(b);
+    });
+  }
+
+  // ---- 예산으로 찾기 ----
+  const BUD_CABIN = {
+    economy: { field: 'fareEconomy', label: '이코노미' },
+    business: { field: 'fareBusiness', label: '비즈니스' },
+    first: { field: 'fareFirst', label: '퍼스트' },
+  };
+  const fmt = (v) => Number(v).toLocaleString('en-US', { maximumFractionDigits: 1 });
+  const won = (v) => fmt(Math.round(v));
+  const isNum = (v) => v !== null && v !== undefined && v !== '' && Number.isFinite(Number(v));
+  const intIn = (v, lo, hi, dflt) => {
+    const n = Math.round(Number(v));
+    return Number.isFinite(n) && n >= lo && n <= hi ? n : dflt;
+  };
+  const monthKey = (offset) => {
+    const [y, m] = todayKST().split('-').map(Number);
+    const d = new Date(Date.UTC(y, m - 1 + offset, 1));
+    return d.getUTCFullYear() + '-' + String(d.getUTCMonth() + 1).padStart(2, '0');
+  };
+  const monthLabel = (key) => {
+    const y = Number(String(key).slice(0, 4));
+    const m = Number(String(key).slice(5, 7));
+    const thisYear = Number(todayKST().slice(0, 4));
+    return (y && y !== thisYear ? y + '년 ' : '') + m + '월';
+  };
+  const setBudgetDefaults = () => {
+    const p = dash.params() || {};
+    if (!p.month) dash.setParams({ month: monthKey(1) });
+  };
+  const byId = (id) => document.getElementById(id);
+  const budEls = {
+    budget: byId('bud-budget'), people: byId('bud-people'), nights: byId('bud-nights'),
+    cabin: byId('bud-cabin'), month: byId('bud-month'), daily: byId('bud-daily'),
+  };
+  const readParams = () => {
+    const p = dash.params() || {};
+    return {
+      budget: Math.max(0, Number(p.budget) || 0),
+      people: intIn(p.people, 1, 4, 2),
+      nights: intIn(p.nights, 1, 30, 5),
+      cabin: BUD_CABIN[p.cabin] ? p.cabin : 'business',
+      month: typeof p.month === 'string' && /^\d{4}-\d{2}$/.test(p.month) ? p.month : monthKey(1),
+      daily: Math.max(0, Number(p.daily) || 0),
+    };
+  };
+  const markBud = (n, field, id) => {
+    n.setAttribute('data-source', 'budget');
+    n.setAttribute('data-field', field);
+    n.setAttribute('data-where', 'id=' + encodeURIComponent(id));
+    return n;
+  };
+
+  function fillMonths(selected) {
+    const keys = [];
+    for (let i = 0; i < 7; i++) keys.push(monthKey(i));
+    if (selected && !keys.includes(selected)) keys.push(selected);
+    const have = Array.from(budEls.month.options).map((o) => o.value).join('|');
+    if (have !== keys.join('|')) budEls.month.replaceChildren(...keys.map((k) => new Option(monthLabel(k), k)));
+  }
+
+  function syncControls(p) {
+    fillMonths(p.month);
+    if (document.activeElement !== budEls.budget) budEls.budget.value = String(p.budget);
+    if (document.activeElement !== budEls.daily) budEls.daily.value = String(p.daily);
+    budEls.people.value = String(p.people);
+    budEls.nights.value = String(p.nights);
+    budEls.cabin.value = p.cabin;
+    budEls.month.value = p.month;
+    document.querySelectorAll('#bud-form .tv-chip').forEach((b) => {
+      b.setAttribute('aria-pressed', String(Number(b.dataset.v) === p.budget));
+    });
+  }
+
+  function bindBudget() {
+    const numParam = (input, name) => {
+      input.addEventListener('input', () => {
+        if (input.value !== '' && input.validity.valid) dash.setParams({ [name]: Math.round(Number(input.value)) });
+      });
+      input.addEventListener('blur', () => syncControls(readParams()));
+    };
+    numParam(budEls.budget, 'budget');
+    numParam(budEls.daily, 'daily');
+    budEls.people.addEventListener('change', () => dash.setParams({ people: Number(budEls.people.value) }));
+    budEls.nights.addEventListener('change', () => dash.setParams({ nights: Number(budEls.nights.value) }));
+    budEls.cabin.addEventListener('change', () => dash.setParams({ cabin: budEls.cabin.value }));
+    budEls.month.addEventListener('change', () => dash.setParams({ month: budEls.month.value }));
+    document.querySelectorAll('#bud-form .tv-chip').forEach((b) => {
+      b.addEventListener('click', () => dash.setParams({ budget: Number(b.dataset.v) }));
+    });
+    byId('bud-reset').addEventListener('click', () => { dash.resetParams(); setBudgetDefaults(); });
+  }
+
+  function estimate(r, p) {
+    let field = BUD_CABIN[p.cabin].field;
+    let fallback = false;
+    if (!isNum(r[field])) {
+      if (p.cabin === 'first' && isNum(r.fareBusiness)) { field = 'fareBusiness'; fallback = true; }
+      else return null;
+    }
+    if (!isNum(r.roomRate)) return null;
+    const fare = Number(r[field]);
+    const rooms = Math.ceil(p.people / 2);
+    const flight = fare * p.people;
+    const hotel = Number(r.roomRate) * p.nights * rooms;
+    const local = p.daily * p.people * p.nights;
+    const months = str(r.seasonMonths).split(',').map((s) => Number(s.trim())).filter(Boolean);
+    return {
+      r, field, fare, fallback, rooms, flight, hotel, local,
+      total: flight + hotel + local,
+      inSeason: months.includes(Number(p.month.slice(5, 7))),
+    };
+  }
+
+  function budgetCard(e, p) {
+    const r = e.r;
+    const a = el('article', 'tv-card tv-bc');
+    a.id = 'bud-' + r.id;
+
+    const top = el('div', 'tv-bc-top');
+    top.append(
+      markBud(el('h3', 'tv-bc-place', str(r.place)), 'place', r.id),
+      el('span', 'tv-bc-tag ' + (e.inSeason ? 'is-on' : 'is-off'), e.inSeason ? monthLabel(p.month) + ' 제철' : '비수기')
+    );
+    if (r.route) top.append(markBud(el('span', 'tv-bc-route', str(r.route)), 'route', r.id));
+    a.append(top);
+
+    const h = el('p', 'tv-bc-hotel');
+    h.append(markBud(el('span', null, str(r.hotel)), 'hotel', r.id));
+    if (r.hotelNote) h.append(document.createTextNode(' · '), markBud(el('span', 'tv-bc-note', str(r.hotelNote)), 'hotelNote', r.id));
+    a.append(h);
+    if (r.why) a.append(markBud(el('p', 'tv-bc-why', str(r.why)), 'why', r.id));
+
+    const diff = p.budget - e.total;
+    const total = el('div', 'tv-bc-total');
+    const sum = el('span', 'tv-bc-sum');
+    sum.append(document.createTextNode('예상 총액 약 '), el('b', null, won(e.total)), document.createTextNode('만원'));
+    total.append(sum, el('span', 'tv-bc-left ' + (diff >= 0 ? 'is-ok' : 'is-over'),
+      diff >= 0 ? '예산보다 ' + won(diff) + '만원 남아요' : won(-diff) + '만원 넘어요'));
+    a.append(total);
+
+    const colors = { flight: accent('air'), hotel: accent('hotel'), local: 'var(--cds-chart-muted)' };
+    const max = Math.max(e.total, p.budget, 1);
+    const wrap = el('div', 'tv-bar-wrap');
+    wrap.setAttribute('role', 'img');
+    wrap.setAttribute('aria-label', '항공 ' + won(e.flight) + '만원, 호텔 ' + won(e.hotel) + '만원, 현지 경비 ' + won(e.local) + '만원, 예산 ' + won(p.budget) + '만원');
+    const bar = el('div', 'tv-bar');
+    const seg = (v, c) => { const s = el('span'); s.style.width = (v / max) * 100 + '%'; s.style.background = c; return s; };
+    bar.append(seg(e.flight, colors.flight), seg(e.hotel, colors.hotel), seg(e.local, colors.local));
+    wrap.append(bar);
+    if (p.budget > 0) {
+      const m = el('span', 'tv-bar-mark');
+      m.style.left = (p.budget / max) * 100 + '%';
+      wrap.append(m);
+    }
+    a.append(wrap);
+
+    const ul = el('ul', 'tv-bd');
+    const row = (label, color, detail, value) => {
+      const li = el('li');
+      const sw = el('span', 'tv-sw');
+      sw.style.background = color;
+      const d = el('span', 'tv-bd-d');
+      d.append(...detail);
+      li.append(sw, el('span', 'tv-bd-k', label), d, el('span', 'tv-bd-v', won(value) + '만원'));
+      ul.append(li);
+    };
+    const cabin = e.fallback ? '퍼스트 없음, 비즈니스 요금' : BUD_CABIN[p.cabin].label + (p.cabin === 'first' && r.firstAirline ? ' · ' + str(r.firstAirline) : '');
+    row('항공', colors.flight, [
+      document.createTextNode(p.people + '명 × 왕복 '),
+      markBud(el('span', null, fmt(e.fare)), e.field, r.id),
+      document.createTextNode('만원 (' + cabin + ')'),
+    ], e.flight);
+    row('호텔', colors.hotel, [
+      document.createTextNode(p.nights + '박 × '),
+      markBud(el('span', null, fmt(Number(r.roomRate))), 'roomRate', r.id),
+      document.createTextNode('만원' + (e.rooms > 1 ? ' × ' + e.rooms + '실' : '')),
+    ], e.hotel);
+    row('현지', colors.local, [
+      document.createTextNode(p.people + '명 × ' + p.nights + '일 × ' + fmt(p.daily) + '만원'),
+    ], e.local);
+    a.append(ul);
+
+    if (r.priceNote) a.append(markBud(el('p', 'tv-bc-basis', str(r.priceNote)), 'priceNote', r.id));
+
+    const foot = el('div', 'tv-bc-foot');
+    const src = (label, name, url, field) => {
+      const href = safeUrl(url);
+      if (!name) return;
+      const n = href ? el('a', 'tv-link') : el('span');
+      if (href) { n.href = href; n.target = '_blank'; n.rel = 'noopener noreferrer'; }
+      n.append(document.createTextNode(label + ' '), markBud(el('span', null, str(name)), field, r.id));
+      if (href) n.append(document.createTextNode(' ↗'));
+      foot.append(n);
+    };
+    const fareSrc = { fareEconomy: ['econSource', 'econUrl'], fareBusiness: ['bizSource', 'bizUrl'], fareFirst: ['firstSource', 'firstUrl'] }[e.field];
+    src('항공가', r[fareSrc[0]], r[fareSrc[1]], fareSrc[0]);
+    src('호텔가', r.rateSource, r.rateUrl, 'rateSource');
+    if (r.asOfLabel) {
+      const s = el('span');
+      s.append(markBud(el('span', null, str(r.asOfLabel)), 'asOfLabel', r.id), document.createTextNode(' 조사'));
+      foot.append(s);
+    }
+    a.append(foot);
+    return a;
+  }
+
+  function drawBudget() {
+    const box = byId('bud-results');
+    const overWrap = byId('bud-over-wrap');
+    const over = byId('bud-over');
+    const sum = byId('bud-sum');
+    const more = byId('bud-more');
+    const p = readParams();
+    syncControls(p);
+    box.replaceChildren();
+    over.replaceChildren();
+    overWrap.hidden = true;
+    more.hidden = true;
+    const d = dash.data('budget');
+    if (d.status === 'loading') {
+      sum.textContent = '';
+      for (let i = 0; i < 2; i++) {
+        const s = el('div', 'tv-card tv-skel');
+        s.append(el('div', 'dash-skeleton', '—'), el('div', 'dash-skeleton', '—'), el('div', 'dash-skeleton', '—'));
+        box.append(s);
+      }
+      return;
+    }
+    if (d.status !== 'ok') { sum.textContent = ''; box.append(failedLine()); return; }
+
+    const rows = (Array.isArray(d.data) ? d.data : []).filter((r) => r && r.id && r.place);
+    const est = rows.map((r) => estimate(r, p)).filter(Boolean);
+    const fits = est.filter((e) => e.total <= p.budget)
+      .sort((a, b) => (Number(b.inSeason) - Number(a.inSeason)) || (b.total - a.total));
+    const near = est.filter((e) => e.total > p.budget && e.total <= p.budget * 1.25)
+      .sort((a, b) => a.total - b.total);
+    const basis = p.people + '명 · ' + p.nights + '박 · ' + BUD_CABIN[p.cabin].label + ' · 현지 경비 1인 하루 ' + fmt(p.daily) + '만원 기준';
+
+    if (fits.length) {
+      sum.textContent = '예산 ' + won(p.budget) + '만원 안에 ' + fits.length + '곳이 들어와요. '
+        + monthLabel(p.month) + '에 제철인 곳부터, 예산을 알차게 쓰는 순서로 보여드려요. (' + basis + ')';
+    } else if (near.length) {
+      sum.textContent = '예산 안에 드는 곳은 없지만, 조금만 더 쓰면 갈 수 있는 곳이 있어요. (' + basis + ')';
+    } else {
+      sum.textContent = est.length
+        ? '이 예산으로는 맞는 곳이 없어요. 가장 적게 드는 곳을 보여드려요. (' + basis + ')'
+        : '계산할 수 있는 여행지가 아직 없어요.';
+    }
+
+    fits.slice(0, 6).forEach((e) => box.append(budgetCard(e, p)));
+    if (fits.length > 6) {
+      more.hidden = false;
+      more.replaceChildren(document.createTextNode('그 밖에 예산 안에 드는 곳: '));
+      fits.slice(6).forEach((e, i) => {
+        if (i) more.append(document.createTextNode(', '));
+        more.append(markBud(el('span', null, str(e.r.place)), 'place', e.r.id));
+      });
+    }
+    let extra = near.slice(0, 3);
+    let title = '조금만 더 쓰면 갈 수 있어요';
+    if (!fits.length && !near.length && est.length) {
+      extra = est.slice().sort((a, b) => a.total - b.total).slice(0, 1);
+      title = '가장 적게 드는 곳';
+    }
+    if (extra.length) {
+      overWrap.hidden = false;
+      byId('bud-over-title').textContent = title;
+      extra.forEach((e) => over.append(budgetCard(e, p)));
+    }
+  }
+
+  function showTab(key) {
+    current = key;
+    tabs.forEach((t) => t.setAttribute('aria-pressed', String(t.dataset.tab === key)));
+    sections.forEach((s) => { s.hidden = !(key === 'all' || s.dataset.tabOf === key); });
+  }
+
+  function draw() {
+    const today = todayKST();
+    const items = dash.data('items');
+    const digest = dash.data('digest');
+
+    const digestRow = digest.status === 'ok' && Array.isArray(digest.data) ? digest.data[0] || null : null;
+    fillStatic('digest', digest.status, digestRow);
+
+    const pick = dash.data('pick');
+    drawPick(pick.status, pick.status === 'ok' ? pick.data : []);
+    drawBudget();
+
+
+    const rows = items.status === 'ok' && Array.isArray(items.data) ? items.data.filter((r) => r && r.id && r.title) : [];
+    drawDue(rows, items.status, today);
+    const enter = items.status === 'ok' && rows.length > 0 && !animated;
+    SECTIONS.forEach((s) => drawGrid(s, rows, items.status, today, digestRow, enter));
+    if (enter) animated = true;
+
+    if (!linked && items.status === 'ok') {
+      linked = true;
+      const named = document.getElementById(location.hash.slice(1));
+      if (named && named.id !== 'top') named.scrollIntoView();
+    }
+  }
+
+  tabs.forEach((t) => t.addEventListener('click', () => {
+    showTab(t.dataset.tab);
+    dash.setLink(t.dataset.tab === 'all' ? 'top' : t.dataset.tab);
+    draw();
+  }));
+
+  const initial = location.hash.slice(1);
+  showTab(TABS.includes(initial) ? initial : 'all');
+  setBudgetDefaults();
+  bindBudget();
+  dash.onData(draw);
+})();
+</script>
+</body>
+</html>

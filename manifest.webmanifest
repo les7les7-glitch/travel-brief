@@ -1,0 +1,17 @@
+{
+  "name": "여행 브리핑",
+  "short_name": "여행 브리핑",
+  "description": "항공·호텔 프로모션, 프리미엄 캐빈, 럭셔리 호텔 소식과 예산별 여행지 추천을 매일 아침 정리해요.",
+  "lang": "ko",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f5f0",
+  "theme_color": "#f7f5f0",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
