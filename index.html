@@ -1070,7 +1070,7 @@ button, input, select { font-family: inherit; }
     { label: '바다', add: { beach: 1 }, re: /바다|해변|비치|해수욕|(^|[^가-힣])섬(?!세)|섬(에서|으로|나라|여행)|스노클|다이빙|산호|물놀이|서핑|풀빌라|에메랄드|오션 ?뷰|수영/ },
     { label: '따뜻한 곳', add: { beach: 0.6 }, re: /따뜻|따듯|햇살|햇볕|더운 ?나라|열대|남국/ },
     { label: '따뜻한 곳', add: { beach: 0.6 }, neg: 'none', re: /추위|추운 ?(게|건|거|데|곳)|겨울 ?피|피한/ },
-    { label: '푹 쉬기', add: { beach: 0.7, nature: 0.4 }, sub: { nightlife: 0.3 }, re: /쉬[고기는러다엄었]|쉴 ?수|쉬어|휴식|휴양|힐링|여유|늘어지|아무것도 ?안|멍 ?때리|느긋|재충전|호캉스/ },
+    { label: '푹 쉬기', add: { beach: 0.4, nature: 0.4 }, sub: { nightlife: 0.3 }, re: /쉬[고기는러다엄었]|쉴 ?수|쉬어|휴식|휴양|힐링|여유|늘어지|아무것도 ?안|멍 ?때리|느긋|재충전|호캉스/ },
     { label: '조용한 곳', add: { beach: 0.3, nature: 0.4 }, sub: { nightlife: 0.8, city: 0.4 }, neg: 'none', re: /조용|한적|고요|프라이빗|아늑|사람 ?(없|적|많지 ?않)|(붐비|북적이|시끄럽)지 ?않|(사람 ?많은|붐비는|시끄러운) ?(건|곳|데)?[은는]? ?(싫|별로|말고)/ },
     { label: '화려한 호텔', add: { luxury: 1 }, re: /화려|럭셔리|호화|고급|최고급|5성|오성|특급|스위트|버틀러|호캉스|팰리스|플렉스|사치|인피니티|좋은 ?호텔|멋진 ?호텔|비싼/ },
     { label: '리조트', add: { beach: 0.6, luxury: 0.5 }, re: /리조트/ },
@@ -1083,11 +1083,15 @@ button, input, select { font-family: inherit; }
     { label: '구경', add: { city: 0.5, culture: 0.5 }, neg: 'ignore', re: /구경|관광|둘러보|볼거리/ },
     { label: '미식', add: { food: 1 }, re: /맛집|미식|먹방|먹[고으는거기을어]|맛있|음식|요리|미쉐린|미슐랭|파인 ?다이닝|레스토랑|노점|야시장|디저트|오마카세|스시|초밥|라멘|딤섬|와인|빵집|베이커리|해산물|식도락/ },
     { label: '자연·풍경', add: { nature: 1 }, re: /자연|풍경|경치|절경|(^|[^가-힣])산(?=[과이에을의속길\s,.!?]|$)|등산|화산|숲|정원|단풍|벚꽃|꽃구경|트레킹|하이킹|폭포|호수|일출|일몰|노을|석양|별빛|별 ?보|은하수|오로라|초록|공기 ?좋|계곡|협곡|국립공원/ },
+    { label: '스키·눈', add: { nature: 1 }, re: /스키|스노보드|보드 ?타|설경|설산|파우더|눈 ?(구경|덮인|오는|쌓인)|눈밭/ },
+    { label: '온천', add: { nature: 0.6, culture: 0.3 }, regions: { 일본: 15 }, re: /온천|노천탕|료칸/ },
     { label: '걷기', add: { city: 0.4, culture: 0.3, nature: 0.3 }, neg: 'ignore', re: /걷[고기는다을]|걸어|산책|거닐/ },
     { label: '문화·역사', add: { culture: 1 }, re: /문화|역사|박물관|미술관|갤러리|전시|(^|[^회])사원|사찰|템플|신사|성당|교회|궁전|왕궁|고궁|유적|건축|성곽|고성|오페라|공연|뮤지컬|예술|전통|골목|옛|오래된|고풍|클래식/ },
-    { label: '활기·파티', add: { nightlife: 1 }, re: /파티|클럽|칵테일|펍|술집|술 ?한잔|한잔|맥주|바 ?호핑|재즈 ?바|와인 ?바|루프[톱탑] ?바|나이트|밤문화|밤늦게|밤새|신나[게는]|신난|활기|축제|페스티벌|북적|시끌|시끄러|불금|흥겨|놀자/ },
+    { label: '활기·파티', add: { nightlife: 1 }, re: /파티|클럽|칵테일|펍|술집|술 ?한잔|한잔|맥주|바 ?호핑|재즈 ?바|와인 ?바|루프[톱탑] ?바|나이트|밤문화|밤늦게|밤새|신나[게는]|신난|활기|축제|페스티벌|북적|시끌|시끄러|불금|흥겨|놀자|카지노|풀 ?파티/ },
   ];
   const SEASON_WORDS = [['봄', [3, 4, 5]], ['여름', [6, 7, 8]], ['가을', [9, 10, 11]], ['겨울', [12, 1, 2]], ['연말', [12]], ['크리스마스', [12]], ['새해', [1]], ['연초', [1]], ['설 ?연휴', [1, 2]], ['추석', [9, 10]]];
+  // 여행지 이름 말고 흔히 부르는 이름 (id 기준)
+  const PLACE_ALIASES = { honolulu: ['하와이', '오아후', '와이키키'], niseko: ['홋카이도', '훗카이도'], okinawa: ['나하'], bali: ['우붓', '누사두아'], lasvegas: ['베가스'], newyork: ['맨해튼'], danang: ['호이안'] };
   const REGION_WORDS = { 일본: ['일본'], 중화권: ['중화권'], 동남아: ['동남아'], 인도양: ['인도양'], 중동: ['중동'], 대양주: ['대양주', '오세아니아'], 유럽: ['유럽'], 미주: ['미주'] };
   const NEG = /말고|빼고|싫|별로|아닌|제외|필요 ?없|관심 ?없|상관 ?없|없어도|안 ?(해도|가도|좋아|땡|끌)|지 ?않|피하|피해|질려|지겨/;
   const CUT = /[,.!?~]|좋고|하고(?! ?싶)|있고|싶고|이고|이랑|랑 |와 |과 |며 |지만|는데|그리고|그런데|면서|해서|니까/;
@@ -1107,6 +1111,7 @@ button, input, select { font-family: inherit; }
   }
   const placeTokens = (r) => str(r.place).split(/[,·]/).map((t) => t.trim()).filter((t) => t.length >= 2)
     .map((t, i) => ({ t, boost: i === 0 ? 30 : 20 }))
+    .concat((PLACE_ALIASES[r.id] || []).map((t) => ({ t, boost: 30 })))
     .concat((REGION_WORDS[r.region] || []).map((t) => ({ t, boost: 15 })));
   // 알아듣는 말들이 시작하는 자리. 부정어는 그 앞에 있는 가장 가까운 말에만 붙여요.
   function keywordStarts(text, rows) {
@@ -1133,7 +1138,7 @@ button, input, select { font-family: inherit; }
 
   function parseVibe(raw, rows) {
     const text = String(raw || '').toLowerCase().replace(/\s+/g, ' ').trim().slice(0, 200);
-    const q = { w: {}, heard: [], who: null, far: null, months: null, when: '', places: {}, placeHeard: [], cheap: false };
+    const q = { w: {}, heard: [], who: null, far: null, months: null, when: '', places: {}, placeHeard: [], cheap: false, terms: [], regions: {} };
     if (!text) return q;
     const said = (label) => { if (!q.heard.includes(label)) q.heard.push(label); };
     const starts = keywordStarts(text, rows);
@@ -1147,6 +1152,15 @@ button, input, select { font-family: inherit; }
       Object.keys(g.add || {}).forEach((k) => { q.w[k] = (q.w[k] || 0) + sign * g.add[k]; });
       if (!neg) Object.keys(g.sub || {}).forEach((k) => { q.w[k] = (q.w[k] || 0) - g.sub[k]; });
       if (!neg && g.cheap) q.cheap = true;
+      if (!neg) {
+        Object.keys(g.regions || {}).forEach((k) => { q.regions[k] = Math.max(q.regions[k] || 0, g.regions[k]); });
+        // 적은 낱말 그대로(예: 온천, 카지노, 미술관)가 여행지 소개에 나오면 조금 더 올려요.
+        hs.forEach((h) => {
+          const t = text.slice(h.s, h.e).replace(/^[^가-힣a-z0-9]+/, '').trim();
+          // "쉬고·먹고·신나게" 같은 동사꼴은 빼고 이름 같은 낱말만 써요.
+          if (t.length >= 2 && !/[고게는기서며면다요]$/.test(t) && !q.terms.includes(t)) q.terms.push(t);
+        });
+      }
       if (!(g.hideIf && q.heard.includes(g.hideIf))) said(neg ? g.label + ' 빼고' : g.label);
     });
     for (const k of WHO_TEXT_ORDER) {
@@ -1227,6 +1241,12 @@ button, input, select { font-family: inherit; }
     else if (fit != null) score = fit;
     else score = 50;
     score += q.places[r.id] || 0;
+    score += q.regions[r.region] || 0;
+    if (q.terms.length) {
+      const hay = str(r.vibeNote) + ' ' + str(r.why);
+      const n = q.terms.filter((t) => hay.includes(t)).length;
+      score += n >= 2 ? 15 : n * 10;
+    }
     const hours = isNum(r.flightHours) ? Number(r.flightHours) : null;
     const cap = q.far ? q.far.cap : null;
     const over = cap != null && hours != null && hours > cap ? hours - cap : 0;
