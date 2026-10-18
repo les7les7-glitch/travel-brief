@@ -277,6 +277,59 @@ button, input, select { font-family: inherit; }
 .tv-vc .tv-vc-cost b { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-heading); }
 .tv-vc-basis { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
 
+.tv-guide-head { display: flex; flex-direction: column; gap: var(--cds-gap-sm); }
+.tv-guide-head .tv-note { margin: 0; }
+.tv-guide-head .tv-field { max-width: 22rem; }
+.tv-guide-btn { font: inherit; font-size: var(--cds-font-size-caption); font-weight: var(--cds-font-weight-medium); padding: var(--cds-pad-xs) var(--cds-pad-md); border-radius: 999px; border: 1px solid var(--color-fg); background: transparent; color: var(--color-fg); cursor: pointer; }
+.tv-guide-btn:hover { background: var(--color-fg); color: var(--color-bg); }
+.tv-vc-foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--cds-gap-sm); padding-top: var(--cds-pad-xs); }
+.tv-gtop { display: flex; flex-direction: column; gap: var(--cds-gap-sm); margin-top: var(--cds-gap-md); box-shadow: inset 0 3px 0 var(--tv-accent); }
+.tv-gtop:has(> .tv-photo) { box-shadow: none; }
+.tv-gtop-hotel { font-size: var(--cds-font-size-body); line-height: 1.5; margin: 0; }
+.tv-g-src { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.5; margin: 0; }
+.tv-g-src .tv-link { margin-left: 0; }
+.tv-g-h { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); line-height: 1.3; margin: var(--cds-gap-xl) 0 var(--cds-gap-sm); }
+.tv-place-link { color: inherit; text-decoration: none; font-weight: var(--cds-font-weight-medium); }
+.tv-place-link > span:first-child { border-bottom: 1px solid var(--color-border-line); }
+.tv-place-link:hover > span:first-child { border-bottom-color: currentColor; }
+.tv-ext { color: var(--color-fg-muted); font-weight: 400; font-size: var(--cds-font-size-caption); }
+
+.tv-days { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: var(--cds-gap-md); }
+.tv-day { display: flex; flex-direction: column; gap: var(--cds-gap-xs); }
+.tv-day-k { font-size: var(--cds-font-size-caption); font-weight: var(--cds-font-weight-medium); color: var(--tv-accent); margin: 0; }
+.tv-day-title { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-heading); line-height: 1.3; margin: 0; }
+.tv-day-note { font-size: var(--cds-font-size-body); line-height: 1.6; color: var(--color-fg-muted); margin: 0 0 var(--cds-gap-xs); }
+.tv-stops { list-style: none; margin: 0; padding: 0; counter-reset: stop; }
+.tv-stop { position: relative; padding: var(--cds-pad-md) 0 var(--cds-pad-md) 2.25rem; border-top: 1px solid var(--color-border-line); display: flex; flex-direction: column; gap: 4px; }
+.tv-stop::before { counter-increment: stop; content: counter(stop); position: absolute; left: 0; top: calc(var(--cds-pad-md) + 1px); width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--tv-accent); color: var(--color-panel); font-size: 0.75rem; font-weight: var(--cds-font-weight-medium); line-height: 1.5rem; text-align: center; font-variant-numeric: tabular-nums; }
+.tv-stop-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px var(--cds-gap-sm); font-size: var(--cds-font-size-body); }
+.tv-slot { font-size: var(--cds-font-size-caption); padding: 0 var(--cds-pad-sm); border-radius: 999px; border: 1px solid var(--color-border-line); color: var(--color-fg-muted); white-space: nowrap; }
+.tv-stop-area { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.tv-stop-note { font-size: var(--cds-font-size-body); line-height: 1.6; margin: 0; }
+.tv-stop-move { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px var(--cds-gap-sm); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0; }
+.tv-stop-move .tv-link { margin-left: 0; }
+.tv-dir { white-space: nowrap; }
+.tv-stop-tip { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); line-height: 1.6; margin: 0; padding-left: var(--cds-pad-sm); border-left: 2px solid var(--color-border-line); }
+.tv-day-foot { display: flex; flex-direction: column; gap: 2px; font-size: var(--cds-font-size-caption); margin: auto 0 0; padding-top: var(--cds-pad-sm); border-top: 1px solid var(--color-border-line); }
+.tv-route { font-weight: var(--cds-font-weight-medium); color: var(--tv-accent); text-decoration: none; }
+.tv-route:hover { text-decoration: underline; }
+.tv-day-hint { color: var(--color-fg-muted); line-height: 1.5; }
+
+.tv-eats { grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr)); }
+.tv-eat { display: flex; flex-direction: column; gap: 6px; }
+.tv-eat-top { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px var(--cds-gap-sm); font-size: var(--cds-font-size-caption); }
+.tv-eat-cat { font-weight: var(--cds-font-weight-medium); color: var(--tv-accent, var(--color-fg)); }
+.tv-eat-name { font-size: var(--cds-font-size-heading); line-height: 1.35; }
+.tv-eat-price { display: flex; flex-wrap: wrap; align-items: center; gap: 4px var(--cds-gap-sm); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0; }
+.tv-eat-price .tv-dots > span.is-on { background: var(--color-fg-muted); }
+.tv-eat-k { color: var(--color-fg-muted); }
+.tv-eat-note { font-size: var(--cds-font-size-body); line-height: 1.6; margin: 0; }
+.tv-eat .tv-g-src { margin-top: auto; padding-top: var(--cds-pad-xs); }
+.tv-near-list { list-style: none; margin: 0; padding: 0; display: grid; }
+.tv-near-list li { display: flex; flex-direction: column; gap: 4px; padding: var(--cds-pad-sm) 0; border-top: 1px solid var(--color-border-line); }
+.tv-near-list li:first-child { border-top: 0; padding-top: 0; }
+.tv-near-list li:last-child { padding-bottom: 0; }
+
 @media (prefers-reduced-motion: no-preference) {
   .tv-enter { animation: tv-in var(--cds-dur-slow) var(--cds-ease-out) both; }
   @keyframes tv-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
@@ -284,8 +337,8 @@ button, input, select { font-family: inherit; }
 
 .tv-photo { position: relative; margin: calc(-1 * var(--cds-pad-md)) calc(-1 * var(--cds-pad-md)) var(--cds-gap-xs); overflow: hidden; border-radius: calc(var(--cds-radius) - 1px) calc(var(--cds-radius) - 1px) 0 0; background: var(--cds-chart-grid); aspect-ratio: 16 / 9; }
 @media (min-width: 40rem) { .tv-photo { margin: calc(-1 * var(--cds-pad-lg)) calc(-1 * var(--cds-pad-lg)) var(--cds-gap-xs); } }
-.tv-photo--pick { aspect-ratio: 3 / 2; }
-@media (min-width: 40rem) { .tv-photo--pick { aspect-ratio: 21 / 9; } }
+.tv-photo--pick, .tv-photo--guide { aspect-ratio: 3 / 2; }
+@media (min-width: 40rem) { .tv-photo--pick, .tv-photo--guide { aspect-ratio: 21 / 9; } }
 .tv-photo--budget, .tv-photo--vibe { aspect-ratio: 2 / 1; }
 .tv-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .tv-photo figcaption { position: absolute; right: 8px; bottom: 8px; max-width: calc(100% - 16px); font-size: 0.6875rem; line-height: 1.4; color: #fff; background: rgba(0, 0, 0, 0.45); padding: 1px 8px; border-radius: 999px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -307,6 +360,7 @@ button, input, select { font-family: inherit; }
     <button class="tv-tab" type="button" data-tab="all" aria-pressed="true">전체</button>
     <button class="tv-tab" type="button" data-tab="vibe" aria-pressed="false">느낌으로 찾기</button>
     <button class="tv-tab" type="button" data-tab="budget" aria-pressed="false">예산으로 찾기</button>
+    <button class="tv-tab" type="button" data-tab="guide" aria-pressed="false">여행지 가이드</button>
     <button class="tv-tab" type="button" data-tab="promo" aria-pressed="false">프로모션</button>
     <button class="tv-tab" type="button" data-tab="air" aria-pressed="false">항공</button>
     <button class="tv-tab" type="button" data-tab="hotel" aria-pressed="false">호텔</button>
@@ -441,6 +495,18 @@ button, input, select { font-family: inherit; }
     </div>
   </section>
 
+  <section class="tv-section" id="guide" data-tab-of="guide">
+    <div class="tv-card tv-guide-head" id="guide-form">
+      <h2 class="tv-h2">여행지 가이드</h2>
+      <p class="tv-note">여행지마다 2일 코스와 식당, 호텔 근처 볼거리를 모았어요. 장소 이름을 누르면 구글 지도가 열리고, '길찾기'는 앞 장소에서 가는 길을 보여줘요.</p>
+      <label class="tv-field"><span class="tv-field-k">여행지</span>
+        <select class="tv-in" id="guide-dest" aria-label="가이드를 볼 여행지"></select>
+      </label>
+    </div>
+    <div id="guide-body"></div>
+    <p class="tv-vibe-basis" id="guide-foot">영업시간, 휴무일, 예약 조건은 자주 바뀌어요. 가기 전에 구글 지도나 공식 사이트에서 꼭 다시 확인하세요.</p>
+  </section>
+
   <section class="tv-section" id="due-soon" data-tab-of="all">
     <div class="tv-card">
       <h2 class="tv-h2">2주 안에 끝나는 혜택</h2>
@@ -467,7 +533,7 @@ button, input, select { font-family: inherit; }
     <div class="tv-grid" id="grid-hotel"></div>
   </section>
 
-  <p class="tv-foot" id="about">항공·호텔 프로그램의 프로모션, 퍼스트·비즈니스 새 좌석, 럭셔리 호텔 소식을 골라 한국어로 요약하고, 오늘의 여행지와 느낌·예산에 맞는 여행지를 함께 보여줘요. Claude가 매일 아침 갱신해요. 가격과 조건은 바뀔 수 있으니 예약 전에 출처에서 꼭 다시 확인하세요.</p>
+  <p class="tv-foot" id="about">항공·호텔 프로그램의 프로모션, 퍼스트·비즈니스 새 좌석, 럭셔리 호텔 소식을 골라 한국어로 요약하고, 오늘의 여행지와 느낌·예산에 맞는 여행지, 여행지별 2일 코스와 식당 가이드를 함께 보여줘요. Claude가 매일 아침 갱신해요. 가격과 조건은 바뀔 수 있으니 예약 전에 출처에서 꼭 다시 확인하세요.</p>
 </div>
 </div>
 <script>
@@ -510,7 +576,7 @@ button, input, select { font-family: inherit; }
 <script>
 (() => {
   const SECTIONS = ['promo', 'air', 'hotel'];
-  const TABS = ['vibe', 'budget', 'promo', 'air', 'hotel'];
+  const TABS = ['vibe', 'budget', 'guide', 'promo', 'air', 'hotel'];
   const tabs = Array.from(document.querySelectorAll('.tv-tab'));
   const sections = Array.from(document.querySelectorAll('.tv-section'));
   let current = 'all';
@@ -536,7 +602,7 @@ button, input, select { font-family: inherit; }
     n.setAttribute('data-where', 'id=' + encodeURIComponent(id));
     return n;
   };
-  const ACCENT_INDEX = { promo: 0, air: 1, hotel: 2, trip: 3, pick: 4, budget: 5, vibe: 6 };
+  const ACCENT_INDEX = { promo: 0, air: 1, hotel: 2, trip: 3, pick: 4, budget: 5, vibe: 6, guide: 1 };
   const accent = (section) => {
     const colors = Array.isArray(dash.colors) && dash.colors.length ? dash.colors : ['currentColor'];
     const i = ACCENT_INDEX[section] ?? 0;
@@ -675,7 +741,7 @@ button, input, select { font-family: inherit; }
     const url = safeUrl(r.photo);
     let fig = box.querySelector(':scope > .tv-photo');
     if (!url) { if (fig) fig.remove(); return; }
-    const w = kind === 'pick' ? 1200 : 800;
+    const w = kind === 'pick' || kind === 'guide' ? 1200 : 800;
     if (!fig) {
       fig = el('figure', 'tv-photo tv-photo--' + kind);
       const img = el('img');
@@ -709,7 +775,7 @@ button, input, select { font-family: inherit; }
     const link = document.getElementById('pick-link');
     const fields = Array.from(card.querySelectorAll('.tv-pick-f'));
     card.style.setProperty('--tv-accent', accent('pick'));
-    card.querySelectorAll('.tv-failed, .tv-empty').forEach((n) => n.remove());
+    card.querySelectorAll('.tv-failed, .tv-empty, .tv-guide-btn').forEach((n) => n.remove());
     const clear = (loading) => {
       fields.forEach((n) => {
         n.textContent = n.dataset.f === 'bestTime' || n.dataset.f === 'source' ? '' : '—';
@@ -744,6 +810,8 @@ button, input, select { font-family: inherit; }
     link.hidden = !href;
     if (href) link.href = href;
     setPhoto(card, cur, 'pick');
+    const pickGuide = guideButton(destByPlace.get(str(cur.place)));
+    if (pickGuide) card.querySelector('.tv-pick-foot').prepend(pickGuide);
 
     hist.replaceChildren();
     hist.hidden = list.length < 2;
@@ -968,6 +1036,8 @@ button, input, select { font-family: inherit; }
       s.append(markBud(el('span', null, str(r.asOfLabel)), 'asOfLabel', r.id), document.createTextNode(' 조사'));
       foot.append(s);
     }
+    const gb = guideButton(r.id);
+    if (gb) foot.prepend(gb);
     a.append(foot);
     return a;
   }
@@ -1393,6 +1463,12 @@ button, input, select { font-family: inherit; }
       c.append(document.createTextNode(' '), el('span', 'tv-vc-basis', '(' + p.people + '명 · ' + p.nights + '박 · ' + (e.fallback ? '퍼스트 없어 비즈니스' : BUD_CABIN[p.cabin].label) + ')'));
       a.append(c);
     }
+    const gb = guideButton(r.id);
+    if (gb) {
+      const f = el('div', 'tv-vc-foot');
+      f.append(gb);
+      a.append(f);
+    }
     return a;
   }
 
@@ -1495,10 +1571,293 @@ button, input, select { font-family: inherit; }
   }
   // ---- 느낌으로 찾기 끝 ----
 
+  // ---- 여행지 가이드 ----
+  const GUIDE_CATS = ['파인다이닝', '현지 맛집', '바', '카페'];
+  const PRICE_WORD = { 1: '부담 없음', 2: '보통', 3: '비싼 편', 4: '아주 비쌈' };
+  const MODE_WORD = { transit: '대중교통', walking: '도보', driving: '차' };
+  let guideDest = null;
+  let guideIndex = new Map();
+  let destByPlace = new Map();
+  const gmapSearch = (q) => 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q);
+  const gmapDir = (origin, dest, mode, waypoints) => {
+    let u = 'https://www.google.com/maps/dir/?api=1&origin=' + encodeURIComponent(origin) + '&destination=' + encodeURIComponent(dest);
+    if (waypoints && waypoints.length) u += '&waypoints=' + waypoints.map((w) => encodeURIComponent(w)).join('%7C');
+    if (mode) u += '&travelmode=' + mode;
+    return u;
+  };
+  const markGuide = (n, field, id) => {
+    n.setAttribute('data-source', 'guide');
+    n.setAttribute('data-field', field);
+    n.setAttribute('data-where', 'id=' + encodeURIComponent(id));
+    return n;
+  };
+  const extLink = (cls, href, text) => {
+    const a = el('a', cls, text);
+    a.href = href;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    return a;
+  };
+
+  // 가이드 데이터를 여행지별로 묶어 두고, 카드에서 "가이드 보기"를 띄울지 정해요.
+  function indexGuides() {
+    guideIndex = new Map();
+    destByPlace = new Map();
+    const g = dash.data('guide');
+    const b = dash.data('budget');
+    if (b.status === 'ok' && Array.isArray(b.data)) b.data.forEach((r) => { if (r && r.id && r.place) destByPlace.set(str(r.place), r.id); });
+    if (g.status !== 'ok' || !Array.isArray(g.data)) return;
+    g.data.forEach((r) => {
+      if (!r || !r.id || !r.dest || !r.kind) return;
+      if (!guideIndex.has(r.dest)) guideIndex.set(r.dest, []);
+      guideIndex.get(r.dest).push(r);
+    });
+    Array.from(guideIndex.keys()).forEach((k) => {
+      const rows = guideIndex.get(k);
+      if (!rows.some((r) => r.kind === 'stop') && !rows.some((r) => r.kind === 'eat')) guideIndex.delete(k);
+    });
+  }
+
+  function guideButton(dest) {
+    if (!dest || !guideIndex.has(dest)) return null;
+    const b = el('button', 'tv-guide-btn', '가이드 보기');
+    b.type = 'button';
+    b.addEventListener('click', () => openGuide(dest));
+    return b;
+  }
+
+  function openGuide(dest) {
+    guideDest = dest;
+    showTab('guide');
+    dash.setLink('guide-' + dest);
+    draw();
+    const s = byId('guide');
+    if (s) s.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function placeLink(r, cls) {
+    const q = str(r.mapQuery);
+    const name = markGuide(el('span', null, str(r.name)), 'name', r.id);
+    if (!q) { const s = el('span', cls); s.append(name); return s; }
+    const a = extLink(cls + ' tv-place-link', gmapSearch(q), null);
+    a.append(name, el('span', 'tv-ext', ' ↗'));
+    a.setAttribute('aria-label', str(r.name) + ' 구글 지도에서 보기');
+    return a;
+  }
+
+  function sourceLine(r) {
+    const foot = el('p', 'tv-g-src');
+    const href = safeUrl(r.url);
+    if (r.source) {
+      const n = href ? extLink('tv-link', href, null) : el('span');
+      n.append(markGuide(el('span', null, str(r.source)), 'source', r.id));
+      if (href) n.append(document.createTextNode(' ↗'));
+      foot.append(n);
+    }
+    return foot.childNodes.length ? foot : null;
+  }
+
+  function dayCard(day, stops, hotel) {
+    const c = el('article', 'tv-card tv-day');
+    c.id = 'guide-' + day.id;
+    c.append(el('p', 'tv-day-k', day.day + '일차'));
+    c.append(markGuide(el('h3', 'tv-day-title', str(day.name)), 'name', day.id));
+    if (day.note) c.append(markGuide(el('p', 'tv-day-note', str(day.note)), 'note', day.id));
+    const mode = ['transit', 'walking', 'driving'].includes(day.mode) ? day.mode : '';
+    const ol = el('ol', 'tv-stops');
+    let prev = hotel && hotel.mapQuery ? str(hotel.mapQuery) : '';
+    stops.forEach((s) => {
+      const li = el('li', 'tv-stop');
+      const top = el('div', 'tv-stop-top');
+      if (s.slot) top.append(markGuide(el('span', 'tv-slot', str(s.slot)), 'slot', s.id));
+      top.append(placeLink(s, 'tv-stop-name'));
+      if (s.area) top.append(markGuide(el('span', 'tv-stop-area', str(s.area)), 'area', s.id));
+      li.append(top);
+      if (s.note) li.append(markGuide(el('p', 'tv-stop-note', str(s.note)), 'note', s.id));
+      if (s.move || (mode && prev && s.mapQuery)) {
+        const mv = el('p', 'tv-stop-move');
+        if (s.move) mv.append(document.createTextNode('가는 길 '), markGuide(el('span', null, str(s.move)), 'move', s.id));
+        if (mode && prev && s.mapQuery) {
+          mv.append(extLink('tv-link tv-dir', gmapDir(prev, str(s.mapQuery), mode), '길찾기 ↗'));
+        }
+        li.append(mv);
+      }
+      if (s.tip) li.append(markGuide(el('p', 'tv-stop-tip', str(s.tip)), 'tip', s.id));
+      const src = sourceLine(s);
+      if (src) li.append(src);
+      ol.append(li);
+      if (s.mapQuery) prev = str(s.mapQuery);
+    });
+    c.append(ol);
+    const mapped = stops.filter((s) => s.mapQuery);
+    if (mode && hotel && hotel.mapQuery && mapped.length >= 2) {
+      const last = mapped[mapped.length - 1];
+      const via = mapped.slice(0, -1).slice(0, 3).map((s) => str(s.mapQuery));
+      const routeMode = mode === 'walking' ? 'walking' : 'driving';
+      const f = el('p', 'tv-day-foot');
+      f.append(extLink('tv-route', gmapDir(str(hotel.mapQuery), str(last.mapQuery), routeMode, via), '하루 동선 지도에서 보기 ↗'));
+      if (mode === 'transit') f.append(el('span', 'tv-day-hint', '지도는 차 기준 경로라, 대중교통은 장소별 길찾기를 눌러 보세요.'));
+      c.append(f);
+    } else if (!mode) {
+      c.append(el('p', 'tv-day-foot tv-day-hint', '리조트 안이나 배로 움직이는 날이라 길찾기 대신 장소만 적었어요.'));
+    }
+    return c;
+  }
+
+  function eatCard(r) {
+    const a = el('article', 'tv-card tv-eat');
+    a.id = 'guide-' + r.id;
+    const top = el('div', 'tv-eat-top');
+    top.append(markGuide(el('span', 'tv-eat-cat', str(r.category)), 'category', r.id));
+    if (r.area) top.append(markGuide(el('span', 'tv-stop-area', str(r.area)), 'area', r.id));
+    a.append(top);
+    a.append(placeLink(r, 'tv-eat-name'));
+    const p = clampN(Math.round(Number(r.price) || 0), 0, 4);
+    if (p) {
+      const meta = el('p', 'tv-eat-price');
+      const dots = el('span', 'tv-dots');
+      dots.setAttribute('role', 'img');
+      dots.setAttribute('aria-label', '가격대 4단계 중 ' + p + '단계');
+      for (let k = 0; k < 4; k++) dots.append(el('span', k < p ? 'is-on' : null));
+      meta.append(el('span', 'tv-eat-k', '가격대'), dots, el('span', null, PRICE_WORD[p]));
+      if (r.priceText) meta.append(document.createTextNode(' · '), markGuide(el('span', null, str(r.priceText)), 'priceText', r.id));
+      a.append(meta);
+    }
+    if (r.note) a.append(markGuide(el('p', 'tv-eat-note', str(r.note)), 'note', r.id));
+    if (r.tip) a.append(markGuide(el('p', 'tv-stop-tip', str(r.tip)), 'tip', r.id));
+    const src = sourceLine(r);
+    if (src) a.append(src);
+    return a;
+  }
+
+  function fillGuideSelect(sel, budgetRows) {
+    const order = budgetRows.map((r) => r.id);
+    const dests = Array.from(guideIndex.keys()).sort((x, y) => {
+      const i = order.indexOf(x), j = order.indexOf(y);
+      return (i < 0 ? 999 : i) - (j < 0 ? 999 : j);
+    });
+    const byId2 = new Map(budgetRows.map((r) => [r.id, r]));
+    const groups = new Map();
+    dests.forEach((d) => {
+      const r = byId2.get(d);
+      const region = r && r.region ? str(r.region) : '기타';
+      if (!groups.has(region)) groups.set(region, []);
+      groups.get(region).push([d, r ? str(r.place) : d]);
+    });
+    const sig = dests.join('|');
+    if (sel.dataset.sig !== sig) {
+      sel.replaceChildren();
+      groups.forEach((list, region) => {
+        const og = document.createElement('optgroup');
+        og.label = region;
+        list.forEach(([d, label]) => og.append(new Option(label, d)));
+        sel.append(og);
+      });
+      sel.dataset.sig = sig;
+    }
+    return dests;
+  }
+
+  function drawGuide() {
+    const box = byId('guide-body');
+    const sel = byId('guide-dest');
+    if (current !== 'guide') return;
+    const g = dash.data('guide');
+    const b = dash.data('budget');
+    box.replaceChildren();
+    if (g.status === 'loading' || b.status === 'loading') {
+      const s = el('div', 'tv-card tv-skel');
+      s.append(el('div', 'dash-skeleton', '—'), el('div', 'dash-skeleton', '—'), el('div', 'dash-skeleton', '—'));
+      box.append(s);
+      return;
+    }
+    if (g.status !== 'ok') { box.append(failedLine()); return; }
+    const budgetRows = b.status === 'ok' && Array.isArray(b.data) ? b.data.filter((r) => r && r.id) : [];
+    const dests = fillGuideSelect(sel, budgetRows);
+    if (!dests.length) { box.append(el('p', 'tv-empty', '아직 준비된 가이드가 없어요.')); return; }
+    if (!guideDest || !guideIndex.has(guideDest)) guideDest = dests[0];
+    sel.value = guideDest;
+    const rows = guideIndex.get(guideDest);
+    const br = budgetRows.find((r) => r.id === guideDest) || null;
+    const hotel = rows.find((r) => r.kind === 'hotel') || null;
+    const byOrder = (x, y) => (Number(x.order) || 0) - (Number(y.order) || 0);
+
+    const card = el('article', 'tv-card tv-gtop');
+    card.id = 'guide-top';
+    if (br) setPhoto(card, br, 'guide');
+    card.style.setProperty('--tv-accent', accent('guide'));
+    card.append(el('p', 'tv-pick-k', '여행지 가이드'));
+    card.append(br ? markBud(el('h3', 'tv-pick-place', str(br.place)), 'place', br.id) : el('h3', 'tv-pick-place', guideDest));
+    if (br && br.vibeNote) card.append(markBud(el('p', 'tv-pick-head', str(br.vibeNote)), 'vibeNote', br.id));
+    if (hotel) {
+      const h = el('p', 'tv-gtop-hotel');
+      h.append(el('span', 'tv-vc-k', '머물 곳'), placeLink(hotel, 'tv-gtop-hotel-name'));
+      if (br && br.hotelNote) h.append(document.createTextNode(' · '), markBud(el('span', 'tv-bc-note', str(br.hotelNote)), 'hotelNote', br.id));
+      card.append(h);
+    }
+    const asOf = rows.map((r) => str(r.asOf)).filter(isDate).sort().pop();
+    if (asOf) card.append(el('p', 'tv-g-src', Number(asOf.slice(5, 7)) + '월 ' + Number(asOf.slice(8, 10)) + '일 기준으로 조사했어요.'));
+    box.append(card);
+
+    const days = el('div', 'tv-days');
+    [1, 2].forEach((d) => {
+      const day = rows.find((r) => r.kind === 'day' && Number(r.day) === d);
+      const stops = rows.filter((r) => r.kind === 'stop' && Number(r.day) === d).sort(byOrder);
+      if (day && stops.length) days.append(dayCard(day, stops, hotel));
+    });
+    if (days.childNodes.length) {
+      days.style.setProperty('--tv-accent', accent('guide'));
+      box.append(el('h3', 'tv-g-h', '2일 코스'), days);
+    }
+
+    const eats = rows.filter((r) => r.kind === 'eat').sort((x, y) => {
+      const i = GUIDE_CATS.indexOf(x.category), j = GUIDE_CATS.indexOf(y.category);
+      return ((i < 0 ? 9 : i) - (j < 0 ? 9 : j)) || byOrder(x, y);
+    });
+    if (eats.length) {
+      const grid = el('div', 'tv-grid tv-eats');
+      eats.forEach((r) => grid.append(eatCard(r)));
+      box.append(el('h3', 'tv-g-h', '식당 ' + eats.length + '곳'), grid);
+    }
+
+    const near = rows.filter((r) => r.kind === 'near').sort(byOrder);
+    if (near.length) {
+      const c = el('div', 'tv-card tv-near');
+      const ul = el('ul', 'tv-near-list');
+      near.forEach((r) => {
+        const li = el('li');
+        const top = el('div', 'tv-stop-top');
+        top.append(placeLink(r, 'tv-stop-name'));
+        if (r.walk) top.append(markGuide(el('span', 'tv-slot', str(r.walk)), 'walk', r.id));
+        li.append(top);
+        if (r.note) li.append(markGuide(el('p', 'tv-stop-note', str(r.note)), 'note', r.id));
+        if (hotel && hotel.mapQuery && r.mapQuery) {
+          const mv = el('p', 'tv-stop-move');
+          mv.append(extLink('tv-link tv-dir', gmapDir(str(hotel.mapQuery), str(r.mapQuery), 'walking'), '호텔에서 걸어가기 ↗'));
+          li.append(mv);
+        }
+        ul.append(li);
+      });
+      c.append(ul);
+      box.append(el('h3', 'tv-g-h', '호텔 근처 걸어서 15분'), c);
+    }
+  }
+
+  function bindGuide() {
+    const sel = byId('guide-dest');
+    sel.addEventListener('change', () => {
+      guideDest = sel.value;
+      dash.setLink('guide-' + guideDest);
+      drawGuide();
+    });
+  }
+  // ---- 여행지 가이드 끝 ----
+
   function showTab(key) {
     current = key;
     tabs.forEach((t) => t.setAttribute('aria-pressed', String(t.dataset.tab === key)));
-    sections.forEach((s) => { s.hidden = !(key === 'all' || s.dataset.tabOf === key); });
+    // 가이드는 길어서 '전체'에는 넣지 않고 자기 탭에서만 보여줘요.
+    sections.forEach((s) => { s.hidden = key === 'all' ? s.dataset.tabOf === 'guide' : s.dataset.tabOf !== key; });
   }
 
   function draw() {
@@ -1509,10 +1868,12 @@ button, input, select { font-family: inherit; }
     const digestRow = digest.status === 'ok' && Array.isArray(digest.data) ? digest.data[0] || null : null;
     fillStatic('digest', digest.status, digestRow);
 
+    indexGuides();
     const pick = dash.data('pick');
     drawPick(pick.status, pick.status === 'ok' ? pick.data : []);
     drawBudget();
     drawVibe();
+    drawGuide();
 
 
     const rows = items.status === 'ok' && Array.isArray(items.data) ? items.data.filter((r) => r && r.id && r.title) : [];
@@ -1535,10 +1896,12 @@ button, input, select { font-family: inherit; }
   }));
 
   const initial = location.hash.slice(1);
-  showTab(TABS.includes(initial) ? initial : 'all');
+  if (/^guide-[a-z0-9-]+$/.test(initial)) { guideDest = initial.slice(6); showTab('guide'); }
+  else showTab(TABS.includes(initial) ? initial : 'all');
   setBudgetDefaults();
   bindBudget();
   bindVibe();
+  bindGuide();
   dash.onData(draw);
 })();
 </script>
