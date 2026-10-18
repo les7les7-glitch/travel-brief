@@ -82,7 +82,8 @@ def main():
         public_picks.append(dict(r, why=scrub(r["why"]), stay=scrub(r["stay"]), getThere=scrub(r["getThere"])))
 
     budget = load(src, "budget.json")
-    public_budget = [dict(r, why=scrub(r.get("why", "")), priceNote=scrub(r.get("priceNote", "")))
+    public_budget = [dict(r, why=scrub(r.get("why", "")), priceNote=scrub(r.get("priceNote", "")),
+                          hotelNote=scrub(r.get("hotelNote", "")), vibeNote=scrub(r.get("vibeNote", "")))
                      for r in budget if not is_private(r.get("place", ""))]
 
     digest = load(src, "digest.json")
