@@ -434,6 +434,30 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
 .entry-more > .kv { margin-top: var(--sp-2); }
 .entry-more > .fineprint { margin-top: var(--sp-3); }
 
+/* ===== 마일리지 좌석 찾기 ===== */
+.award { display: grid; gap: var(--sp-5); padding: clamp(20px, 3.4vw, 40px); border-radius: var(--r-panel); background: var(--c-bg); }
+.award:focus { outline: none; }
+.award-head { display: grid; gap: 6px; }
+.award-title { font-size: var(--fs-h3); font-weight: 700; line-height: var(--lh-tight); letter-spacing: -0.015em; }
+.award-desc { color: var(--c-text-2); }
+.award-form { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-4) var(--sp-5); }
+@media (max-width: 899px) { .award-form { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 419px) { .award-form { grid-template-columns: minmax(0, 1fr); } }
+.input-code { text-transform: uppercase; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
+.input-code::placeholder { text-transform: none; letter-spacing: 0; }
+.award-codes { margin-top: calc(-1 * var(--sp-2)); color: var(--c-text-3); font-size: var(--fs-sm); }
+.award-quick { display: flex; flex-wrap: wrap; align-items: center; gap: var(--sp-2) var(--sp-3); }
+.award-quick-k { color: var(--c-text-2); font-size: var(--fs-sm); font-weight: 700; }
+.award-actions { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+@media (max-width: 559px) { .award-actions .btn { flex: 1 1 100%; } }
+.award-hint { color: var(--c-soon); font-size: var(--fs-sm); font-weight: 600; }
+.award-hint:empty { display: none; }
+.award-hint.is-info { color: var(--c-text-2); font-weight: 500; }
+.award-links { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.award-links-k { color: var(--c-text-3); font-size: var(--fs-sm); }
+.award-links .link-ext { color: var(--c-primary); font-weight: 600; }
+#sec-air .sub-head { margin-top: var(--sp-9); }
+
 /* ===== 프로모션 · 호텔 카드, 항공 목록 ===== */
 .ncard { display: flex; flex-direction: column; gap: var(--sp-3); min-width: 0; overflow: hidden; border-radius: var(--r-card); }
 .ncard-body { display: flex; flex: 1; flex-direction: column; gap: var(--sp-3); padding: var(--sp-6); }
@@ -807,9 +831,46 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <h2 class="sec-title" id="air-title">항공 소식</h2>
-          <p class="sec-desc">퍼스트·비즈니스 새 좌석과 노선 소식이에요.</p>
+          <h2 class="sec-title" id="air-title">항공</h2>
+          <p class="sec-desc">마일리지로 탈 수 있는 빈 좌석을 찾고, 퍼스트·비즈니스 새 좌석과 노선 소식을 봐요.</p>
         </div>
+      </div>
+
+      <div class="award" id="award" tabindex="-1" role="search" aria-labelledby="award-title">
+        <div class="award-head">
+          <h3 class="award-title" id="award-title">마일리지 좌석 찾기</h3>
+          <p class="award-desc">출발지, 도착지, 날짜를 넣으면 seats.aero에서 마일리지로 예약할 수 있는 빈 좌석을 바로 열어 드려요.</p>
+        </div>
+        <div class="award-form">
+          <label class="field"><span class="field-k">출발</span>
+            <input class="input input-code" id="aw-from" type="text" inputmode="text" autocapitalize="characters" autocomplete="off" spellcheck="false" maxlength="23" placeholder="ICN" aria-describedby="aw-codes">
+          </label>
+          <label class="field"><span class="field-k">도착</span>
+            <input class="input input-code" id="aw-to" type="text" inputmode="text" autocapitalize="characters" autocomplete="off" spellcheck="false" maxlength="23" placeholder="예: LHR" list="aw-dests" aria-describedby="aw-codes">
+            <datalist id="aw-dests"></datalist>
+          </label>
+          <label class="field"><span class="field-k">출발 날짜</span>
+            <input class="input" id="aw-date" type="date">
+          </label>
+          <label class="field"><span class="field-k">좌석</span>
+            <select class="select" id="aw-cabin"><option value="any">전체</option><option value="economy">이코노미</option><option value="premium">프리미엄 이코노미</option><option value="business">비즈니스</option><option value="first">퍼스트</option></select>
+          </label>
+        </div>
+        <p class="award-codes" id="aw-codes">공항 코드는 쉼표로 여러 개 넣을 수 있어요 (예: HND, NRT).</p>
+        <div class="award-quick" role="group" aria-label="우리 여행지로 도착지 채우기">
+          <span class="award-quick-k">우리 여행지</span>
+          <div class="chips" id="aw-quick"></div>
+        </div>
+        <div class="award-actions">
+          <a class="btn btn-primary btn-ext" id="aw-go" target="_blank" rel="noopener noreferrer">seats.aero에서 빈 좌석 보기</a>
+          <a class="btn btn-outline btn-ext" id="aw-cash" target="_blank" rel="noopener noreferrer">구글 항공권에서 현금가 보기</a>
+        </div>
+        <p class="award-hint" id="aw-hint" aria-live="polite"></p>
+        <p class="fineprint">seats.aero는 항공사 마일리지 좌석을 모아 보여주는 외부 서비스예요. 로그인하지 않으면 60일 안쪽 출발만 볼 수 있고, Pro(월 9.99달러)는 1년 치와 실시간 검색, 알림을 줘요. 저장해 둔 결과라 실제와 다를 수 있으니 예약 전에 항공사 사이트에서 다시 확인하세요.</p>
+      </div>
+
+      <div class="sub-head">
+        <h3 class="sub-title">항공 소식</h3>
         <a class="sec-link" href="#air" data-home-only id="air-all">전체 보기</a>
       </div>
       <ul class="alist" id="air-list"></ul>
@@ -1310,7 +1371,7 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
   const VIEWS = ['home', 'explore', 'guide', 'calendar', 'promo', 'air', 'hotel'];
   const VIEW_TITLE = {
     home: '여행 브리핑', explore: '여행 찾기 · 여행 브리핑', guide: '여행지 가이드 · 여행 브리핑', calendar: '여행 달력 · 여행 브리핑',
-    promo: '프로모션 · 여행 브리핑', air: '항공 소식 · 여행 브리핑', hotel: '호텔 · 여행 브리핑',
+    promo: '프로모션 · 여행 브리핑', air: '항공 · 여행 브리핑', hotel: '호텔 · 여행 브리핑',
   };
   let view = 'home';
   let routed = false;
@@ -1326,12 +1387,14 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
     if (h === 'vibe') return { view: 'explore', tab: 'taste' };
     if (h === 'budget') return { view: 'explore', tab: 'budget' };
     if (h === 'liked') return { view: 'explore', tab: 'liked' };
+    if (h === 'award') return { view: 'air', go: 'award' };
     if (VIEWS.includes(h)) return { view: h };
     return { view: 'home' };
   }
   function applyRoute() {
     closeSheet();
     const r = routeFromHash();
+    if (r.go && !pending) pending = { id: r.go, focus: true };
     const prevView = routed ? view : null;
     routed = true;
     lastHref = location.href;
@@ -1505,6 +1568,7 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
       ['항공편', str(r.route)],
       ['비행 시간', isNum(r.flightHours) ? '인천에서 약 ' + fmt(r.flightHours) + '시간' : ''],
       ['좋은 때', str(r.seasonLabel)],
+      ['찾아보기', awardLinks(r.id, p)],
     ]));
     body.append(ws);
 
@@ -2398,6 +2462,120 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
     });
   }
 
+  // ===== 마일리지 좌석 찾기 =====
+  // seats.aero 검색 주소를 만들어 새 창으로 열어요. 좌석 자료를 이 사이트로 가져오지는 않아요.
+  const AIRPORTS = {
+    osaka: 'KIX', tokyo: 'HND,NRT', hongkong: 'HKG', bangkok: 'BKK', phuquoc: 'PQC', bali: 'DPS', maldives: 'MLE',
+    sydney: 'SYD', paris: 'CDG', newyork: 'JFK,EWR', kyoto: 'KIX,ITM', okinawa: 'OKA', niseko: 'CTS', rome: 'FCO',
+    london: 'LHR,LGW', lasvegas: 'LAS', taipei: 'TPE', honolulu: 'HNL', danang: 'DAD', singapore: 'SIN', phuket: 'HKT',
+  };
+  const AWARD_QUICK = ['tokyo', 'osaka', 'bangkok', 'singapore', 'maldives', 'paris', 'london', 'newyork'];
+  const CABIN_WORDS = { any: '', economy: 'economy', premium: 'premium economy', business: 'business class', first: 'first class' };
+  const AKEY = 'travel-brief-award';
+  const aw = { from: byId('aw-from'), to: byId('aw-to'), date: byId('aw-date'), cabin: byId('aw-cabin'), go: byId('aw-go'), cash: byId('aw-cash'), hint: byId('aw-hint'), quick: byId('aw-quick'), list: byId('aw-dests') };
+  const codesOf = (v) => str(v).toUpperCase().split(/[^A-Z]+/).filter((x) => x.length === 3).slice(0, 6);
+  const addDays = (iso, n) => new Date(Date.parse(iso + 'T00:00:00Z') + n * 86400000).toISOString().slice(0, 10);
+  function seatsUrl(from, to, date, cabin) {
+    const q = new URLSearchParams({ origins: from.join(','), destinations: to.join(','), date });
+    if (CABIN_WORDS[cabin]) q.set('applicable_cabin', cabin);
+    return 'https://seats.aero/search?' + q.toString();
+  }
+  function cashUrl(from, to, date, cabin) {
+    const q = 'Flights from ' + from[0] + ' to ' + to[0] + ' on ' + date + ' one way' + (CABIN_WORDS[cabin] ? ' ' + CABIN_WORDS[cabin] : '');
+    return 'https://www.google.com/travel/flights?hl=ko&curr=KRW&q=' + encodeURIComponent(q);
+  }
+  // 상세 화면에서는 고른 달의 15일로 찾아요. 그날이 이미 지났으면 2주 뒤로 잡아요.
+  function awardDateFor(month) {
+    const today = todayKST();
+    const d = /^\d{4}-\d{2}$/.test(str(month)) ? month + '-15' : addDays(today, 30);
+    return d > today ? d : addDays(today, 14);
+  }
+  function awardLinks(dest, p) {
+    const to = codesOf(AIRPORTS[dest]);
+    if (!to.length) return '';
+    const date = awardDateFor(p.month);
+    const cabin = CABIN_WORDS[p.cabin] ? p.cabin : 'any';
+    const s = el('span', 'award-links');
+    const a1 = extA('link-ext', seatsUrl(['ICN'], to, date, cabin), '마일리지 좌석');
+    a1.setAttribute('aria-label', '마일리지 좌석, seats.aero에서 보기 (새 창)');
+    const a2 = extA('link-ext', cashUrl(['ICN'], to, date, cabin), '현금가');
+    a2.setAttribute('aria-label', '현금가, 구글 항공권에서 보기 (새 창)');
+    s.append(a1, a2, el('span', 'award-links-k', dateWord(date) + ' 출발 기준'));
+    return s;
+  }
+  const award = { from: 'ICN', to: '', date: '', cabin: 'business' };
+  try {
+    const saved = JSON.parse(localStorage.getItem(AKEY) || 'null');
+    if (saved && typeof saved === 'object') ['from', 'to', 'date', 'cabin'].forEach((k) => { if (typeof saved[k] === 'string') award[k] = saved[k].slice(0, 23); });
+  } catch (e) { /* 저장소를 못 쓰면 기본값으로 */ }
+  if (!(award.cabin in CABIN_WORDS)) award.cabin = 'business';
+  if (!isDate(award.date) || award.date <= todayKST()) award.date = addDays(todayKST(), 30);
+  const saveAward = () => { try { localStorage.setItem(AKEY, JSON.stringify(award)); } catch (e) { /* 무시 */ } };
+
+  function syncAward() {
+    const today = todayKST();
+    const from = codesOf(award.from);
+    const to = codesOf(award.to);
+    const date = isDate(award.date) ? award.date : '';
+    let hint = '';
+    if (!from.length) hint = '출발 공항 코드를 넣어 주세요 (예: ICN).';
+    else if (!to.length) hint = '도착 공항 코드를 넣거나 아래 여행지를 눌러 주세요.';
+    else if (!date || date <= today) hint = '내일 이후 날짜를 골라 주세요.';
+    const ok = !hint;
+    if (ok && days(today, date) > 60) hint = '60일이 넘는 날짜는 seats.aero Pro로 로그인해야 결과가 보여요.';
+    [[aw.go, ok ? seatsUrl(from, to, date, award.cabin) : ''], [aw.cash, ok ? cashUrl(from, to, date, award.cabin) : '']].forEach(([a, href]) => {
+      if (href) { a.href = href; a.removeAttribute('aria-disabled'); a.removeAttribute('role'); }
+      else { a.removeAttribute('href'); a.setAttribute('aria-disabled', 'true'); a.setAttribute('role', 'link'); }
+    });
+    aw.hint.textContent = hint;
+    aw.hint.classList.toggle('is-info', ok);
+    const now = to.join(',');
+    aw.quick.querySelectorAll('.chip').forEach((b) => b.setAttribute('aria-pressed', String(codesOf(AIRPORTS[b.dataset.dest]).join(',') === now)));
+  }
+
+  function renderAward() {
+    if (!['home', 'air'].includes(view)) return;
+    const names = {};
+    Object.keys(AIRPORTS).forEach((d) => { const r = budgetRow(d); names[d] = r ? cityOf(r.place) : ''; });
+    const sig = Object.keys(names).map((d) => names[d]).join(',');
+    if (aw.quick.dataset.sig === sig) return;
+    aw.quick.dataset.sig = sig;
+    aw.list.replaceChildren(...Object.keys(AIRPORTS).filter((d) => names[d]).map((d) => { const o = document.createElement('option'); o.value = AIRPORTS[d].replace(',', ', '); o.label = names[d]; return o; }));
+    aw.quick.replaceChildren(...AWARD_QUICK.filter((d) => names[d]).map((d) => {
+      const b = button('chip chip-sm', names[d], () => {
+        award.to = AIRPORTS[d].replace(',', ', ');
+        aw.to.value = award.to;
+        saveAward();
+        syncAward();
+      });
+      b.dataset.dest = d;
+      b.setAttribute('aria-label', names[d] + ' (' + AIRPORTS[d].replace(',', ', ') + ')');
+      return b;
+    }));
+    syncAward();
+  }
+
+  function bindAward() {
+    aw.from.value = award.from;
+    aw.to.value = award.to;
+    aw.date.value = award.date;
+    aw.date.min = addDays(todayKST(), 1);
+    aw.cabin.value = award.cabin;
+    const read = () => {
+      award.from = aw.from.value.toUpperCase();
+      award.to = aw.to.value.toUpperCase();
+      award.date = aw.date.value;
+      award.cabin = aw.cabin.value;
+      saveAward();
+      syncAward();
+    };
+    [aw.from, aw.to, aw.date].forEach((n) => n.addEventListener('input', read));
+    aw.cabin.addEventListener('change', read);
+    aw.date.addEventListener('change', read);
+    [aw.go, aw.cash].forEach((a) => a.addEventListener('click', (e) => { if (!a.getAttribute('href')) e.preventDefault(); }));
+    syncAward();
+  }
+
   // ===== 소식 (프로모션 · 항공 · 호텔) =====
   const SECTION_WORD = { promo: '프로모션', air: '항공', hotel: '호텔' };
   const prio = (r) => Number(r.priority) || 3;
@@ -3023,6 +3201,7 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
     renderCalTeaser();
     renderGuideTeaser();
     renderNews('promo', 'promo-grid', 'promo-all', newsCard, 3);
+    renderAward();
     renderNews('air', 'air-list', 'air-all', airRow, 3);
     renderBestHotels();
     renderNews('hotel', 'hotel-grid', 'hotel-all', newsCard, 3);
@@ -3032,6 +3211,7 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
   }
 
   bindFinder();
+  bindAward();
   // 뒤로 가기 한 번에 popstate와 hashchange가 함께 올 수 있어서, 주소가 바뀐 경우에만 한 번 그려요.
   const onUrlChange = () => { if (location.href !== lastHref) applyRoute(); };
   window.addEventListener('hashchange', onUrlChange);
