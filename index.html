@@ -109,7 +109,7 @@ body { margin: 0; background: var(--c-bg); color: var(--c-text); font-family: va
 img { display: block; max-width: 100%; }
 a { color: inherit; }
 button, input, select { font: inherit; color: inherit; }
-h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
+h1, h2, h3, h4, h5, p, figure, dl, dd { margin: 0; }
 [hidden] { display: none !important; }
 .wrap { width: 100%; max-width: calc(var(--max) + 2 * var(--gutter)); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
@@ -440,9 +440,9 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
 .award-head { display: grid; gap: 6px; }
 .award-title { font-size: var(--fs-h3); font-weight: 700; line-height: var(--lh-tight); letter-spacing: -0.015em; }
 .award-desc { color: var(--c-text-2); }
-.award-form { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-4) var(--sp-5); }
+.award-form { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-4) var(--sp-5); }
 @media (max-width: 899px) { .award-form { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 419px) { .award-form { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 519px) { .award-form { grid-template-columns: minmax(0, 1fr); } }
 .input-code { text-transform: uppercase; letter-spacing: 0.04em; font-variant-numeric: tabular-nums; }
 .input-code::placeholder { text-transform: none; letter-spacing: 0; }
 .award-codes { margin-top: calc(-1 * var(--sp-2)); color: var(--c-text-3); font-size: var(--fs-sm); }
@@ -455,7 +455,45 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
 .award-hint.is-info { color: var(--c-text-2); font-weight: 500; }
 .award-links { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
 .award-links-k { color: var(--c-text-3); font-size: var(--fs-sm); }
-.award-links .link-ext { color: var(--c-primary); font-weight: 600; }
+.award-links .link-ext, .link-int { color: var(--c-primary); font-weight: 600; }
+.link-int { text-decoration: none; }
+.link-int:hover { text-decoration: underline; text-underline-offset: 3px; }
+.progs-wrap { display: grid; gap: var(--sp-4); padding-top: var(--sp-5); border-top: 1px solid var(--c-line); }
+.progs-head { display: grid; gap: 4px; }
+.progs-title { font-size: 1.0625rem; font-weight: 700; }
+.progs-note { color: var(--c-text-3); font-size: var(--fs-sm); }
+#aw-progs { display: grid; gap: var(--sp-5); }
+.prog-group { display: grid; gap: var(--sp-2); }
+.prog-group-h { color: var(--c-text-2); font-size: var(--fs-sm); font-weight: 700; }
+.progs { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 14.5rem), 1fr)); gap: var(--sp-2) var(--sp-3); margin: 0; padding: 0; list-style: none; }
+.progs > li { display: flex; min-width: 0; }
+.prog { position: relative; display: flex; flex: 1; flex-direction: column; gap: 2px; min-width: 0; padding: 12px 34px 12px 14px; border: 1px solid var(--c-line); border-radius: var(--r-card); background: var(--c-bg); color: var(--c-text); text-decoration: none; transition: border-color 0.15s, background-color 0.15s; }
+.prog::after { content: "↗"; position: absolute; top: 11px; right: 12px; color: var(--c-text-3); font-size: 0.875rem; }
+.prog[href]:hover { border-color: var(--c-primary); background: var(--c-primary-soft); }
+.prog:focus-visible { outline: 2px solid var(--c-primary); outline-offset: 2px; }
+.prog-name { font-weight: 700; line-height: 1.4; }
+.prog-en { color: var(--c-text-3); font-size: var(--fs-xs); line-height: 1.4; }
+.prog-reach { color: var(--c-text-2); font-size: var(--fs-sm); line-height: 1.45; }
+.prog-how { margin-top: auto; padding-top: 6px; font-size: var(--fs-xs); font-weight: 700; }
+.prog.is-deep .prog-how { color: var(--c-primary); }
+.prog.is-page .prog-how { color: var(--c-text-3); }
+.prog[aria-disabled="true"] { cursor: not-allowed; }
+.prog[aria-disabled="true"] .prog-how { color: var(--c-text-3); }
+.progs-all { justify-self: start; }
+.prog-note { color: var(--c-text-2); font-size: var(--fs-xs); font-weight: 600; line-height: 1.45; }
+/* 휴대폰: 한 줄짜리 목록으로 줄여요 */
+@media (max-width: 559px) {
+  .progs { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .prog { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 2px 12px; padding: 11px 32px 11px 14px; }
+  .prog::after { top: 12px; right: 12px; }
+  .prog-en, .prog-reach { display: none; }
+  .prog-name { grid-column: 1; grid-row: 1; font-size: 0.9375rem; }
+  .prog-how { grid-column: 2; grid-row: 1; margin: 0; padding: 0; white-space: nowrap; }
+  .prog-note { grid-column: 1 / -1; grid-row: 2; }
+}
+.award-cash { display: flex; flex-wrap: wrap; align-items: flex-end; gap: var(--sp-3); padding-top: var(--sp-5); border-top: 1px solid var(--c-line); }
+.award-cabin { flex: 0 1 15rem; }
+@media (max-width: 559px) { .award-cash .btn { flex: 1 1 100%; } .award-cabin { flex: 1 1 100%; } }
 #sec-air .sub-head { margin-top: var(--sp-9); }
 
 /* ===== 프로모션 · 호텔 카드, 항공 목록 ===== */
@@ -839,7 +877,7 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
       <div class="award" id="award" tabindex="-1" role="search" aria-labelledby="award-title">
         <div class="award-head">
           <h3 class="award-title" id="award-title">마일리지 좌석 찾기</h3>
-          <p class="award-desc">출발지, 도착지, 날짜를 넣으면 seats.aero에서 마일리지로 예약할 수 있는 빈 좌석을 바로 열어 드려요.</p>
+          <p class="award-desc">출발지·도착지·날짜를 넣고 마일리지 프로그램을 누르면, 그 항공사 사이트에서 마일리지 좌석을 바로 확인할 수 있어요.</p>
         </div>
         <div class="award-form">
           <label class="field"><span class="field-k">출발</span>
@@ -852,21 +890,28 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
           <label class="field"><span class="field-k">출발 날짜</span>
             <input class="input" id="aw-date" type="date">
           </label>
-          <label class="field"><span class="field-k">좌석</span>
-            <select class="select" id="aw-cabin"><option value="any">전체</option><option value="economy">이코노미</option><option value="premium">프리미엄 이코노미</option><option value="business">비즈니스</option><option value="first">퍼스트</option></select>
-          </label>
         </div>
-        <p class="award-codes" id="aw-codes">공항 코드는 쉼표로 여러 개 넣을 수 있어요 (예: HND, NRT).</p>
+        <p class="award-codes" id="aw-codes">공항 코드를 쉼표로 여러 개 넣으면 항공사 사이트는 첫 번째 공항으로 열려요.</p>
         <div class="award-quick" role="group" aria-label="우리 여행지로 도착지 채우기">
           <span class="award-quick-k">우리 여행지</span>
           <div class="chips" id="aw-quick"></div>
         </div>
-        <div class="award-actions">
-          <a class="btn btn-primary btn-ext" id="aw-go" target="_blank" rel="noopener noreferrer">seats.aero에서 빈 좌석 보기</a>
+        <p class="award-hint" id="aw-hint" aria-live="polite"></p>
+        <div class="progs-wrap">
+          <div class="progs-head">
+            <h4 class="progs-title">마일리지 프로그램</h4>
+            <p class="progs-note">‘조건 채워 열기’는 넣은 조건으로 바로 검색해요. 나머지는 공식 마일리지 페이지가 열리고, 로그인한 뒤 직접 검색해요.</p>
+          </div>
+          <div id="aw-progs"></div>
+          <a class="sec-link progs-all" href="#award" id="aw-all" hidden>프로그램 전체 보기</a>
+        </div>
+        <div class="award-cash">
+          <label class="field award-cabin"><span class="field-k">현금가 비교</span>
+            <select class="select" id="aw-cabin" aria-label="현금가를 볼 좌석"><option value="any">모든 좌석</option><option value="economy">이코노미</option><option value="premium">프리미엄 이코노미</option><option value="business">비즈니스</option><option value="first">퍼스트</option></select>
+          </label>
           <a class="btn btn-outline btn-ext" id="aw-cash" target="_blank" rel="noopener noreferrer">구글 항공권에서 현금가 보기</a>
         </div>
-        <p class="award-hint" id="aw-hint" aria-live="polite"></p>
-        <p class="fineprint">seats.aero는 항공사 마일리지 좌석을 모아 보여주는 외부 서비스예요. 로그인하지 않으면 60일 안쪽 출발만 볼 수 있고, Pro(월 9.99달러)는 1년 치와 실시간 검색, 알림을 줘요. 저장해 둔 결과라 실제와 다를 수 있으니 예약 전에 항공사 사이트에서 다시 확인하세요.</p>
+        <p class="fineprint">누르면 항공사 사이트가 새 창으로 열리고, 좌석은 그 사이트에서 확인해요. 이 사이트는 좌석을 대신 조회하거나 저장하지 않아요. 여러 프로그램을 한 번에 훑어보고 싶을 때는 <a class="link-ext" href="https://seats.aero/" target="_blank" rel="noopener noreferrer">seats.aero</a>도 참고할 수 있어요(로그인 없이 60일 안쪽).</p>
       </div>
 
       <div class="sub-head">
@@ -2463,23 +2508,47 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
   }
 
   // ===== 마일리지 좌석 찾기 =====
-  // seats.aero 검색 주소를 만들어 새 창으로 열어요. 좌석 자료를 이 사이트로 가져오지는 않아요.
+  // 조건을 넣고 마일리지 프로그램을 누르면 그 항공사 사이트를 새 창으로 열어요.
+  // 항공사 사이트를 대신 조회하거나 결과를 저장하지 않아요.
   const AIRPORTS = {
     osaka: 'KIX', tokyo: 'HND,NRT', hongkong: 'HKG', bangkok: 'BKK', phuquoc: 'PQC', bali: 'DPS', maldives: 'MLE',
     sydney: 'SYD', paris: 'CDG', newyork: 'JFK,EWR', kyoto: 'KIX,ITM', okinawa: 'OKA', niseko: 'CTS', rome: 'FCO',
     london: 'LHR,LGW', lasvegas: 'LAS', taipei: 'TPE', honolulu: 'HNL', danang: 'DAD', singapore: 'SIN', phuket: 'HKT',
   };
   const AWARD_QUICK = ['tokyo', 'osaka', 'bangkok', 'singapore', 'maldives', 'paris', 'london', 'newyork'];
+  const PROG_GROUPS = [
+    { k: 'skyteam', label: '스카이팀' },
+    { k: 'star', label: '스타얼라이언스' },
+    { k: 'oneworld', label: '원월드' },
+    { k: 'other', label: '그 밖의 항공사' },
+  ];
+  // deep: 조건을 채운 검색 주소를 만드는 함수 (o·d는 공항 코드, date는 YYYY-MM-DD)
+  const PROGRAMS = [
+    { id: 'korean', name: '대한항공 스카이패스', en: 'Korean Air SKYPASS', group: 'skyteam', reach: '대한항공과 스카이팀', page: 'https://www.koreanair.com/us/ko/skypass/use-miles/koreanair/award-tickets/overview' },
+    { id: 'delta', name: '델타 스카이마일스', en: 'Delta SkyMiles', group: 'skyteam', reach: '델타와 스카이팀', page: 'https://www.delta.com/flight-search/book-a-flight' },
+    { id: 'flyingblue', name: '플라잉블루', en: 'Air France–KLM Flying Blue', group: 'skyteam', reach: '에어프랑스·KLM과 스카이팀', page: 'https://wwws.airfrance.co.kr/en/information/flyingblue/shopping-avec-vos-miles-flying-blue' },
+    { id: 'virgin', name: '버진애틀랜틱 플라잉클럽', en: 'Virgin Atlantic Flying Club', group: 'skyteam', reach: '버진애틀랜틱과 스카이팀', page: 'https://www.virginatlantic.com/en-US/flying-club/spend-points/reward-seats' },
+    { id: 'asiana', name: '아시아나클럽', en: 'Asiana Club', group: 'star', reach: '아시아나와 스타얼라이언스', note: '12월 17일 대한항공과 통합해요', page: 'https://flyasiana.com/C/KR/KO/contents/mileage-tickets' },
+    { id: 'united', name: '유나이티드 마일리지플러스', en: 'United MileagePlus', group: 'star', reach: '유나이티드와 스타얼라이언스', note: '로그인하면 결과가 보여요', deep: (o, d, date) => 'https://www.united.com/en/us/fsr/choose-flights?f=' + o + '&t=' + d + '&d=' + date + '&tt=1&at=1&sc=7&px=1&taxng=1&newHP=True&clm=7&st=bestmatches&tqp=A' },
+    { id: 'aeroplan', name: '에어캐나다 에어로플랜', en: 'Air Canada Aeroplan', group: 'star', reach: '에어캐나다와 스타얼라이언스', deep: (o, d, date) => 'https://www.aircanada.com/aeroplan/redeem/availability/outbound?org0=' + o + '&dest0=' + d + '&departureDate0=' + date + '&ADT=1&YTH=0&CHD=0&INF=0&INS=0&lang=en-CA&tripType=O&marketCode=INT' },
+    { id: 'krisflyer', name: '싱가포르항공 크리스플라이어', en: 'Singapore Airlines KrisFlyer', group: 'star', reach: '싱가포르항공과 스타얼라이언스', page: 'https://www.singaporeair.com/en_UK/kr/ppsclub-krisflyer/use-miles/redeem-miles/' },
+    { id: 'alaska', name: '알래스카 아트모스 리워즈', en: 'Alaska Atmos Rewards', group: 'oneworld', reach: '알래스카와 원월드', note: '로그인 없이도 결과가 보여요', deep: (o, d, date) => 'https://www.alaskaair.com/search/results?A=1&O=' + o + '&D=' + d + '&OD=' + date + '&OT=Anytime&RT=false&UPG=none&ShoppingMethod=onlineaward&awardType=MilesOnly' },
+    { id: 'aa', name: '아메리칸항공 에이어드밴티지', en: 'American AAdvantage', group: 'oneworld', reach: '아메리칸과 원월드', deep: (o, d, date) => 'https://www.aa.com/booking/search?locale=en_US&pax=1&adult=1&child=0&type=OneWay&searchType=Award&cabin=&carriers=ALL&travelType=personal&slices=' + encodeURIComponent(JSON.stringify([{ orig: o, origNearby: false, dest: d, destNearby: false, date }])) },
+    { id: 'ba', name: '영국항공 클럽', en: 'The British Airways Club', group: 'oneworld', reach: '영국항공과 원월드 · 에이비오스', page: 'https://www.britishairways.com/content/the-british-airways-club/avios/spending-avios/reward-flights' },
+    { id: 'qatar', name: '카타르항공 프리빌리지클럽', en: 'Qatar Airways Privilege Club', group: 'oneworld', reach: '카타르항공과 원월드', page: 'https://www.qatarairways.com/en/Privilege-Club/fly-with-avios.html' },
+    { id: 'cathay', name: '캐세이 아시아 마일즈', en: 'Cathay Asia Miles', group: 'oneworld', reach: '캐세이퍼시픽과 원월드', page: 'https://www.cathaypacific.com/cx/en_KR/book-a-trip/redeem-flights/redeem-flight-awards.html' },
+    { id: 'jal', name: 'JAL 마일리지뱅크', en: 'JAL Mileage Bank', group: 'oneworld', reach: 'JAL과 원월드', page: 'https://www.jal.co.jp/jp/en/jalmile/use/jal/inter/' },
+    { id: 'qantas', name: '콴타스 프리퀀트 플라이어', en: 'Qantas Frequent Flyer', group: 'oneworld', reach: '콴타스와 원월드', page: 'https://www.qantas.com/en-au/frequent-flyer/use-points/classic-flight-rewards/tables' },
+    { id: 'emirates', name: '에미레이트 스카이워즈', en: 'Emirates Skywards', group: 'other', reach: '에미레이트와 제휴 항공사', page: 'https://www.emirates.com/kr/english/skywards/spend-miles/' },
+    { id: 'etihad', name: '에티하드 게스트', en: 'Etihad Guest', group: 'other', reach: '에티하드와 제휴 항공사', page: 'https://www.etihad.com/en/etihadguest/spend-miles' },
+  ];
+  // 홈에서는 자주 쓰는 곳만 보여주고, 항공 화면에서 모두 보여줘요.
+  const HOME_PROGS = ['korean', 'asiana', 'alaska', 'aa', 'united', 'aeroplan'];
   const CABIN_WORDS = { any: '', economy: 'economy', premium: 'premium economy', business: 'business class', first: 'first class' };
   const AKEY = 'travel-brief-award';
-  const aw = { from: byId('aw-from'), to: byId('aw-to'), date: byId('aw-date'), cabin: byId('aw-cabin'), go: byId('aw-go'), cash: byId('aw-cash'), hint: byId('aw-hint'), quick: byId('aw-quick'), list: byId('aw-dests') };
+  const aw = { from: byId('aw-from'), to: byId('aw-to'), date: byId('aw-date'), cabin: byId('aw-cabin'), cash: byId('aw-cash'), hint: byId('aw-hint'), quick: byId('aw-quick'), list: byId('aw-dests'), progs: byId('aw-progs'), all: byId('aw-all') };
   const codesOf = (v) => str(v).toUpperCase().split(/[^A-Z]+/).filter((x) => x.length === 3).slice(0, 6);
   const addDays = (iso, n) => new Date(Date.parse(iso + 'T00:00:00Z') + n * 86400000).toISOString().slice(0, 10);
-  function seatsUrl(from, to, date, cabin) {
-    const q = new URLSearchParams({ origins: from.join(','), destinations: to.join(','), date });
-    if (CABIN_WORDS[cabin]) q.set('applicable_cabin', cabin);
-    return 'https://seats.aero/search?' + q.toString();
-  }
   function cashUrl(from, to, date, cabin) {
     const q = 'Flights from ' + from[0] + ' to ' + to[0] + ' on ' + date + ' one way' + (CABIN_WORDS[cabin] ? ' ' + CABIN_WORDS[cabin] : '');
     return 'https://www.google.com/travel/flights?hl=ko&curr=KRW&q=' + encodeURIComponent(q);
@@ -2490,19 +2559,6 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
     const d = /^\d{4}-\d{2}$/.test(str(month)) ? month + '-15' : addDays(today, 30);
     return d > today ? d : addDays(today, 14);
   }
-  function awardLinks(dest, p) {
-    const to = codesOf(AIRPORTS[dest]);
-    if (!to.length) return '';
-    const date = awardDateFor(p.month);
-    const cabin = CABIN_WORDS[p.cabin] ? p.cabin : 'any';
-    const s = el('span', 'award-links');
-    const a1 = extA('link-ext', seatsUrl(['ICN'], to, date, cabin), '마일리지 좌석');
-    a1.setAttribute('aria-label', '마일리지 좌석, seats.aero에서 보기 (새 창)');
-    const a2 = extA('link-ext', cashUrl(['ICN'], to, date, cabin), '현금가');
-    a2.setAttribute('aria-label', '현금가, 구글 항공권에서 보기 (새 창)');
-    s.append(a1, a2, el('span', 'award-links-k', dateWord(date) + ' 출발 기준'));
-    return s;
-  }
   const award = { from: 'ICN', to: '', date: '', cabin: 'business' };
   try {
     const saved = JSON.parse(localStorage.getItem(AKEY) || 'null');
@@ -2511,6 +2567,55 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
   if (!(award.cabin in CABIN_WORDS)) award.cabin = 'business';
   if (!isDate(award.date) || award.date <= todayKST()) award.date = addDays(todayKST(), 30);
   const saveAward = () => { try { localStorage.setItem(AKEY, JSON.stringify(award)); } catch (e) { /* 무시 */ } };
+  function fillAwardInputs() {
+    if (document.activeElement !== aw.from) aw.from.value = award.from;
+    if (document.activeElement !== aw.to) aw.to.value = award.to;
+    if (document.activeElement !== aw.date) aw.date.value = award.date;
+    aw.cabin.value = award.cabin;
+  }
+  // 여행지 상세 화면에서 '항공사별 마일리지 좌석'을 누르면 조건을 채워 이 칸으로 와요.
+  function openAward(dest, p) {
+    award.from = 'ICN';
+    award.to = AIRPORTS[dest].replace(',', ', ');
+    award.date = awardDateFor(p.month);
+    if (CABIN_WORDS[p.cabin]) award.cabin = p.cabin;
+    saveAward();
+    fillAwardInputs();
+    navigate('award', { id: 'award', focus: true });
+  }
+  function awardLinks(dest, p) {
+    const to = codesOf(AIRPORTS[dest]);
+    if (!to.length) return '';
+    const date = awardDateFor(p.month);
+    const cabin = CABIN_WORDS[p.cabin] ? p.cabin : 'any';
+    const s = el('span', 'award-links');
+    const a1 = el('a', 'link-int', '항공사별 마일리지 좌석');
+    a1.href = '#award';
+    a1.addEventListener('click', (e) => { e.preventDefault(); openAward(dest, p); });
+    const a2 = extA('link-ext', cashUrl(['ICN'], to, date, cabin), '현금가');
+    a2.setAttribute('aria-label', '현금가, 구글 항공권에서 보기 (새 창)');
+    s.append(a1, a2, el('span', 'award-links-k', dateWord(date) + ' 출발 기준'));
+    return s;
+  }
+
+  function progTile(pg, ok, from, to, date) {
+    const a = el('a', 'prog' + (pg.deep ? ' is-deep' : ' is-page'));
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.dataset.id = pg.id;
+    const href = pg.deep ? (ok ? pg.deep(from[0], to[0], date) : '') : pg.page;
+    if (href) a.href = href;
+    else { a.setAttribute('aria-disabled', 'true'); a.setAttribute('role', 'link'); }
+    const name = el('span', 'prog-name', pg.name);
+    const en = el('span', 'prog-en', pg.en);
+    en.lang = 'en';
+    const how = el('span', 'prog-how', pg.deep ? (ok ? '조건 채워 열기' : '조건을 넣으면 열려요') : '공식 페이지 열기');
+    a.append(name, en, el('span', 'prog-reach', pg.reach));
+    if (pg.note) a.append(el('span', 'prog-note', pg.note));
+    a.append(how);
+    a.setAttribute('aria-label', pg.name + ', ' + (pg.note ? pg.note + ', ' : '') + how.textContent + ' (새 창)');
+    return a;
+  }
 
   function syncAward() {
     const today = todayKST();
@@ -2522,13 +2627,30 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
     else if (!to.length) hint = '도착 공항 코드를 넣거나 아래 여행지를 눌러 주세요.';
     else if (!date || date <= today) hint = '내일 이후 날짜를 골라 주세요.';
     const ok = !hint;
-    if (ok && days(today, date) > 60) hint = '60일이 넘는 날짜는 seats.aero Pro로 로그인해야 결과가 보여요.';
-    [[aw.go, ok ? seatsUrl(from, to, date, award.cabin) : ''], [aw.cash, ok ? cashUrl(from, to, date, award.cabin) : '']].forEach(([a, href]) => {
-      if (href) { a.href = href; a.removeAttribute('aria-disabled'); a.removeAttribute('role'); }
-      else { a.removeAttribute('href'); a.setAttribute('aria-disabled', 'true'); a.setAttribute('role', 'link'); }
-    });
     aw.hint.textContent = hint;
-    aw.hint.classList.toggle('is-info', ok);
+    const cash = ok ? cashUrl(from, to, date, award.cabin) : '';
+    if (cash) { aw.cash.href = cash; aw.cash.removeAttribute('aria-disabled'); aw.cash.removeAttribute('role'); }
+    else { aw.cash.removeAttribute('href'); aw.cash.setAttribute('aria-disabled', 'true'); aw.cash.setAttribute('role', 'link'); }
+    const all = view !== 'home';
+    const list = all ? PROGRAMS : HOME_PROGS.map((id) => PROGRAMS.find((x) => x.id === id));
+    const sig = [all, ok, from[0], to[0], date].join('|');
+    if (aw.progs.dataset.sig !== sig) {
+      aw.progs.dataset.sig = sig;
+      aw.progs.replaceChildren();
+      const groups = all ? PROG_GROUPS : [{ k: '', label: '' }];
+      groups.forEach((g) => {
+        const items = list.filter((x) => !g.k || x.group === g.k);
+        if (!items.length) return;
+        const box = el('div', 'prog-group');
+        if (g.label) box.append(el('h5', 'prog-group-h', g.label));
+        const ul = el('ul', 'progs');
+        items.forEach((pg) => { const li = el('li'); li.append(progTile(pg, ok, from, to, date)); ul.append(li); });
+        box.append(ul);
+        aw.progs.append(box);
+      });
+    }
+    aw.all.hidden = all;
+    aw.all.textContent = '프로그램 ' + PROGRAMS.length + '곳 모두 보기';
     const now = to.join(',');
     aw.quick.querySelectorAll('.chip').forEach((b) => b.setAttribute('aria-pressed', String(codesOf(AIRPORTS[b.dataset.dest]).join(',') === now)));
   }
@@ -2538,29 +2660,28 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
     const names = {};
     Object.keys(AIRPORTS).forEach((d) => { const r = budgetRow(d); names[d] = r ? cityOf(r.place) : ''; });
     const sig = Object.keys(names).map((d) => names[d]).join(',');
-    if (aw.quick.dataset.sig === sig) return;
-    aw.quick.dataset.sig = sig;
-    aw.list.replaceChildren(...Object.keys(AIRPORTS).filter((d) => names[d]).map((d) => { const o = document.createElement('option'); o.value = AIRPORTS[d].replace(',', ', '); o.label = names[d]; return o; }));
-    aw.quick.replaceChildren(...AWARD_QUICK.filter((d) => names[d]).map((d) => {
-      const b = button('chip chip-sm', names[d], () => {
-        award.to = AIRPORTS[d].replace(',', ', ');
-        aw.to.value = award.to;
-        saveAward();
-        syncAward();
-      });
-      b.dataset.dest = d;
-      b.setAttribute('aria-label', names[d] + ' (' + AIRPORTS[d].replace(',', ', ') + ')');
-      return b;
-    }));
+    if (aw.quick.dataset.sig !== sig) {
+      aw.quick.dataset.sig = sig;
+      aw.list.replaceChildren(...Object.keys(AIRPORTS).filter((d) => names[d]).map((d) => { const o = document.createElement('option'); o.value = AIRPORTS[d].replace(',', ', '); o.label = names[d]; return o; }));
+      aw.quick.replaceChildren(...AWARD_QUICK.filter((d) => names[d]).map((d) => {
+        const b = button('chip chip-sm', names[d], () => {
+          award.to = AIRPORTS[d].replace(',', ', ');
+          aw.to.value = award.to;
+          saveAward();
+          syncAward();
+        });
+        b.dataset.dest = d;
+        b.setAttribute('aria-label', names[d] + ' (' + AIRPORTS[d].replace(',', ', ') + ')');
+        return b;
+      }));
+    }
+    fillAwardInputs();
     syncAward();
   }
 
   function bindAward() {
-    aw.from.value = award.from;
-    aw.to.value = award.to;
-    aw.date.value = award.date;
+    fillAwardInputs();
     aw.date.min = addDays(todayKST(), 1);
-    aw.cabin.value = award.cabin;
     const read = () => {
       award.from = aw.from.value.toUpperCase();
       award.to = aw.to.value.toUpperCase();
@@ -2572,7 +2693,9 @@ h1, h2, h3, h4, p, figure, dl, dd { margin: 0; }
     [aw.from, aw.to, aw.date].forEach((n) => n.addEventListener('input', read));
     aw.cabin.addEventListener('change', read);
     aw.date.addEventListener('change', read);
-    [aw.go, aw.cash].forEach((a) => a.addEventListener('click', (e) => { if (!a.getAttribute('href')) e.preventDefault(); }));
+    aw.cash.addEventListener('click', (e) => { if (!aw.cash.getAttribute('href')) e.preventDefault(); });
+    aw.progs.addEventListener('click', (e) => { const a = e.target.closest('.prog'); if (a && !a.getAttribute('href')) e.preventDefault(); });
+    aw.all.addEventListener('click', (e) => { e.preventDefault(); navigate('award', { id: 'award', focus: true }); });
     syncAward();
   }
 
