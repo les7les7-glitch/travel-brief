@@ -1,5 +1,21 @@
 [
  {
+  "id": "2026-11-03-munich",
+  "date": "2026-11-03",
+  "dateLabel": "11월 3일",
+  "place": "뮌헨, 독일",
+  "headline": "크리스마스 마켓 앞둔 뮌헨, 로즈우드로",
+  "why": "마리엔 광장 크리스마스 마켓이 11월 20일부터 12월 24일까지 130개 넘는 노점으로 열려요. 로즈우드 대부분 호텔이 11월 3~10일 예약분에 30% 할인을 내걸어 시기도 잘 맞아요.",
+  "stay": "로즈우드 뮌헨: 2023년 옛 바이에른 국립은행 본사와 귀족 저택 팔레 노이하우스-프라이징을 이어 문을 연 호텔로, 객실 73개와 스위트 59개를 갖췄어요. 실내 수영장이 있는 두 층짜리 아사야 스파와 라이브 재즈가 흐르는 바 몬테즈가 있어요.",
+  "getThere": "인천–뮌헨은 루프트한자가 직항으로 다니고 약 13시간 15분 걸려요.",
+  "bestTime": "11월 하순~12월 24일",
+  "source": "muenchen.de",
+  "url": "https://www.muenchen.de/en/events/munich-christkindlmarkt-info-about-christmas-market",
+  "photo": "https://images.unsplash.com/photo-1642867783877-014b35ca6c0a",
+  "photoCredit": "Ilia Bronskiy · Unsplash",
+  "photoPage": "https://unsplash.com/photos/1FYxFwSiKkk"
+ },
+ {
   "id": "2026-11-02-singapore",
   "date": "2026-11-02",
   "dateLabel": "11월 2일",
