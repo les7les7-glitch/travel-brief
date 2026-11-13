@@ -1,5 +1,21 @@
 [
  {
+  "id": "2026-11-13-melbourne",
+  "date": "2026-11-13",
+  "dateLabel": "11월 13일",
+  "place": "멜버른, 호주",
+  "headline": "여름 직항 타고 멜버른, 80층 리츠칼튼으로",
+  "why": "대한항공 인천–멜버른 직항이 12월 18일부터 3월 14일까지 주 3회 운항하고, 1월 11~31일엔 멜버른 파크에서 호주오픈 테니스가 열려요.",
+  "stay": "리츠칼튼 멜버른: 2023년 3월 문을 연 257실 호텔로, 80층 타워의 65층 이상에 객실이 있고 80층 스카이 로비와 28도로 데운 인피니티 풀에서 도심을 내려다봐요.",
+  "getThere": "KE409편이 수·금·일 오전 8시 인천을 떠나 같은 날 저녁 8시 30분 멜버른에 도착해요(약 10시간 30분).",
+  "bestTime": "12월 하순~3월 초",
+  "source": "대한항공",
+  "url": "https://www.koreanair.com/contents/promotion/list/2026/mel2026",
+  "photo": "https://images.unsplash.com/photo-1516783213219-b88f460e30a4",
+  "photoCredit": "Nate Watson · Unsplash",
+  "photoPage": "https://unsplash.com/photos/NOxhXpk43hQ"
+ },
+ {
   "id": "2026-11-12-niseko",
   "date": "2026-11-12",
   "dateLabel": "11월 12일",
