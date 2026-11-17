@@ -1,5 +1,21 @@
 [
  {
+  "id": "2026-11-17-paris",
+  "date": "2026-11-17",
+  "dateLabel": "11월 17일",
+  "place": "파리, 프랑스",
+  "headline": "샹젤리제 불빛 아래 연말 파리",
+  "why": "샹젤리제에 크리스마스 조명이 켜져 오후 5시부터 새벽 1시까지 한 시간에 네 번 빛 공연이 열려요. 12월 24·25일엔 빨강·초록 조명, 31일엔 개선문 쪽으로 새 6분짜리 새해 쇼가 더해져요.",
+  "stay": "슈발 블랑 파리: 2021년 9월 사마리텐 백화점 건물에 문을 연 72실(스위트 46실) 호텔로, 피터 마리노가 실내를 꾸몄어요. 센강과 퐁뇌프가 보이는 테라스, 7층 루프톱 브라스리, 30m 수영장이 있는 디올 스파가 대표 공간이에요.",
+  "getThere": "인천–파리 샤를드골 직항으로 약 14시간 걸려요.",
+  "bestTime": "11월 하순~1월 초",
+  "source": "Country & Town House",
+  "url": "https://www.countryandtownhouse.com/travel/cheval-blanc-paris/",
+  "photo": "https://images.unsplash.com/photo-1492136344046-866c85e0bf04",
+  "photoCredit": "Jad Limcaco · Unsplash",
+  "photoPage": "https://unsplash.com/photos/eiffel-tower-paris-NT1mJPgni6A"
+ },
+ {
   "id": "2026-11-16-nara",
   "date": "2026-11-16",
   "dateLabel": "11월 16일",
@@ -462,21 +478,5 @@
   "photo": "https://images.unsplash.com/photo-1665242127968-38e2406be0e7",
   "photoCredit": "Christian Lendl · Unsplash",
   "photoPage": "https://unsplash.com/photos/a-city-with-a-river-running-through-it-pw-Q-PRF-VU"
- },
- {
-  "id": "2026-10-18-bangkok",
-  "date": "2026-10-18",
-  "dateLabel": "10월 18일",
-  "place": "방콕, 태국",
-  "headline": "건기 방콕, 새로 지은 두짓타니에서",
-  "why": "11월부터 덥고 습한 우기가 끝나고 선선한 건기가 시작돼요. 올해 러이끄라통은 11월 24~25일께로 예상돼 강 위 등불 축제도 함께 볼 수 있어요.",
-  "stay": "두짓타니 방콕: 1970년 랜드마크를 허물고 2024년 9월 39층 새 타워로 다시 연 257실 호텔이에요. 인테리어는 앙드레 푸, 건축은 OMA가 맡았고 모든 객실이 50㎡ 이상에 룸피니 공원을 내려다봐요.",
-  "getThere": "인천에서 수완나품까지 대한항공·아시아나·타이항공 직항으로 약 6시간이에요.",
-  "bestTime": "11월 하순~2월",
-  "source": "Le Journal des Palaces",
-  "url": "https://www.journaldespalaces.com/pressrelease-69564-A-legendary-landmark-returns-the-iconic-Dusit-Thani-Bangkok-announces-September-reopening.html",
-  "photo": "https://images.unsplash.com/photo-1613672803979-a6edfc5a179b",
-  "photoCredit": "Anantachai Saothong · Unsplash",
-  "photoPage": "https://unsplash.com/photos/wat-arun-temple-in-bangkok-0DKDTSFBXc8"
  }
 ]
