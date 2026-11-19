@@ -1,5 +1,21 @@
 [
  {
+  "id": "2026-11-19-guam",
+  "date": "2026-11-19",
+  "dateLabel": "11월 19일",
+  "place": "괌, 미국",
+  "headline": "건기 문턱의 괌, 언덕 위 츠바키 타워",
+  "why": "괌은 12월에 우기가 끝나가고 1~5월이 비가 가장 적은 건기라, 연말부터 맑은 바다를 기대하기 좋아요. 4시간 남짓 비행이라 짧은 휴가에도 부담이 없어요.",
+  "stay": "더 츠바키 타워: 2020년 7월 투몬만에서 가장 높은 언덕에 문을 연 27층 타워로, 340개 객실과 스위트가 모두 바다를 향해요. 30m 인피니티 풀과 넓은 기본 객실이 강점이에요.",
+  "getThere": "인천–괌 직항으로 약 4시간 20분 걸려요.",
+  "bestTime": "12월 말~5월",
+  "source": "Pacific Island Times",
+  "url": "https://www.pacificislandtimes.com/post/2020/07/02/the-tsubaki-tower-offical-opens",
+  "photo": "https://images.unsplash.com/photo-1544531846-873b4e5cdc1a",
+  "photoCredit": "HUANG JUNSHENG · Unsplash",
+  "photoPage": "https://unsplash.com/photos/body-of-water-and-building-EzxJPKyDKfc"
+ },
+ {
   "id": "2026-11-18-bangkok",
   "date": "2026-11-18",
   "dateLabel": "11월 18일",
@@ -462,21 +478,5 @@
   "photo": "https://images.unsplash.com/photo-1555331446-0ff637678740",
   "photoCredit": "Vernon Raineil Cenzon · Unsplash",
   "photoPage": "https://unsplash.com/photos/skyline-sky-view-I0fnFdtE9zc"
- },
- {
-  "id": "2026-10-20-kuala-lumpur",
-  "date": "2026-10-20",
-  "dateLabel": "10월 20일",
-  "place": "쿠알라룸푸르, 말레이시아",
-  "headline": "세계 2위 마천루 속 파크 하얏트",
-  "why": "2025년 8월 메르데카 118에 문을 연 파크 하얏트가 아직 새 호텔이고, 11월 우기가 지나면 12~2월이 비교적 덜 습해요. 1월 22일 타이푸삼에는 바투 동굴 행렬도 볼 수 있어요.",
-  "stay": "파크 하얏트 쿠알라룸푸르: 메르데카 118의 75~114층을 쓰는 252실 호텔로 객실은 100~112층에 있어요. 75층 스카이 로비에 그릴과 바가 모여 있고, 99층에는 30m 실내 인피니티 풀과 스파가 있어요.",
-  "getThere": "인천–쿠알라룸푸르는 대한항공·말레이시아항공 등 직항으로 약 6시간 45분이고, 대한항공 프레스티지 왕복은 272만원대부터 나와 있어요.",
-  "bestTime": "12월~2월",
-  "source": "EdgeProp",
-  "url": "https://www.edgeprop.sg/amp/property-news/park-hyatt-kuala-lumpur-opens-merdeka-118-tallest-skyscraper-asia-pacific",
-  "photo": "https://images.unsplash.com/photo-1596422846543-75c6fc197f07",
-  "photoCredit": "Esmonde Yong · Unsplash",
-  "photoPage": "https://unsplash.com/photos/petronas-towers-skyline-in-kuala-lumpur--9B08uduMyY"
  }
 ]
