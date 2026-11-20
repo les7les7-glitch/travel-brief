@@ -1,5 +1,21 @@
 [
  {
+  "id": "2026-11-20-osaka",
+  "date": "2026-11-20",
+  "dateLabel": "11월 20일",
+  "place": "오사카, 일본",
+  "headline": "단풍 절정 앞둔 오사카, 월도프 아스토리아",
+  "why": "올해 오사카 단풍 절정 예보가 12월 6일로 평년보다 늦어, 11월 말~12월 초에 가면 붉은 단풍을 보기 좋아요. 대시보드의 힐튼 '모어 포인츠 투 플레이'도 럭셔리 브랜드 숙박에 적용돼요.",
+  "stay": "월도프 아스토리아 오사카: 2025년 오사카역 옆 그랜드 그린 오사카에 문을 연 브랜드 일본 첫 호텔로, 252실이 모두 31층 이상에 있어요. 앙드레 푸가 꾸민 아르데코 실내와 7m 높이 목조 로툰다, 피콕 앨리 라운지가 볼거리예요.",
+  "getThere": "인천–간사이 직항으로 약 2시간 걸려요.",
+  "bestTime": "11월 하순~12월 초",
+  "source": "Eden Magnet",
+  "url": "https://www.edenmagnet.com.au/story/9233781/is-this-new-luxury-hotel-in-osaka-worth-the-hype/",
+  "photo": "https://images.unsplash.com/photo-1782641246639-de594a187a03",
+  "photoCredit": "Joss Woodhead · Unsplash",
+  "photoPage": "https://unsplash.com/photos/osaka-castle-rises-above-a-serene-pond-and-green-trees-yj47GYk1g3o"
+ },
+ {
   "id": "2026-11-19-guam",
   "date": "2026-11-19",
   "dateLabel": "11월 19일",
@@ -462,21 +478,5 @@
   "photo": "https://images.unsplash.com/photo-1675149047607-287185e888f3",
   "photoCredit": "Taewoo Kim · Unsplash",
   "photoPage": "https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EB%86%92%EC%9D%80-%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C-%EB%B3%B8-%EB%B0%A4%EC%9D%98-%EB%8F%84%EC%8B%9C-%EC%A0%84%EB%A7%9D-klGmlD8Hflw"
- },
- {
-  "id": "2026-10-21-macau",
-  "date": "2026-10-21",
-  "dateLabel": "10월 21일",
-  "place": "마카오",
-  "headline": "그랑프리 주간, 금빛 올스위트 래플스",
-  "why": "11월 19~22일 시내 도로를 서킷으로 쓰는 제73회 마카오 그랑프리가 열리고, 10월부터 이어지는 건조하고 선선한 날씨라 걷기에도 좋아요.",
-  "stay": "래플스 앳 갤럭시 마카오: 2023년 문을 연 약 450스위트 규모로 세계 최대 올스위트 래플스예요. 스위트는 78~228㎡이고, 6층 40m 인피니티 풀에 갤럭시 리조트의 대형 웨이브 풀까지 무료로 쓸 수 있어요.",
-  "getThere": "인천–마카오 직항으로 약 4시간이고, 대한항공 프레스티지 왕복은 170만원대부터 나와 있어요.",
-  "bestTime": "11월 중순~12월",
-  "source": "Macau Daily Times",
-  "url": "https://macaudailytimes.com.mo/organizers-confirm-program-for-the-73rd-edition.html",
-  "photo": "https://images.unsplash.com/photo-1555331446-0ff637678740",
-  "photoCredit": "Vernon Raineil Cenzon · Unsplash",
-  "photoPage": "https://unsplash.com/photos/skyline-sky-view-I0fnFdtE9zc"
  }
 ]
