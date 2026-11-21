@@ -1,5 +1,21 @@
 [
  {
+  "id": "2026-11-21-macau",
+  "date": "2026-11-21",
+  "dateLabel": "11월 21일",
+  "place": "마카오",
+  "headline": "맑고 선선한 마카오, 금빛 래플스 스위트",
+  "why": "11~12월은 습도가 낮고 맑은 날이 많아 마카오를 걷기 가장 좋은 때예요. 1~2월도 15~21도 정도로 다닐 만해요.",
+  "stay": "래플스 앳 갤럭시 마카오: 2023년 코타이에 문을 연 세계 최대 올스위트 래플스로 스위트가 약 450개예요. 금빛 타워에 흰 대리석 로비, 수공예 크리스털 샹들리에가 걸린 라운지가 볼거리예요.",
+  "getThere": "인천–마카오 직항으로 약 4시간 걸려요.",
+  "bestTime": "11월~2월",
+  "source": "Tatler Asia",
+  "url": "https://www.tatlerasia.com/lifestyle/travel/raffles-at-galaxy-macau-debuts-in-cotai",
+  "photo": "https://images.unsplash.com/photo-1555331446-0ff637678740",
+  "photoCredit": "Vernon Raineil Cenzon · Unsplash",
+  "photoPage": "https://unsplash.com/photos/skyline-sky-view-I0fnFdtE9zc"
+ },
+ {
   "id": "2026-11-20-osaka",
   "date": "2026-11-20",
   "dateLabel": "11월 20일",
@@ -462,21 +478,5 @@
   "photo": "https://images.unsplash.com/photo-1569310173768-65d611b7f517",
   "photoCredit": "Quique Olivar · Unsplash",
   "photoPage": "https://unsplash.com/photos/aerial-photo-of-city-buildings-at-night-vfB2rQhHFj8"
- },
- {
-  "id": "2026-10-22-fukuoka",
-  "date": "2026-10-22",
-  "dateLabel": "10월 22일",
-  "place": "후쿠오카, 일본",
-  "headline": "규슈 스모 시즌, 타워 꼭대기 리츠칼튼",
-  "why": "11월 8~22일 후쿠오카 국제센터에서 대스모 11월 장소가 열리고, 인천에서 1시간 반 거리라 짧은 휴가로도 늦가을 시내를 즐기기 좋아요.",
-  "stay": "더 리츠칼튼 후쿠오카: 2023년 문을 연 167실 호텔로, 25층 유리 타워의 꼭대기 9개 층을 쓰고 객실이 약 50㎡예요. 24층 실내 수영장과 스파에서 하카타만과 오호리 공원이 내려다보여요.",
-  "getThere": "인천–후쿠오카 직항으로 약 1시간 30분이고, 본보이 포인트 구매 55% 보너스(11월 24일까지)로 숙박 포인트를 미리 모아 둘 수도 있어요.",
-  "bestTime": "11월 중순~12월 초",
-  "source": "Hospitality Net",
-  "url": "https://www.hospitalitynet.org/announcement/41009719/the-ritz-carlton-debuts-in-fukuoka-japan",
-  "photo": "https://images.unsplash.com/photo-1675149047607-287185e888f3",
-  "photoCredit": "Taewoo Kim · Unsplash",
-  "photoPage": "https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EB%86%92%EC%9D%80-%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C-%EB%B3%B8-%EB%B0%A4%EC%9D%98-%EB%8F%84%EC%8B%9C-%EC%A0%84%EB%A7%9D-klGmlD8Hflw"
  }
 ]
