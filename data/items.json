@@ -578,23 +578,6 @@
   "added": "2026-10-27"
  },
  {
-  "id": "waldorf-astoria-kuala-lumpur-open-2026-10",
-  "section": "hotel",
-  "program": "힐튼 아너스",
-  "title": "월도프 아스토리아 쿠알라룸푸르 개장",
-  "summary": "10월 말 골든 트라이앵글에 268개 전 객실 스위트(80~745㎡)로 문을 열었어요. 기본 스위트가 1박 $479(세금 별도)부터, 포인트로는 약 10만 포인트예요.",
-  "tip": "힐튼 ‘모어 포인츠 투 플레이’에 등록하면 럭셔리 숙박마다 3,000포인트를 더 받아요.",
-  "source": "One Mile at a Time",
-  "url": "https://onemileatatime.com/news/waldorf-astoria-kuala-lumpur/",
-  "date": "2026-10-31",
-  "dateLabel": "10월 31일",
-  "due": "2026-10-30",
-  "dueLabel": "10월 말 개장",
-  "dueKind": "event",
-  "priority": 2,
-  "added": "2026-10-26"
- },
- {
   "id": "malaysia-enrich-match-skypass-2026-10",
   "section": "promo",
   "program": "말레이시아항공 엔리치",
@@ -663,23 +646,6 @@
   "added": "2026-10-23"
  },
  {
-  "id": "sq-first-ground-experience-changi-2026-10",
-  "section": "air",
-  "program": "싱가포르항공",
-  "title": "싱가포르항공 창이 퍼스트 지상 서비스 개편",
-  "summary": "창이 T3에서 퍼스트·스위트 승객에게 전담 컨시어지, 전용 출국 심사 줄, 게이트 우선 보안검색(A1~A5)을 정식 도입해요. 10월 28일부터 퍼스트 실버크리스 라운지에 메뉴판과 테이블 서비스를 갖춘 정식 다이닝이 추가돼요.",
-  "tip": "싱가포르 경유 퍼스트 발권을 노린다면 10월 28일 이후 라운지에서 새 다이닝을 경험할 수 있어요.",
-  "source": "The MileLion",
-  "url": "https://milelion.com/2026/10/21/singapore-airlines-unveils-new-first-class-ground-experience/",
-  "date": "2026-10-21",
-  "dateLabel": "10월 21일",
-  "due": "2026-10-28",
-  "dueLabel": "10월 28일 라운지 다이닝 시작",
-  "dueKind": "event",
-  "priority": 2,
-  "added": "2026-10-22"
- },
- {
   "id": "bonvoy-buy-points-55-2026-11",
   "section": "promo",
   "program": "메리어트 본보이",
@@ -728,23 +694,6 @@
   "dueLabel": "12월 17일 시행",
   "dueKind": "event",
   "priority": 1,
-  "added": "2026-10-17"
- },
- {
-  "id": "hilton-buy-points-120-2026-10",
-  "section": "promo",
-  "program": "힐튼 아너스",
-  "title": "힐튼 포인트 구매 120% 보너스, 역대 최고",
-  "summary": "11월 21일(미 동부시간)까지 5,000P 이상 사면 120% 보너스를 줘요. 평소 연 8만P인 구매 한도도 이번엔 크게 늘었어요.",
-  "tip": "힐튼 무료 숙박을 앞두고 포인트가 모자랄 때 채우는 용도로 적합해요.",
-  "source": "LoyaltyLobby",
-  "url": "https://loyaltylobby.com/2026/10/07/hilton-honors-buy-points-120-bonus-sale-increased-limit-ocotber-7-november-21-2026/",
-  "date": "2026-10-07",
-  "dateLabel": "10월 7일",
-  "due": "2026-11-21",
-  "dueLabel": "11월 21일 마감",
-  "dueKind": "deadline",
-  "priority": 2,
   "added": "2026-10-17"
  }
 ]

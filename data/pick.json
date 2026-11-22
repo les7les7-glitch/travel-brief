@@ -1,5 +1,21 @@
 [
  {
+  "id": "2026-11-22-vienna",
+  "date": "2026-11-22",
+  "dateLabel": "11월 22일",
+  "place": "비엔나, 오스트리아",
+  "headline": "크리스마스 마켓 켜진 비엔나, 옛 은행 호텔",
+  "why": "시청 앞 크리스마스 마켓이 11월 13일~12월 26일, 쇤브룬 궁전 마켓이 1월 6일까지 열려 지금부터 연말까지가 가장 반짝이는 때예요.",
+  "stay": "로즈우드 비엔나: 페터스플라츠의 19세기 은행 건물을 바꾼 104실 호텔로 슈테판 대성당과 몇 블록 거리예요. 꼭대기 브라세리·바 '노이에 호하이트'의 테라스에서 구시가 지붕이 내려다보여요.",
+  "getThere": "대한항공이 인천–빈 직항을 주 4회 운항하고 약 13시간 걸려요.",
+  "bestTime": "11월 중순~12월 하순",
+  "source": "wien.info",
+  "url": "https://www.wien.info/en/shopping-wining-dining/markets/christmas-markets-342664",
+  "photo": "https://images.unsplash.com/photo-1665242127968-38e2406be0e7",
+  "photoCredit": "Christian Lendl · Unsplash",
+  "photoPage": "https://unsplash.com/photos/a-city-with-a-river-running-through-it-pw-Q-PRF-VU"
+ },
+ {
   "id": "2026-11-21-macau",
   "date": "2026-11-21",
   "dateLabel": "11월 21일",
@@ -462,21 +478,5 @@
   "photo": "https://images.unsplash.com/photo-1693282814784-649be45a459b",
   "photoCredit": "Vivu Vietnam · Unsplash",
   "photoPage": "https://unsplash.com/photos/a-beach-with-palm-trees-and-a-boat-in-the-water-IVJVh1v1PVs"
- },
- {
-  "id": "2026-10-23-madrid",
-  "date": "2026-10-23",
-  "dateLabel": "10월 23일",
-  "place": "마드리드, 스페인",
-  "headline": "크리스마스 조명 켜지는 마드리드, 포시즌스",
-  "why": "11월 21일 무렵부터 내년 1월 6일까지 시내 거리에 크리스마스 조명이 켜지고, 마요르 광장에는 연말 마켓이 들어서 늦가을·초겨울 도시 여행에 잘 맞아요.",
-  "stay": "포시즌스 호텔 마드리드: 2020년 9월 문을 연 200실(스위트 39실) 호텔로, 솔 광장과 라스 레트라스 사이 옛 건물 7채를 복원해 이었어요. 실내 수영장이 있는 스파와 마틴 브루드니츠키가 꾸민 루프톱 레스토랑 다니가 대표 공간이에요.",
-  "getThere": "인천–마드리드는 대한항공이 주 4회 직항으로 약 15시간 걸리고, 12월 출발 프레스티지 왕복은 490만 원대부터예요.",
-  "bestTime": "11월 하순~12월",
-  "source": "Four Seasons Press Room",
-  "url": "https://press.fourseasons.com/madrid/hotel-facts",
-  "photo": "https://images.unsplash.com/photo-1569310173768-65d611b7f517",
-  "photoCredit": "Quique Olivar · Unsplash",
-  "photoPage": "https://unsplash.com/photos/aerial-photo-of-city-buildings-at-night-vfB2rQhHFj8"
  }
 ]
