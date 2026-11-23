@@ -745,7 +745,7 @@
   "walk": "",
   "source": "MICHELIN Guide",
   "url": "https://guide.michelin.com/us/en/singapore-region/singapore/restaurant/odette",
-  "asOf": "2026-10-18"
+  "asOf": "2026-11-23"
  },
  {
   "id": "singapore-eat-2",
@@ -767,7 +767,7 @@
   "walk": "",
   "source": "MICHELIN Guide",
   "url": "https://guide.michelin.com/us/en/singapore-region/singapore/restaurant/jaan-by-kirk-westaway",
-  "asOf": "2026-10-18"
+  "asOf": "2026-11-23"
  },
  {
   "id": "singapore-eat-3",
@@ -785,11 +785,11 @@
   "category": "현지 맛집",
   "price": 1,
   "priceText": "",
-  "tip": "화~일 10:00~20:00 영업(월요일 휴무)하고, 긴 줄을 각오하고 현금을 챙기세요.",
+  "tip": "화~일 08:30~20:00 영업(월요일 휴무)하고, 줄이 길고 현금만 받아요.",
   "walk": "",
   "source": "MICHELIN Guide",
   "url": "https://guide.michelin.com/us/en/singapore-region/singapore/restaurant/tian-tian-hainanese-chicken-rice",
-  "asOf": "2026-10-18"
+  "asOf": "2026-11-23"
  },
  {
   "id": "singapore-eat-4",
@@ -811,7 +811,7 @@
   "walk": "",
   "source": "MICHELIN Guide",
   "url": "https://guide.michelin.com/us/en/singapore-region/singapore/restaurant/hill-street-tai-hwa-pork-noodle",
-  "asOf": "2026-10-18"
+  "asOf": "2026-11-23"
  },
  {
   "id": "singapore-eat-5",
@@ -828,12 +828,12 @@
   "mode": "",
   "category": "바",
   "price": 2,
-  "priceText": "칵테일 S$28",
-  "tip": "매일 18:00에 열고 금·토는 새벽 2시까지 영업해요.",
+  "priceText": "",
+  "tip": "매일 18:00에 열고 일~화 자정, 수·목 새벽 1시, 금·토 새벽 2시까지 영업해요.",
   "walk": "",
-  "source": "Time Out Singapore",
-  "url": "https://www.timeout.com/singapore/bars-and-pubs/jigger-and-pony",
-  "asOf": "2026-10-18"
+  "source": "Amara Singapore",
+  "url": "https://singapore.amarahotels.com/dining/jigger-pony",
+  "asOf": "2026-11-23"
  },
  {
   "id": "singapore-eat-6",
@@ -854,8 +854,8 @@
   "tip": "",
   "walk": "",
   "source": "The World's 50 Best Bars",
-  "url": "https://www.theworlds50best.com/discovery/Establishments/Singapore/Singapore/Nutmeg-and-Clove.html",
-  "asOf": "2026-10-18"
+  "url": "https://www.the50.com/discovery/Establishments/Singapore/Singapore/Nutmeg-and-Clove.html",
+  "asOf": "2026-11-23"
  },
  {
   "id": "singapore-eat-7",
@@ -872,12 +872,12 @@
   "mode": "",
   "category": "카페",
   "price": 3,
-  "priceText": "클래식 애프터눈 티 1인 S$98++",
-  "tip": "12:30~17:30에 운영하고 이용 시간은 90분으로 제한되며, SevenRooms로 예약해요.",
+  "priceText": "",
+  "tip": "매일 12:30~17:30에 운영하고, 전화나 이메일로 예약할 수 있어요.",
   "walk": "",
-  "source": "Accor Plus",
-  "url": "https://www.accorplus.com/?p=96047",
-  "asOf": "2026-10-18"
+  "source": "Raffles Singapore",
+  "url": "https://www.raffles.com/singapore/dining/the-grand-lobby",
+  "asOf": "2026-11-23"
  },
  {
   "id": "singapore-near-1",

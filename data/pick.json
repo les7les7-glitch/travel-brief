@@ -1,5 +1,21 @@
 [
  {
+  "id": "2026-11-23-hakone",
+  "date": "2026-11-23",
+  "dateLabel": "11월 23일",
+  "place": "하코네, 일본",
+  "headline": "하코네 새 온천 리조트가 12월 15일 열려요",
+  "why": "미쓰이 부동산의 최상급 브랜드가 12월 15일 고와쿠다니에 새 리조트를 열어요. 메리어트 럭셔리 컬렉션에 속해 본보이 숙박으로도 이용할 수 있고, 추운 겨울이라 노천 온천을 즐기기 좋아요.",
+  "stay": "호텔 더 미쓰이 하코네: 후지하코네이즈 국립공원 안 약 14헥타르 부지에 126실로 문을 열고, 모든 객실에 자체 원천 온천과 발코니나 테라스가 있어요. 48㎡ 디럭스부터 200㎡가 넘는 스위트·시그니처 빌라까지 갖췄어요.",
+  "getThere": "인천–하네다 직항 약 2시간 뒤 전철로 약 2시간 더 가요.",
+  "bestTime": "12월 중순~2월",
+  "source": "TRAVEL VOICE",
+  "url": "https://www.travelvoice.jp/20260713-160161",
+  "photo": "https://images.unsplash.com/photo-1749352133990-67bf2a652149",
+  "photoCredit": "Helmi Tan · Unsplash",
+  "photoPage": "https://unsplash.com/photos/aEvsvyiG3ro"
+ },
+ {
   "id": "2026-11-22-vienna",
   "date": "2026-11-22",
   "dateLabel": "11월 22일",
@@ -462,21 +478,5 @@
   "photo": "https://images.unsplash.com/photo-1513407030348-c983a97b98d8",
   "photoCredit": "Louie Martinez · Unsplash",
   "photoPage": "https://unsplash.com/photos/tokyo-tower-illuminated-at-dusk-with-city-skyline-IocJwyqRv3M"
- },
- {
-  "id": "2026-10-24-phu-quoc",
-  "date": "2026-10-24",
-  "dateLabel": "10월 24일",
-  "place": "푸꾸옥, 베트남",
-  "headline": "건기 시작한 푸꾸옥, 리젠트 롱비치 리조트",
-  "why": "11월부터 비가 줄고 바다가 잔잔해지는 건기가 시작돼 해변 휴양에 가장 좋은 때예요. 리젠트는 IHG 브랜드라 대시보드의 IHG 4분기 프로모션(두 번째 숙박부터 최대 3배)도 받을 수 있어요.",
-  "stay": "리젠트 푸꾸옥: 2022년 4월 문을 연 스위트 176실·빌라 126채 규모 롱비치 리조트예요. 해변 쪽 인피니티 풀을 포함한 수영장 4개, DJ가 있는 비치클럽 오션 클럽, 스카이 풀 테라스 바 푸 바가 대표 공간이에요.",
-  "getThere": "인천–푸꾸옥은 직항으로 약 6시간이고, 공항에서 리조트까지 차로 20분이 채 안 걸려요.",
-  "bestTime": "11월~3월",
-  "source": "Qantas Travel Insider",
-  "url": "https://qantas.com/travelinsider/en/explore/asia/vietnam/regent-phu-quoc-hotel-review.html",
-  "photo": "https://images.unsplash.com/photo-1693282814784-649be45a459b",
-  "photoCredit": "Vivu Vietnam · Unsplash",
-  "photoPage": "https://unsplash.com/photos/a-beach-with-palm-trees-and-a-boat-in-the-water-IVJVh1v1PVs"
  }
 ]
