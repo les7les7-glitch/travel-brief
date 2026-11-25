@@ -1,5 +1,21 @@
 [
  {
+  "id": "2026-11-25-kualalumpur",
+  "date": "2026-11-25",
+  "dateLabel": "11월 25일",
+  "place": "쿠알라룸푸르, 말레이시아",
+  "headline": "건기 성수기 쿠알라룸푸르, 99층 풀에서 야경",
+  "why": "12~2월은 말레이반도 서해안이 비교적 건조한 성수기이고, 1월 말~2월 초에는 설(춘절)과 타이푸삼 축제가 이어져요. 대시보드의 말레이시아항공 스카이패스 등급 매치를 쓰면 원월드 라운지도 노려볼 수 있어요.",
+  "stay": "파크 하얏트 쿠알라룸푸르: 118층 메르데카 118 상층부에 252실을 둔 호텔로, 로비가 75층에 있고 99층에 30m 인피니티 풀과 웰니스 층이 있어요. 캄풍 수상가옥과 바틱 문양에서 따온 실내 디자인도 볼거리예요.",
+  "getThere": "인천–쿠알라룸푸르는 대한항공·말레이시아항공 등이 직항으로 약 6시간 45분 걸려요.",
+  "bestTime": "12월~2월",
+  "source": "The Points Guy",
+  "url": "https://thepointsguy.com/hotel/reviews/park-hyatt-kuala-lumpur/",
+  "photo": "https://images.unsplash.com/photo-1596422846543-75c6fc197f07",
+  "photoCredit": "Esmonde Yong · Unsplash",
+  "photoPage": "https://unsplash.com/photos/petronas-towers-skyline-in-kuala-lumpur--9B08uduMyY"
+ },
+ {
   "id": "2026-11-24-phuquoc",
   "date": "2026-11-24",
   "dateLabel": "11월 24일",
@@ -462,21 +478,5 @@
   "photo": "https://images.unsplash.com/photo-1645536111601-af99b7e9cd70",
   "photoCredit": "Leonhard Niederwimmer · Unsplash",
   "photoPage": "https://unsplash.com/photos/a-view-of-a-city-with-a-river-running-through-it-UtbG6-r9mRQ"
- },
- {
-  "id": "2026-10-26-hongkong",
-  "date": "2026-10-26",
-  "dateLabel": "10월 26일",
-  "place": "홍콩",
-  "headline": "선선한 건기, 하버 앞 리젠트 홍콩",
-  "why": "홍콩 천문대 설명대로 11~12월은 맑고 선선한 바람이 부는 시기이고, 11~12월엔 센트럴에서 20m 트리와 조명 쇼가 있는 윈터페스트가 열려요. 대시보드에 있는 IHG 4분기 포인트 프로모션도 참여 호텔인지 확인해 보세요.",
-  "stay": "리젠트 홍콩: 전면 리노베이션 뒤 2023년 11월 다시 문을 연 497실 호텔로, 침사추이 빅토리아 하버 바로 앞에 있어요. 하버를 향한 객실 데이베드와 욕조, 연중 온수 야외 수영장과 3단 인피니티 자쿠지가 대표 공간이고 2026년 T+L이 홍콩 최고 호텔로 뽑았어요.",
-  "getThere": "인천–홍콩 직항으로 약 4시간이고 캐세이퍼시픽·대한항공·아시아나 등이 매일 다녀요.",
-  "bestTime": "11월~12월",
-  "source": "Travel + Leisure World's Best Awards 2026 보도자료",
-  "url": "https://www.utusan.com.my/?p=1387428",
-  "photo": "https://images.unsplash.com/photo-1620015092538-e33c665fc181",
-  "photoCredit": "Manson · Unsplash",
-  "photoPage": "https://unsplash.com/photos/hong-kong-skyline-across-victoria-harbour-4vf1KEkD7Gc"
  }
 ]
