@@ -1,5 +1,39 @@
 [
  {
+  "id": "asia-miles-partner-awards-devalue-2027-01",
+  "section": "promo",
+  "program": "캐세이 아시아 마일",
+  "title": "아시아 마일 파트너 항공 차감 인상, 1월 5일부터",
+  "summary": "2027년 1월 5일부터 파트너 항공 보너스 항공권 24개 구간 중 9개가 8~20% 올라요. 장거리 퍼스트는 135,000→162,000마일, 초장거리 비즈니스는 120,000→130,000마일이 되고, 캐세이 자사편은 그대로예요.",
+  "tip": "1월 4일 밤(홍콩 시간)까지 발권하면 지금 차감액이 적용되니, 파트너 퍼스트·비즈니스를 쓸 계획이면 그 전에 끊어 두세요.",
+  "source": "The MileLion",
+  "url": "https://milelion.com/2026/11/25/cathay-devalues-asia-miles-partner-awards-from-5-january-2027/",
+  "date": "2026-11-25",
+  "dateLabel": "11월 25일",
+  "due": "2027-01-04",
+  "dueLabel": "1월 4일 발권 마감",
+  "dueKind": "deadline",
+  "priority": 1,
+  "added": "2026-11-26"
+ },
+ {
+  "id": "krisflyer-offline-fee-up-2026-12",
+  "section": "promo",
+  "program": "싱가포르항공 크리스플라이어",
+  "title": "크리스플라이어 전화 발권 수수료, 12월 1일 두 배로",
+  "summary": "12월 1일부터 전화 등 오프라인 창구에서 마일 항공권을 발권하거나 바꿀 때 붙는 수수료가 25달러에서 50달러로 올라요.",
+  "tip": "마일 발권과 변경은 웹사이트나 앱에서 직접 처리해 오프라인 수수료를 피하세요.",
+  "source": "The MileLion",
+  "url": "https://milelion.com/2026/11/25/supplementary-solitaire-pps-club-membership-what-you-get-and-what-you-dont/",
+  "date": "2026-11-25",
+  "dateLabel": "11월 25일",
+  "due": "2026-12-01",
+  "dueLabel": "12월 1일 시행",
+  "dueKind": "event",
+  "priority": 3,
+  "added": "2026-11-26"
+ },
+ {
   "id": "lufthansa-mainline-shrink-plan-2026-11",
   "section": "air",
   "program": "루프트한자",
@@ -610,23 +644,6 @@
   "dueKind": "",
   "priority": 2,
   "added": "2026-10-27"
- },
- {
-  "id": "malaysia-enrich-match-skypass-2026-10",
-  "section": "promo",
-  "program": "말레이시아항공 엔리치",
-  "title": "말레이시아항공, 스카이패스 등급 유료 매치",
-  "summary": "엔리치 유료 등급 매치 대상에 대한항공 스카이패스(아시아나 포함 보도)가 추가됐어요.",
-  "tip": "통합 전 스카이패스 등급이 있다면 원월드 에메랄드 라운지 접근용으로 따져볼 만하지만, 등급별 매칭표는 공식 FAQ에서 먼저 확인하세요.",
-  "source": "VeryLvke",
-  "url": "https://www.verylvke.com/en/2026/10/21/malaysia-airlines-status-match-expanded-now-including-miles-more/",
-  "date": "2026-10-21",
-  "dateLabel": "10월 21일",
-  "due": "",
-  "dueLabel": "",
-  "dueKind": "",
-  "priority": 2,
-  "added": "2026-10-26"
  },
  {
   "id": "hotel-the-mitsui-hakone-2026-12",

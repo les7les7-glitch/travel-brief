@@ -1,5 +1,21 @@
 [
  {
+  "id": "2026-11-26-tokyo",
+  "date": "2026-11-26",
+  "dateLabel": "11월 26일",
+  "place": "도쿄, 일본",
+  "headline": "샴페인 골드 가로수 아래 도쿄 겨울 밤",
+  "why": "마루노우치 나카도리 약 1.2km 가로수에 샴페인 골드 조명이 2027년 2월 14일까지 무료로 켜지고, 11월 27일~12월 25일에는 도쿄역과 황궁 외원 사이 교코도리까지 불이 이어져요.",
+  "stay": "불가리 호텔 도쿄: 2023년 도쿄역 옆 도쿄 미드타운 야에스 40~45층에 98실로 문을 열었고, 25m 수영장과 트리트먼트룸 9개짜리 스파, 45층 루프 테라스를 갖췄어요. 2026년 '세계 50 베스트 호텔'에서 24위에 올랐어요.",
+  "getThere": "인천–하네다 직항으로 약 2시간 20분 걸리고, 호텔이 도쿄역 바로 옆이라 마루노우치 조명 거리까지 걸어갈 수 있어요.",
+  "bestTime": "11월 하순~12월",
+  "source": "The World's 50 Best Hotels",
+  "url": "https://www.the50.com/hotels/best-in-the-world/the-list/bulgari-tokyo.html",
+  "photo": "https://images.unsplash.com/photo-1513407030348-c983a97b98d8",
+  "photoCredit": "Louie Martinez · Unsplash",
+  "photoPage": "https://unsplash.com/photos/tokyo-tower-illuminated-at-dusk-with-city-skyline-IocJwyqRv3M"
+ },
+ {
   "id": "2026-11-25-kualalumpur",
   "date": "2026-11-25",
   "dateLabel": "11월 25일",
@@ -462,21 +478,5 @@
   "photo": "https://images.unsplash.com/photo-1754295560016-450d6a38f2fd",
   "photoCredit": "Max Bvp · Unsplash",
   "photoPage": "https://unsplash.com/photos/a-beautiful-beach-meets-a-green-lush-landscape-fShPggUL3LQ"
- },
- {
-  "id": "2026-10-27-prague",
-  "date": "2026-10-27",
-  "dateLabel": "10월 27일",
-  "place": "프라하, 체코",
-  "headline": "크리스마스 마켓 앞, 다시 태어난 브루탈리즘 호텔",
-  "why": "올해 구시가지 광장·바츨라프 광장 크리스마스 마켓은 11월 28일부터 2027년 1월 6일까지 열리고, 11월 28일 광장 트리 점등을 시작으로 매일 저녁 조명이 켜져요.",
-  "stay": "페어몬트 골든 프라하: 1974년 문을 연 옛 인터컨티넨탈 건물을 2020년부터 골조만 남기고 다시 지어 2025년 4월 320실로 재개장했어요. 블타바 강변 파르지슈스카 거리 끝에 있고, 1970년대 체코 유리 조명·예술품을 되살린 로비와 강·구시가지가 보이는 루프톱 레스토랑이 돋보여요.",
-  "getThere": "인천–프라하는 대한항공·아시아나 직항으로 약 13시간 30분이에요.",
-  "bestTime": "11월 말~12월",
-  "source": "Robb Report Singapore",
-  "url": "https://robbreport.com.sg/fairmont-golden-prague-opens/",
-  "photo": "https://images.unsplash.com/photo-1645536111601-af99b7e9cd70",
-  "photoCredit": "Leonhard Niederwimmer · Unsplash",
-  "photoPage": "https://unsplash.com/photos/a-view-of-a-city-with-a-river-running-through-it-UtbG6-r9mRQ"
  }
 ]
