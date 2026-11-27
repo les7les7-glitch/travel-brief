@@ -1,5 +1,22 @@
 [
  {
+  "id": "bonvoy-soft-landing-2027",
+  "section": "promo",
+  "program": "메리어트 본보이",
+  "title": "본보이 2027 등급 소프트 랜딩, 최대 한 단계만 하락",
+  "summary": "소프트 랜딩으로 받은 등급 연도도 평생 등급 연수에 들어가요.",
+  "tip": "",
+  "source": "One Mile at a Time",
+  "url": "https://onemileatatime.com/news/marriott-bonvoy-status-soft-landing/",
+  "date": "2026-11-25",
+  "dateLabel": "11월 25일",
+  "due": "",
+  "dueLabel": "",
+  "dueKind": "",
+  "priority": 1,
+  "added": "2026-11-27"
+ },
+ {
   "id": "asia-miles-partner-awards-devalue-2027-01",
   "section": "promo",
   "program": "캐세이 아시아 마일",
@@ -625,23 +642,6 @@
   "due": "2026-12-01",
   "dueLabel": "12월 1일 본보이 합류",
   "dueKind": "event",
-  "priority": 2,
-  "added": "2026-10-27"
- },
- {
-  "id": "korean-air-starlink-free-wifi-2026-10",
-  "section": "air",
-  "program": "대한항공",
-  "title": "대한항공 스타링크 와이파이, 전 승객 무료",
-  "summary": "9월 15일 시작한 스타링크 기내 와이파이를 모든 승객에게 무료로 주고, 탑승권의 이름과 좌석번호만 넣으면 접속돼요. 약 40일 만에 15대에 달았고 2027년 상반기까지 아시아나 기체를 포함해 대부분 기단에 설치할 계획이에요.",
-  "tip": "장거리편에선 기체마다 승객 절반 이상이 쓴다고 하니 업무용으로도 기대할 만해요.",
-  "source": "대한항공 뉴스룸",
-  "url": "https://news.koreanair.com/%ec%9d%b8%ed%84%b0%eb%b7%b0-%eb%8c%80%ed%95%9c%ed%95%ad%ea%b3%b5%ec%9d%98-%ec%8a%a4%ed%83%80%eb%a7%81%ed%81%ac-%ea%b8%b0%eb%b0%98-%ea%b8%b0%eb%82%b4-%ec%99%80%ec%9d%b4%ed%8c%8c%ec%9d%b4%eb%8a%94/",
-  "date": "2026-10-26",
-  "dateLabel": "10월 26일",
-  "due": "",
-  "dueLabel": "",
-  "dueKind": "",
   "priority": 2,
   "added": "2026-10-27"
  },

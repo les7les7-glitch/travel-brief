@@ -1,5 +1,21 @@
 [
  {
+  "id": "2026-11-27-st-moritz",
+  "date": "2026-11-27",
+  "dateLabel": "11월 27일",
+  "place": "생모리츠, 스위스",
+  "headline": "설산 위 그랜드 호텔, 생모리츠 겨울 개막",
+  "why": "코르빌리아 스키장이 11월 27일 시즌권자 대상 조기 개장으로 겨울을 열었고, 12월 18~20일엔 같은 산 살라스트라인스에서 여자 알파인 스키 월드컵이 열려요.",
+  "stay": "배드럿 팰리스 호텔: 2026/27 겨울 시즌을 12월 3일~3월 30일 운영하고, 객실 163개(스위트 47개)에 2025년 안토니오 치테리오가 설계한 세를라스 윙과 2024년 새 야외 수영장을 더했어요.",
+  "getThere": "대한항공 인천–취리히 직항(약 13시간 20분, 1월 출발 프레스티지 왕복 616만 8천 원부터)을 타고 취리히에서 기차로 약 3시간 30분 가요.",
+  "bestTime": "12월~3월",
+  "source": "Badrutt's Palace Hotel",
+  "url": "https://badruttspalace.com/media/eu4g2j0a/badrutts-palace-hotel-press-kit-2026.pdf",
+  "photo": "https://images.unsplash.com/photo-1614784817383-b6d056a1a07b",
+  "photoCredit": "Renato Muolo · Unsplash",
+  "photoPage": "https://unsplash.com/photos/body-of-water-near-snow-covered-mountain-during-daytime-_6QrtnCWW2I"
+ },
+ {
   "id": "2026-11-26-tokyo",
   "date": "2026-11-26",
   "dateLabel": "11월 26일",
@@ -462,21 +478,5 @@
   "photo": "https://images.unsplash.com/photo-1470004914212-05527e49370b",
   "photoCredit": "Thomas Tucker · Unsplash",
   "photoPage": "https://unsplash.com/photos/taipei-101-skyscraper-in-taipei-au3CYbd7vCU"
- },
- {
-  "id": "2026-10-28-phuket",
-  "date": "2026-10-28",
-  "dateLabel": "10월 28일",
-  "place": "푸껫, 태국",
-  "headline": "우기 끝, 맑은 안다만해가 돌아오는 푸껫",
-  "why": "11월부터 푸껫은 건기에 들어서 하늘이 맑아지고 바다도 잔잔해져요. 12월 중순 성수기 직전이라 지금 예약하면 가장 좋은 시기를 잡을 수 있어요.",
-  "stay": "인터컨티넨탈 푸껫 리조트: 2019년 카말라 비치에 문을 연 221실 규모의 대형 리조트로, 첨탑을 올린 사원풍 중앙 파빌리온과 수영장 5개, 인피니티 풀을 갖춘 클럽 라운지가 볼거리예요.",
-  "getThere": "인천에서 대한항공·진에어 직항으로 약 6시간 45분이면 푸껫에 닿아요.",
-  "bestTime": "11월~2월",
-  "source": "MICHELIN Guide",
-  "url": "https://guide.michelin.com/en/hotels-stays/kamala-beach/intercontinental-phuket-resort-12845",
-  "photo": "https://images.unsplash.com/photo-1754295560016-450d6a38f2fd",
-  "photoCredit": "Max Bvp · Unsplash",
-  "photoPage": "https://unsplash.com/photos/a-beautiful-beach-meets-a-green-lush-landscape-fShPggUL3LQ"
  }
 ]
