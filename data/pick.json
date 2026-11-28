@@ -1,5 +1,21 @@
 [
  {
+  "id": "2026-11-28-hong-kong",
+  "date": "2026-11-28",
+  "dateLabel": "11월 28일",
+  "place": "홍콩",
+  "headline": "윈터페스트로 반짝이는 12월 빅토리아 하버",
+  "why": "홍콩 윈터페스트가 11월 18일~1월 5일 센트럴 스태추 스퀘어(22m 트리)와 침사추이 하버 산책로에서 열리고, 12월 31일엔 빅토리아 하버 새해 불꽃이 터져요.",
+  "stay": "로즈우드 홍콩: 2019년 3월 침사추이 빅토리아 독사이드의 65층 타워에 문을 열었고, 객실 413개(스위트 91개)에 KPF 외관·토니 치 인테리어, 아사야 풀과 1,000㎡ 무기둥 그랜드 볼룸을 갖췄어요.",
+  "getThere": "인천–홍콩 캐세이퍼시픽 직항으로 약 4시간이고, 진행 중인 캐세이 ‘리워딩 저니’에 등록해 두면 예약 실적을 보너스 목표에 쌓을 수 있어요.",
+  "bestTime": "11월 하순~1월 초",
+  "source": "Discover Hong Kong",
+  "url": "https://www.discoverhongkong.com/eng/what-s-new/events/hong-kong-winterfest.html",
+  "photo": "https://images.unsplash.com/photo-1620015092538-e33c665fc181",
+  "photoCredit": "Manson · Unsplash",
+  "photoPage": "https://unsplash.com/photos/hong-kong-skyline-across-victoria-harbour-4vf1KEkD7Gc"
+ },
+ {
   "id": "2026-11-27-st-moritz",
   "date": "2026-11-27",
   "dateLabel": "11월 27일",
@@ -462,21 +478,5 @@
   "photo": "https://images.unsplash.com/photo-1607309843659-f4ad95cf3277",
   "photoCredit": "City of Gold Coast · Unsplash",
   "photoPage": "https://unsplash.com/photos/aerial-view-of-city-buildings-near-sea-during-daytime-O3ji6Tv0PtY"
- },
- {
-  "id": "2026-10-29-taipei",
-  "date": "2026-10-29",
-  "dateLabel": "10월 29일",
-  "place": "타이베이, 대만",
-  "headline": "새 인터컨티넨탈과 101 야경, 선선한 타이베이",
-  "why": "한여름 더위가 물러간 늦가을부터 연말까지 걷기 좋은 날씨가 이어지고, 12월 31일 밤엔 타이베이 101 새해 불꽃이 열려요. 10월 12일 신이 지구 타이베이 돔 단지에 인터컨티넨탈이 새로 문을 열었어요.",
-  "stay": "인터컨티넨탈 타이베이: 2026년 10월 개장한 347실 호텔로, 일부 클래식 룸에서 타이베이 101이 보이고 실내 수영장과 클럽 인터컨티넨탈 라운지, 아키라 백 레스토랑을 포함한 다이닝 7곳을 갖췄어요.",
-  "getThere": "인천에서 타오위안까지 직항으로 약 2시간 30분~3시간이면 닿아요.",
-  "bestTime": "10월 하순~12월",
-  "source": "IHG",
-  "url": "https://www.ihgplc.com/en/news-and-media/news-releases/2026/ihg-hotels-and-resorts-opens-intercontinental-taipei-expanding-luxury-portfolio-in-greater-china",
-  "photo": "https://images.unsplash.com/photo-1470004914212-05527e49370b",
-  "photoCredit": "Thomas Tucker · Unsplash",
-  "photoPage": "https://unsplash.com/photos/taipei-101-skyscraper-in-taipei-au3CYbd7vCU"
  }
 ]
